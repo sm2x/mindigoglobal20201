@@ -1369,3 +1369,9 @@ Route::get('/reg', function() {
     // $pageName = 'auth_default';
     return view('pages.authentication.auth_register')->with($data);
 })->name('reg');
+
+
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+
+
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
