@@ -18,6 +18,41 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
+Auth::routes();
+
+Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
+
+    Route::get('/', 'UserPageController@home')->name('user.home');
+    Route::get('/my_account', 'UserPageController@my_account')->name('user.my_account');
+    Route::get('/my_profile', 'UserPageController@my_profile')->name('user.my_profile');
+    Route::get('/genealogy', 'UserPageController@genealogy')->name('user.genealogy');
+    Route::get('/mindigo_mart', 'UserPageController@mindigo_mart')->name('user.mindigo_mart');
+    Route::get('/notification', 'UserPageController@notification')->name('user.notification');
+    Route::get('/support', 'UserPageController@support')->name('user.support');
+    Route::get('/single_support', 'UserPageController@single_support')->name('user.single_support');
+
+
+});
+
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(){
+
+    Route::get('/', 'AdminPageController@home')->name('admin.home');
+    Route::get('/members', 'AdminPageController@members')->name('admin.members');
+    Route::get('/single_members', 'AdminPageController@single_members')->name('admin.single_members');
+    Route::get('/payouts', 'AdminPageController@payouts')->name('admin.payouts');
+    Route::get('/genealogy', 'AdminPageController@genealogy')->name('admin.genealogy');
+    Route::get('/orders', 'AdminPageController@orders')->name('admin.orders');
+    Route::get('/single_order', 'AdminPageController@single_order')->name('admin.single_order');
+    Route::get('/support', 'AdminPageController@support')->name('admin.support');
+    Route::get('/single_support', 'AdminPageController@single_support')->name('admin.single_support');
+    Route::get('/audit_trail', 'AdminPageController@audit_trail')->name('admin.audit_trail');
+
+
+
+
+});
+
+
 Route::group(['middleware' => 'auth'] , function() {
 
     // $this->middleware
@@ -219,17 +254,17 @@ Route::group(['middleware' => 'auth'] , function() {
             // $pageName = 'auth_boxed';
             return view('pages.authentication.auth_register_boxed')->with($data);
         });
-        Route::get('/register', function() {
-            // $category_name = 'auth';
-            $data = [
-                'category_name' => 'auth',
-                'page_name' => 'auth_default',
-                'has_scrollspy' => 0,
-                'scrollspy_offset' => '',
-            ];
-            // $pageName = 'auth_default';
-            return view('pages.authentication.auth_register')->with($data);
-        });
+        // Route::get('/register', function() {
+        //     // $category_name = 'auth';
+        //     $data = [
+        //         'category_name' => 'auth',
+        //         'page_name' => 'auth_default',
+        //         'has_scrollspy' => 0,
+        //         'scrollspy_offset' => '',
+        //     ];
+        //     // $pageName = 'auth_default';
+        //     return view('pages.authentication.auth_register')->with($data);
+        // });
     });
 
 
@@ -1276,18 +1311,18 @@ Route::group(['middleware' => 'auth'] , function() {
             // $pageName = 'account_settings';
             return view('pages.users.user_account_setting')->with($data);
         });
-        Route::get('/profile', function() {
-            // $category_name = '';
-            $data = [
-                'category_name' => 'users',
-                'page_name' => 'profile',
-                'has_scrollspy' => 0,
-                'scrollspy_offset' => '',
+        // Route::get('/profile', function() {
+        //     // $category_name = '';
+        //     $data = [
+        //         'category_name' => 'users',
+        //         'page_name' => 'profile',
+        //         'has_scrollspy' => 0,
+        //         'scrollspy_offset' => '',
 
-            ];
-            // $pageName = 'profile';
-            return view('pages.users.user_profile')->with($data);
-        });
+        //     ];
+        //     // $pageName = 'profile';
+        //     return view('pages.users.user_profile')->with($data);
+        // });
     });
 
     // Widgets
@@ -1307,17 +1342,30 @@ Route::group(['middleware' => 'auth'] , function() {
 
 });
 
-Auth::routes();
 
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
 
-Route::get('/register', function() {
-    return redirect('/login');    
-});
-Route::get('/password/reset', function() {
-    return redirect('/login');    
-});
+// Route::get('/register', function() {
+//     return redirect('/login');    
+// });
+// Route::get('/password/reset', function() {
+//     return redirect('/login');    
+// });
+
+Route::get('/choose', 'ChooseRoleController@index');
 
 Route::get('/', function() {
-    return redirect('/sales');    
+    return redirect('/login');    
 });
+
+Route::get('/reg', function() {
+    // $category_name = 'auth';
+    $data = [
+        'category_name' => 'auth',
+        'page_name' => 'auth_default',
+        'has_scrollspy' => 0,
+        'scrollspy_offset' => '',
+    ];
+    // $pageName = 'auth_default';
+    return view('pages.authentication.auth_register')->with($data);
+})->name('reg');

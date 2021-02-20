@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ setTitle($page_name) }}</title>
+    <title>Mindigo</title>
     <link rel="icon" type="image/x-icon" href="{{asset('storage/img/favicon.ico')}}"/>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -33,7 +33,22 @@
         <div class="overlay"></div>
         <div class="search-overlay"></div>
 
-        @include('inc.sidebar')
+        @auth()
+
+            @if(Auth::user()->role == 'user')
+
+                @include('inc.user_sidebar')
+
+            @elseif(Auth::user()->role == 'admin')
+
+                @include('inc.admin_sidebar')
+
+            @endif
+
+
+        @endauth
+
+      
 
         <!--  BEGIN CONTENT PART  -->
         <div id="content" class="main-content">
