@@ -57,11 +57,12 @@ class UserPageController extends Controller
     public function my_profile()
     {
         //
-         $data = [
-            'category_name' => 'dashboard',
-            'page_name' => 'analytics',
+        $data = [
+            'category_name' => 'users',
+            'page_name' => 'account_settings',
             'has_scrollspy' => 0,
             'scrollspy_offset' => '',
+
         ];
 
         return view('user.my_profile')->with($data);

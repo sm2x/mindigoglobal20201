@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
 });
 
 
-Route::group(['middleware' => 'auth'] , function() {
+Route::group([] , function() {
 
     // $this->middleware
 
@@ -1311,18 +1311,18 @@ Route::group(['middleware' => 'auth'] , function() {
             // $pageName = 'account_settings';
             return view('pages.users.user_account_setting')->with($data);
         });
-        // Route::get('/profile', function() {
-        //     // $category_name = '';
-        //     $data = [
-        //         'category_name' => 'users',
-        //         'page_name' => 'profile',
-        //         'has_scrollspy' => 0,
-        //         'scrollspy_offset' => '',
+        Route::get('/profilez', function() {
+            // $category_name = '';
+            $data = [
+                'category_name' => 'users',
+                'page_name' => 'profile',
+                'has_scrollspy' => 0,
+                'scrollspy_offset' => '',
 
-        //     ];
-        //     // $pageName = 'profile';
-        //     return view('pages.users.user_profile')->with($data);
-        // });
+            ];
+            // $pageName = 'profile';
+            return view('pages.users.user_profile')->with($data);
+        });
     });
 
     // Widgets

@@ -14,7 +14,15 @@ class CreateMatchingBonusesTable extends Migration
     public function up()
     {
         Schema::create('matching_bonuses', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->bigInteger('owners_id')->unsigned();
+            $table->string('total_left_points')->default('0');
+            $table->string('total_right_points')->default('0');
+            $table->string('aggregate')->default('0');
+            $table->string('points_left')->default('0');
+            $table->string('total_bonus')->default('0');
+
+            $table->foreign('owners_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

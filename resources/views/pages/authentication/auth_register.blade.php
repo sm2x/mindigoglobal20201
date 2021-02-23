@@ -77,7 +77,7 @@
                                         </label>
                                     </div>
                                     <div class="field-wrapper">
-                                        <button type="submit" class="btn btn-primary" value="">Get Started!</button>
+                                        <button type="submit" class="btn btn-warning" value="">Get Started!</button>
                                     </div>
                                 </div>
 

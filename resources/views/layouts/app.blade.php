@@ -45,6 +45,10 @@
 
             @endif
 
+        @else
+
+        @include('inc.sidebar')
+
 
         @endauth
 

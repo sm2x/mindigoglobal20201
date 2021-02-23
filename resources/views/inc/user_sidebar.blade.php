@@ -2,6 +2,8 @@
 
     <!--  BEGIN SIDEBAR  -->
     <div class="sidebar-wrapper sidebar-theme">
+
+    
             
         <nav id="sidebar">
             <div class="shadow-bottom"></div>

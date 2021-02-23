@@ -14,7 +14,20 @@ class CreateMindigoPacksTable extends Migration
     public function up()
     {
         Schema::create('mindigo_packs', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->string('title');
+            $table->string('description');
+            $table->double('reg_fee');
+            $table->integer('grade');
+            $table->integer('points');
+            $table->string('dr_commission');
+            $table->string('match_bonus');
+            $table->integer('max_daily_matching');
+            $table->string('banner_img');
+            
+            
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
