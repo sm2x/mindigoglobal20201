@@ -3,7 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use Auth;
+
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+
+use Paystack;
+
 
 class OrderController extends Controller
 {
@@ -15,6 +24,10 @@ class OrderController extends Controller
     public function index()
     {
         //
+        $paymentDetails = Paystack::getPaymentData();
+
+
+        return redirect('/purchase_success');
     }
 
     /**

@@ -22,7 +22,7 @@
     @case('analytics')
       {{-- Dashboard --}}
       <script src="{{asset('plugins/apex/apexcharts.min.js')}}"></script>
-      <script src="{{asset('assets/js/dashboard/dash_1.js')}}"></script>
+      <script src="{{asset('assets/js/dashboard/dash_2.js')}}"></script>
       @break
 
     @case('sales')

@@ -32,6 +32,30 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
     Route::get('/single_support', 'UserPageController@single_support')->name('user.single_support');
 
 
+
+    //actions 
+
+    Route::get('/purchase_action', 'OrderController@purchase_action')->name('user.purchase_action');
+
+
+
+
+
+    Route::get('/purchase_success', function (){
+        # code...
+        // $category_name = '';
+        $data = [
+            'category_name' => 'pages',
+            'page_name' => 'maintenence',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+
+        ];
+        // $pageName = 'maintenence';
+        return view('user.purchase_success')->with($data);
+    });
+
+
 });
 
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(){
@@ -1352,7 +1376,7 @@ Route::group([] , function() {
 //     return redirect('/login');    
 // });
 
-Route::get('/choose', 'ChooseRoleController@index');
+Route::get('/choose', 'ChooseRoleController@index')->name('choose');
 
 Route::get('/', function() {
     return redirect('/login');    

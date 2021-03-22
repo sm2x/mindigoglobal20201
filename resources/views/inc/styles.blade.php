@@ -16,7 +16,7 @@
     @case('analytics')
       {{-- Dashboard --}}
 <link href="{{asset('plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
-<link href="{{asset('assets/css/dashboard/dash_1.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('assets/css/dashboard/dash_2.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('sales')
@@ -201,7 +201,7 @@
     @case('pricing_table')
       {{-- Component Pricing Table --}}
       <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
-      <link href="{{asset('plugins/pricing-table/css/component.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset('plugins/pricing-table/component.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('session_timeout')

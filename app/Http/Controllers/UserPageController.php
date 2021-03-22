@@ -28,7 +28,7 @@ class UserPageController extends Controller
     public function home()
     {
         //
-         $data = [
+        $data = [
             'category_name' => 'dashboard',
             'page_name' => 'analytics',
             'has_scrollspy' => 0,
@@ -82,13 +82,15 @@ class UserPageController extends Controller
         return view('user.genealogy')->with($data);
     }
 
+    
+
 
     public function mindigo_mart()
     {
         //
          $data = [
-            'category_name' => 'dashboard',
-            'page_name' => 'analytics',
+            'category_name' => 'components',
+            'page_name' => 'pricing_table',
             'has_scrollspy' => 0,
             'scrollspy_offset' => '',
         ];
@@ -100,11 +102,12 @@ class UserPageController extends Controller
     public function notification()
     {
         //
-         $data = [
-            'category_name' => 'dashboard',
-            'page_name' => 'analytics',
-            'has_scrollspy' => 0,
-            'scrollspy_offset' => '',
+        $data = [
+            'category_name' => 'components',
+            'page_name' => 'tabs',
+            'has_scrollspy' => 1,
+            'scrollspy_offset' => 100,
+
         ];
 
         return view('user.notification')->with($data);
@@ -113,11 +116,12 @@ class UserPageController extends Controller
     public function support()
     {
         //
-         $data = [
-            'category_name' => 'dashboard',
-            'page_name' => 'analytics',
+        $data = [
+            'category_name' => 'pages',
+            'page_name' => 'faq2',
             'has_scrollspy' => 0,
             'scrollspy_offset' => '',
+
         ];
 
         return view('user.support')->with($data);

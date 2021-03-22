@@ -33,14 +33,14 @@
                  
                   
 
-                    <li class="menu {{ ($category_name === 'fonticons') ? 'active' : '' }}">
+                    <!-- <li class="menu {{ ($category_name === 'fonticons') ? 'active' : '' }}">
                         <a href="{{route('user.my_account')}}" data-active="{{ ($category_name === 'fonticons') ? 'true' : 'false' }}" aria-expanded="{{ ($category_name === 'fonticons') ? 'true' : 'false' }}" class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
                                 <span>My Account</span>
                             </div>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="menu {{ ($category_name === 'fonticons') ? 'active' : '' }}">
                         <a href="{{route('user.my_profile')}}" data-active="{{ ($category_name === 'fonticons') ? 'true' : 'false' }}" aria-expanded="{{ ($category_name === 'fonticons') ? 'true' : 'false' }}" class="dropdown-toggle">
@@ -86,6 +86,30 @@
                             </div>
                         </a>
                     </li>
+
+
+                    <div class="  layout-spacing">
+                <div class="row widget-statistic">
+                   
+                    <div class=" col-12">
+                        <div class="widget widget-one_hybrid widget-referral">
+                            <div class="widget-heading">
+                                <div class="w-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                                </div>
+                                <p class="w-value">1,900</p>
+                                <h5 class="">Referral</h5>
+                            </div>
+                            <div class="widget-content">    
+                                <div class="w-chart">
+                                    <div id="hybrid_followers1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div> 
 
                     
 
