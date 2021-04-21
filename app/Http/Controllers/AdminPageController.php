@@ -11,11 +11,115 @@ class AdminPageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function home()
     {
         //
+
+        $data = [
+            'category_name' => 'dashboard',
+            'page_name' => 'analytics',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+        ];
+
+        return view('admin.home',[
+
+        ])->with($data);
     }
 
+    public function members()
+    {
+        //
+
+        return view('admin.members',[
+            
+        ]);
+    }
+
+    public function single_member()
+    {
+        //
+
+        return view('admin.single_member',[
+            
+        ]);
+    }
+
+    public function payouts()
+    {
+        //
+        $data = [
+            'category_name' => 'dashboard',
+            'page_name' => 'analytics',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+        ];
+
+        return view('admin.payouts',[
+            
+        ])->with($data);
+    }
+    
+    public function genealogy()
+    {
+        //
+        $data = [
+            'category_name' => 'dashboard',
+            'page_name' => 'analytics',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+        ];
+
+        return view('admin.genealogy',[
+            
+        ])->with($data);
+    }
+
+    public function orders()
+    {
+        //
+
+        return view('admin.orders',[
+            
+        ]);
+    }
+
+    public function single_order()
+    {
+        //
+
+        return view('admin.single_order',[
+            
+        ]);
+    }
+
+    public function support()
+    {
+        //
+
+        return view('admin.support',[
+            
+        ]);
+    }
+
+
+    public function single_support()
+    {
+        //
+
+        return view('admin.single_support',[
+            
+        ]);
+    }
+
+    public function audit_trail()
+    {
+        //
+
+        return view('admin.audit_trail',[
+            
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

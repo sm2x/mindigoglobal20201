@@ -58,7 +58,7 @@ class UserSeeder extends Seeder
                 'password' =>  Hash::make('secret003'),
                 
                 'email_verified_at' => now(),
-                'role' => 'admin',
+                'role' => 'user',
                
                 'user_code' => 'MNG0003',
                 'remember_token' => null,

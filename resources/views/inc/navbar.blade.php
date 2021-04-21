@@ -8,7 +8,7 @@
             <ul class="navbar-item theme-brand flex-row  text-center">
                 <li class="nav-item theme-logo">
                     <a href="/analytics">
-                        <img src="{{asset('storage/img/90x90.jpg')}}" class="navbar-logo" alt="logo">
+                        <img src="{{asset('storage/img/90x90.jpg')}}" class="navbar-logo" alt="">
                     </a>
                 </li>
                 <li class="nav-item theme-text">
@@ -34,7 +34,7 @@
                 @if ($category_name != 'starter_kits')
                 <li class="nav-item dropdown language-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{asset('storage/img/ng.png')}}" class="flag-width" alt="flag">
+                        <img src="{{asset('storage/img/ng.png')}}" class="flag-width" alt="">
                     </a>
                    
                 </li>

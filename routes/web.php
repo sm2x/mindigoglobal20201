@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
     Route::get('/', 'UserPageController@home')->name('user.home');
     Route::get('/my_account', 'UserPageController@my_account')->name('user.my_account');
     Route::get('/my_profile', 'UserPageController@my_profile')->name('user.my_profile');
+    Route::get('/my_accounts', 'UserPageController@my_accounts')->name('user.my_accounts');
     Route::get('/genealogy', 'UserPageController@genealogy')->name('user.genealogy');
     Route::get('/mindigo_mart', 'UserPageController@mindigo_mart')->name('user.mindigo_mart');
     Route::get('/notification', 'UserPageController@notification')->name('user.notification');
@@ -62,7 +63,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
 
     Route::get('/', 'AdminPageController@home')->name('admin.home');
     Route::get('/members', 'AdminPageController@members')->name('admin.members');
-    Route::get('/single_members', 'AdminPageController@single_members')->name('admin.single_members');
+    Route::get('/single_member', 'AdminPageController@single_member')->name('admin.single_member');
     Route::get('/payouts', 'AdminPageController@payouts')->name('admin.payouts');
     Route::get('/genealogy', 'AdminPageController@genealogy')->name('admin.genealogy');
     Route::get('/orders', 'AdminPageController@orders')->name('admin.orders');

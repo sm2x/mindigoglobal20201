@@ -88,6 +88,8 @@ class UserPageController extends Controller
     public function mindigo_mart()
     {
         //
+        $packs = MindigoPack::get();
+
          $data = [
             'category_name' => 'components',
             'page_name' => 'pricing_table',
@@ -95,7 +97,9 @@ class UserPageController extends Controller
             'scrollspy_offset' => '',
         ];
 
-        return view('user.mindigo_mart')->with($data);
+        return view('user.mindigo_mart',[
+            'packs' => $packs
+        ])->with($data);
     }
 
 

@@ -28,7 +28,7 @@
     @include('inc.navbar')
     
     <!--  BEGIN MAIN CONTAINER  -->
-    <div class="main-container" id="container">
+    <div class="main-container" id="container-fluid">
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -55,7 +55,7 @@
       
 
         <!--  BEGIN CONTENT PART  -->
-        <div id="content" class="main-content">
+        <div id="content" class="main-content p-0">
 
             @yield('content')
 

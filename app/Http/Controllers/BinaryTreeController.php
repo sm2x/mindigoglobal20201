@@ -12,9 +12,21 @@ class BinaryTreeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function initialize(Request $request)
     {
         //
+        $position = 'L';
+        $legs = '00';
+
+        $binaryTree = BinaryTree::Create([
+            'user_id' => $request->user_id,
+            'user_code' => $request->user_code,
+            'position' => $position,  
+            'legs' => $legs,        
+            'pack_name' => $user_order->pack_name,
+            'pack_id' => $user_order->pack_id,
+        ]);
+
     }
 
     /**

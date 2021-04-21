@@ -15,7 +15,7 @@ class CreateMindigoPacksTable extends Migration
     {
         Schema::create('mindigo_packs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+  
             $table->string('title');
             $table->string('description');
             $table->double('reg_fee');
@@ -27,7 +27,7 @@ class CreateMindigoPacksTable extends Migration
             $table->string('banner_img');
             
             
-            $table->foreign('user_id')->references('id')->on('users');
+           
             $table->timestamps();
         });
     }

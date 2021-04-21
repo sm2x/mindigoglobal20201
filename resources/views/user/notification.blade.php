@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="layout-px-spacing pt-5">
+<div class="layout-px-spacing p-0">
 
     <h2 class="mt-3 pt-5 pb-5">Notifications</h2>
-            <div class="container ">
+            <div class="containe ">
                 <div class="col-lg-12 col-12 layout-spacing">
                     <div class="statbox widget box box-shadow">
                         <div class="widget-header">
