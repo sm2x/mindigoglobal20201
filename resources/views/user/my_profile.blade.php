@@ -6,6 +6,9 @@
                     
                 <div class="account-settings-container layout-top-spacing">
 
+
+                <example-component></example-component>
+
                     <div class="account-content">
                         <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll" data-offset="-100">
                             <div class="row">

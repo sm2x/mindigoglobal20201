@@ -11,7 +11,7 @@
 
             @foreach($packs as $pack)
 
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-4">
                     <div class="card stacked mt-5">
                         <div class="card-header pt-0">
                             <span style="width: 230px;" class="border-warning card-price">${{number_format($pack->reg_fee)}}</span>
@@ -42,7 +42,7 @@
                                             
                                             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
                                             <input type="hidden" name="orderID" value="345">
-                                            <input type="hidden" name="amount" value="{{$pack->reg_fee}}"> {{-- required in kobo --}}
+                                            <input type="hidden" name="amount" value="{{$pack->reg_fee * 100 * 460}}"> {{-- required in kobo --}}
                                             <input type="hidden" name="quantity" value="1">
                                             <input type="hidden" name="currency" value="NGN">
                                             <input type="hidden" name="callback_url" value="{{config('app.url')}}user/purchase_success">
@@ -66,7 +66,20 @@
                     </div>
                 </div>
 
+                
+            <div class="col-md-6">
+                                                
+                <h3>About the package</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem corporis libero, odio ab laudantium tempore ipsa a reiciendis maxime soluta enim, corrupti minima repudiandae voluptatibus voluptas quaerat sapiente? Similique, assumenda!
+                </p>
+                                            
+            </div>
+
+
             @endforeach
+
 
 
 

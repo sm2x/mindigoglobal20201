@@ -28,43 +28,46 @@
     @include('inc.navbar')
     
     <!--  BEGIN MAIN CONTAINER  -->
-    <div class="main-container" id="container-fluid">
+    <div id="app">
+         <div class="main-container" id="container-fluid">
 
-        <div class="overlay"></div>
-        <div class="search-overlay"></div>
+            <div class="overlay"></div>
+            <div class="search-overlay"></div>
 
-        @auth()
+            @auth()
 
-            @if(Auth::user()->role == 'user')
+                @if(Auth::user()->role == 'user')
 
-                @include('inc.user_sidebar')
+                    @include('inc.user_sidebar')
 
-            @elseif(Auth::user()->role == 'admin')
+                @elseif(Auth::user()->role == 'admin')
 
-                @include('inc.admin_sidebar')
+                    @include('inc.admin_sidebar')
 
-            @endif
+                @endif
 
-        @else
+            @else
 
-        @include('inc.sidebar')
+            @include('inc.sidebar')
 
 
-        @endauth
+            @endauth
 
-      
 
-        <!--  BEGIN CONTENT PART  -->
-        <div id="content" class="main-content p-0">
 
-            @yield('content')
+            <!--  BEGIN CONTENT PART  -->
+            <div id="content" class="main-content p-0">
 
-            @if ($page_name != 'account_settings')
-                @include('inc.footer')
-            @endif
+                @yield('content')
+
+                @if ($page_name != 'account_settings')
+                    @include('inc.footer')
+                @endif
+                
+            </div>
+            <!--  END CONTENT PART  -->
+
         </div>
-        <!--  END CONTENT PART  -->
-
     </div>
     <!-- END MAIN CONTAINER -->
 

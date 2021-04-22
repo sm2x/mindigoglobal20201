@@ -1075,4 +1075,6 @@
     @default
     <script>console.log('No custom script available.')</script>
 @endswitch
+
+<script src="{{asset('js/app.js')}}"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->

@@ -20,6 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/choose', 'ChooseRoleController@index')->name('choose');
+
+Route::get('/', function() {
+    return redirect('/login');    
+});
+
 Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
 
     Route::get('/', 'UserPageController@home')->name('user.home');
@@ -78,7 +84,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
 });
 
 
-Route::group([] , function() {
+Route::group(['/test'] , function() {
 
     // $this->middleware
 
@@ -1377,11 +1383,7 @@ Route::group([] , function() {
 //     return redirect('/login');    
 // });
 
-Route::get('/choose', 'ChooseRoleController@index')->name('choose');
 
-Route::get('/', function() {
-    return redirect('/login');    
-});
 
 Route::get('/reg', function() {
     // $category_name = 'auth';

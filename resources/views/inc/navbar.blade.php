@@ -117,7 +117,7 @@
 
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                {{ set_breadcrumb($page_name, $category_name) }}
+                                <!-- {{ set_breadcrumb($page_name, $category_name) }} -->
                             </ol>
                         </nav>
 
