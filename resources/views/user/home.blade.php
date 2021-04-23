@@ -109,7 +109,7 @@
                         <div class="w-chart-section">
                             <div class="w-detail">
                                 <p class="w-title">Total Referrals</p>
-                                <p class="w-stats">12</p>
+                                <p class="w-stats">0</p>
                             </div>
                             <div class="w-chart-render-one">
                                 <div id="total-users"></div>
@@ -118,8 +118,8 @@
 
                         <div class="w-chart-section">
                             <div class="w-detail">
-                                <p class="w-title">Earnings</p>
-                                <p class="w-stats">$ 7,929</p>
+                                <p class="w-title">Pending Earnings</p>
+                                <p class="w-stats">$ 0.00</p>
                             </div>
                             <div class="w-chart-render-one">
                                 <div id="paid-visits"></div>
@@ -129,14 +129,14 @@
                     </div>
                         <div class="c">
                         <h6 class="text-center font-weight-bold">Share Links</h6>
-                            <a class="btn btn-primary btn-sm btn-bloc" href="https://www.facebook.com/sharer/sharer.php?u=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">facebook</a>
-                            <a class="btn btn-info btn-sm btn-bloc" href="https://twitter.com/intent/tweet?url=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}&text=Join us today">twitter</a>
-                            <a class="btn btn-danger btn-sm btn-bloc" href="https://wa.me/?text=Hello%20from%20Mindigoglobal%20Join%20us%20https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">whatsapp</a>
+                            <a target="_blank" class="btn btn-primary btn-sm btn-bloc" href="https://www.facebook.com/sharer/sharer.php?u=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">facebook</a>
+                            <a target="_blank" class="btn btn-info btn-sm btn-bloc" href="https://twitter.com/intent/tweet?url=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}&text=Join us today">twitter</a>
+                            <a target="_blank" class="btn btn-danger btn-sm btn-bloc" href="https://wa.me/?text=Hello%20from%20Mindigoglobal%20Join%20us%20https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">whatsapp</a>
                         </div>
 
                         <div class="c p-1 mt-3 d-flex justify-content-center">
                      
-                            <a class="btn btn-outline-success btn-sm btn-bloc" href="{{config('app.url')}}landingPage/{{Auth::user()->user_code}}">View Landing Page</a>
+                            <a target="_blank" class="btn btn-outline-success btn-sm btn-bloc" href="{{config('app.url')}}landingPage/{{Auth::user()->user_code}}">View Landing Page</a>
                         </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@
                     <div class="widget-content">
                         <div class="w-content">
                             <div class="w-info">
-                                <h3 class="value">$ 45,141</h3>
+                                <h3 class="value">$ 0.00</h3>
                                 <p class="">Wallet Balance</p>
                             </div>
                             <div class="">
