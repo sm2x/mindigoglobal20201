@@ -26,6 +26,8 @@ Route::get('/', function() {
     return redirect('/login');    
 });
 
+Route::get('/affiliate/{user_code}', 'UserPageController@affiliate_reg')->name('user.affiliate_reg');
+
 Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
 
     Route::get('/', 'UserPageController@home')->name('user.home');
@@ -34,6 +36,9 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
     Route::get('/my_accounts', 'UserPageController@my_accounts')->name('user.my_accounts');
     Route::get('/genealogy', 'UserPageController@genealogy')->name('user.genealogy');
     Route::get('/mindigo_mart', 'UserPageController@mindigo_mart')->name('user.mindigo_mart');
+
+    Route::get('/mindigo_resources', 'UserPageController@mindigo_resources')->name('user.mindigo_resources');
+    
     Route::get('/notification', 'UserPageController@notification')->name('user.notification');
     Route::get('/support', 'UserPageController@support')->name('user.support');
     Route::get('/single_support', 'UserPageController@single_support')->name('user.single_support');
@@ -1402,3 +1407,16 @@ Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 
 
 Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
+
+
+Route::post('updateProfile', 'UserProfileController@updateProfile');
+
+Route::post('/getUserInfo', 'UserProfileController@getUserInfo');
+
+
+
+Route::get('/receive', 'UserProfileController@getUserInfo');
+
+
+Route::get('/landingPage/{user_code}', 'LandingPageController@landingPage');
+

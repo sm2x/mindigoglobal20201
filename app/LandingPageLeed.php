@@ -4,9 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserProfile extends Model
+class LandingPageLeed extends Model
 {
     //
-
-    protected $guarded = [];
 }

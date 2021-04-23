@@ -103,6 +103,39 @@ class UserPageController extends Controller
     }
 
 
+    public function mindigo_resources()
+    {
+        //
+        $packs = MindigoPack::get();
+
+         $data = [
+            'category_name' => 'components',
+            'page_name' => 'pricing_table',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+        ];
+
+        return view('user.mindigo_resources',[
+            'packs' => $packs
+        ])->with($data);
+    }
+
+    public function affiliate_reg($user_code)
+    {
+            $category_name = 'auth';
+            $data = [
+                'category_name' => 'auth',
+                'page_name' => 'auth_default',
+                'has_scrollspy' => 0,
+                'scrollspy_offset' => '',
+            ];
+            $pageName = 'auth_default';
+        return view('pages.authentication.auth_register',[
+            'user_code' => $user_code
+        ])->with($data);
+    }
+
+
     public function notification()
     {
         //

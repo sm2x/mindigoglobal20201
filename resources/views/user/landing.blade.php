@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Minidigo Landing Page</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -31,10 +31,13 @@
                 <div class="form-container">
                     <div class="form-content">
 
-                        
-                        <h1 class="">Welcome to Mindigo</h1>
+                        <img width="100" height="100" class="img-thumbnail rounded-circle" src="{{config('app.url')}}avatars/{{$user_data->avatar}}" alt="">
 
-                        <h6 class="">Signin</h6>
+                        <h1 style="font-size: 44pt" class="text-left ">Hello,</h1>
+
+                        <h1 style="font-size: 30pt" class="text-left h1">I am {{$user_data->name}}</h1>
+
+                        <h6 style="font-size: 20pt" class="text-left pt-5">I will like to introduce you to an amazing business opportunity!!</h6>
                   
                         
                         <form method="POST" action="{{ route('login') }}" class="text-left">
@@ -56,30 +59,14 @@
                                     
                                 </div>
 
-                                <div id="password-field" class="field-wrapper input mb-2">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="password">PASSWORD</label>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                    <input id="password" name="password" type="password" placeholder="Password" value="" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="toggle-password" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
                                 <div class="d-sm-flex justify-content-end ">
-                                    <div class="field-wrapper p-5">
-                                        <button type="submit" class="btn btn-warning mx-auto" >{{ __('Login') }}</button>
+                                    <div class="field-wrapper">
+                                        <button type="submit" class="btn btn-warning mx-auto" >{{ __('Get Started') }}</button>
                                     </div>
-                                    <div class="field-wrapper p-5">
+                                    <div class="field-wrapper">
                                        
                                     </div>
-                                    <div class="field-wrapper p-5">
-                                        <button type="submit" class="btn btn-outline-warning mx-auto" ><a href="{{route('reg')}}">{{ __('Register') }}</a></button>
-                                    </div>
+
                                 </div>
 
                                 <div class="division">

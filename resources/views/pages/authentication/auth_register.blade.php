@@ -39,7 +39,7 @@
                                 <div id="user_code-field" class="field-wrapper input">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
 
-                                    <input id="user_code" name="user_code" type="text"  placeholder="Referral Code">
+                                    <input id="user_code" name="user_code" type="text" value="{{$user_code??''}}"  placeholder="Referral Code" {{$user_code?'readonly':''}}>
                                         @error('user_code')
                                         <span class=" text-danger" role="alert">
                                             <strong>{{ $message }}</strong>
