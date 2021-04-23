@@ -138,6 +138,10 @@
                      
                             <a target="_blank" class="btn btn-outline-success btn-sm btn-bloc" href="{{config('app.url')}}landingPage/{{Auth::user()->user_code}}">View Landing Page</a>
                         </div>
+
+                        <div class="c p-1 mt-3 d-flex justify-content-center">
+                            <input type="text" class="form-control" value="{{config('app.url')}}affiliate/{{Auth::user()->user_code}}">
+                        </div>
                 </div>
             </div>
 
@@ -344,6 +348,9 @@
                                         <div class="t-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
                                     </div>
 
+                                    @forelse($notificationz as $notify)
+
+                                        
                                     <div class="t-content">
                                         <div class="t-uppercontent">
                                             <h5>Logs</h5>
@@ -356,7 +363,19 @@
                                             <div class="badge badge-warning">Update</div>
                                         </div>
                                     </div>
-                                    
+
+
+
+                                    @empty
+
+
+                                        <h6 class="text-center">No messages yet..</h6>
+
+
+
+                                    @endforelse
+
+
                                 </div>
 
                                                                      
