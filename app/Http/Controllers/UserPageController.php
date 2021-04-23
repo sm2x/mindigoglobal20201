@@ -15,6 +15,8 @@ use App\Faq;
 use App\DirectReferral;
 use App\BinaryTree;
 
+use Auth;
+
 
 
 
@@ -27,6 +29,8 @@ class UserPageController extends Controller
      */
     public function home()
     {
+
+        $user_id = Auth::user()->id;
         //
         $data = [
             'category_name' => 'dashboard',
@@ -36,8 +40,14 @@ class UserPageController extends Controller
         ];
 
 
+        $user_wallet = UserWallet::where('user_id', $user_id)->get();
 
-        return view('user.home')->with($data);
+        $notificationz = Notification::where('_for', $user_id)->latest()->paginate(15);
+
+
+        return view('user.home',[
+            'notificationz' => $notificationz
+        ])->with($data);
     }
 
     public function my_account()
