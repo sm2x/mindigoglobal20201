@@ -2,7 +2,7 @@
 
 @section('content')
 
-            <div class="layout-px-spacing">                
+            <div  class="layout-px-spacing">                
                     
                 <div class="account-settings-container layout-top-spacing">
 

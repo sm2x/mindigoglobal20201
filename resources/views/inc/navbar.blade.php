@@ -8,7 +8,7 @@
             <ul class="navbar-item theme-brand flex-row  text-center">
                 <li class="nav-item theme-logo">
                     <a href="/analytics">
-                        <img src="{{asset('storage/img/90x90.jpg')}}" class="navbar-logo" alt="">
+                        <img src="{{asset('img/90x90.jpg')}}" class="navbar-logo" alt="">
                     </a>
                 </li>
                 <li class="nav-item theme-text">
@@ -34,16 +34,11 @@
                 @if ($category_name != 'starter_kits')
                 <li class="nav-item dropdown language-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{asset('storage/img/ng.png')}}" class="flag-width" alt="">
+                        <img src="{{asset('img/ng.png')}}" class="flag-width" alt="">
                     </a>
                    
                 </li>
-
-                <?php
-
-                    $notifications = \App\Notification::where('_for', Auth::user()->id)->where('status', 'unread')->get();
-
-                ?>
+                
 
                
 
@@ -54,10 +49,7 @@
                     <div class="dropdown-menu position-absolute" aria-labelledby="notificationDropdown">
                         <div class="notification-scroll">
 
-                        @forelse($notifications as $notification)
-
-                            
-                        <div class="dropdown-item">
+                            <div class="dropdown-item">
                                 <div class="media">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                                     <div class="media-body">
@@ -67,25 +59,6 @@
                             </div>
 
 
-
-                        @empty
-
-                        <div class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-body">
-                                        <div class="notification-para"><span class="user-name">Empty...</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        
-
-                        @endforelse
-
-
-
-
-
                         </div>
                     </div>
                 </li>
@@ -93,7 +66,7 @@
 
                 <li class="nav-item dropdown user-profile-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <img src="{{asset('storage/img/90x90.jpg')}}" alt="avatar">
+                        <img src="{{asset('img/90x90.jpg')}}" alt="avatar">
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                         <div class="">

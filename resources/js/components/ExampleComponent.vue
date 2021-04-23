@@ -30,7 +30,7 @@
 
                                                 <div class="col-sm-6">
                                                 <label for="">Gender</label>
-                                                    <div class="form-group">
+                                                    <div class="form-group ">
                                                     
                                                         <div class="custom-control custom-radio custom-control-inline">
                                                             <input type="radio" id="customRadioInline1" name="gender" value="male" class="custom-control-input">
