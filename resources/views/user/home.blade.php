@@ -127,11 +127,16 @@
                         </div>
                        
                     </div>
-                    <div class="c">
-                    <h6 class="text-center font-weight-bold">Share Links</h6>
+                        <div class="c">
+                        <h6 class="text-center font-weight-bold">Share Links</h6>
                             <a class="btn btn-primary btn-sm btn-bloc" href="">facebook</a>
                             <a class="btn btn-info btn-sm btn-bloc" href="">twitter</a>
                             <a class="btn btn-danger btn-sm btn-bloc" href="">instagram</a>
+                        </div>
+
+                        <div class="c p-1 mt-3 d-flex justify-content-center">
+                     
+                            <a class="btn btn-outline-success btn-sm btn-bloc" href="{{config('app.url')}}landingPage/{{Auth::user()->user_code}}">View Landing Page</a>
                         </div>
                 </div>
             </div>
@@ -366,12 +371,7 @@
         </div>
 
     </div>
-
-    
-
-    
-@endsection  
-@verified
+    @verified
 
 <script type="text/javascript">
     $(window).on('load', function() {
@@ -380,6 +380,11 @@
 </script>
 
 @endverified
+    
+
+    
+@endsection  
+
 <script>
         $('#yt-video-link').click(function () {
             var src = 'https://www.youtube.com/embed/YE7VzlLtp-4';
