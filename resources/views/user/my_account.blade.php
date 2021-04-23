@@ -19,7 +19,7 @@
                     <div class="widget-content">
                         <div class="w-content">
                             <div class="w-info">
-                                <h3 class="value">$ 45,141</h3>
+                                <h3 class="value">$ 0.00</h3>
                                 <p class="">Direct Referral Bonus</p>
                             </div>
                             <div class="">
@@ -43,7 +43,7 @@
                     <div class="widget-content">
                         <div class="w-content">
                             <div class="w-info">
-                                <h3 class="value">$ 45,141</h3>
+                                <h3 class="value">$ 0.00</h3>
                                 <p class="">Matching Bonus</p>
                             </div>
                             <div class="">

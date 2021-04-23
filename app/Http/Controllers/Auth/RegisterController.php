@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\RefferalBonus;
+use App\Notification;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -67,11 +69,59 @@ class RegisterController extends Controller
     {
         $regCode = "MNG" .rand(11100,999999);
 
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'user_code' => $regCode,
             'password' => Hash::make($data['password']),
         ]);
+
+
+
+        
+        $sponsors_data = User::where('user_code', $data['user_code'])->first();
+
+
+
+        $notification = Notificaiton::create([
+            '_for' => $sponsor_data->id,
+            'title' => "New Registration",
+            'log' => 'Someone just signed up with your code'
+        ]);
+        
+        $notification = Notificaiton::create([
+            '_for' => $user->id,
+            'title' => "Welcome",
+            'log' => 'You just signed up welcome to Mindigoglobal'
+        ]);
+
+
+        $weekNo = Carbon::now()->weekOfYear;
+
+        // $weekNo = $dt->weekOfYear();
+
+
+
+
+
+        $referral_bonus = ReferralBonus::Create([
+            'referrer_id' => $sponsors_data->id,
+            'referree_id' => $user->id,
+            'referral' => $sponsors_data->user_code,
+            'referree' => $regCode,
+            'weekInYear' => $weekNo,
+            
+        ]);
+
+
+
+        return $user;
+
     }
 }
+
+
+
+
+
+

@@ -129,9 +129,9 @@
                     </div>
                         <div class="c">
                         <h6 class="text-center font-weight-bold">Share Links</h6>
-                            <a class="btn btn-primary btn-sm btn-bloc" href="">facebook</a>
-                            <a class="btn btn-info btn-sm btn-bloc" href="">twitter</a>
-                            <a class="btn btn-danger btn-sm btn-bloc" href="">instagram</a>
+                            <a class="btn btn-primary btn-sm btn-bloc" href="https://www.facebook.com/sharer/sharer.php?u=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">facebook</a>
+                            <a class="btn btn-info btn-sm btn-bloc" href="https://twitter.com/intent/tweet?url=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}&text=Join us today">twitter</a>
+                            <a class="btn btn-danger btn-sm btn-bloc" href="https://wa.me/?text=Hello%20from%20Mindigoglobal%20Join%20us%20https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">whatsapp</a>
                         </div>
 
                         <div class="c p-1 mt-3 d-flex justify-content-center">
