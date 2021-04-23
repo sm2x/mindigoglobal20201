@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
-use App\RefferalBonus;
+use App\DirectReferral;
 use App\Notification;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -104,7 +104,7 @@ class RegisterController extends Controller
 
 
 
-        $referral_bonus = ReferralBonus::Create([
+        $referral_bonus = DirectReferral::Create([
             'referrer_id' => $sponsors_data->id,
             'referree_id' => $user->id,
             'referral' => $sponsors_data->user_code,
