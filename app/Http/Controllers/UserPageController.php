@@ -42,7 +42,7 @@ class UserPageController extends Controller
 
         $user_wallet = UserWallet::where('user_id', $user_id)->get();
 
-        $notificationz = Notification::where('_for', $user_id)->latest()->paginate(15);
+        $notificationz = Notification::where('user_id', $user_id)->latest()->paginate(15);
 
 
         return view('user.home',[
