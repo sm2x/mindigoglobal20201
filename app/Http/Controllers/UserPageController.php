@@ -42,13 +42,18 @@ class UserPageController extends Controller
         ];
 
 
-        $user_wallet = UserWallet::where('user_id', $user_id)->get();
+        $credit = UserWallet::where('user_id', $user_id)->where('credit', '1')->sum('amount');
+        $debit = UserWallet::where('user_id', $user_id)->where('debit', '0')->sum('amount');
+
+        $balance = $credit - $debit;
+
 
         $notificationz = Notification::where('user_id', $user_id)->latest()->paginate(15);
 
 
         return view('user.home',[
-            'notificationz' => $notificationz
+            'notificationz' => $notificationz,
+            'balance' => $balance
         ])->with($data);
     }
 

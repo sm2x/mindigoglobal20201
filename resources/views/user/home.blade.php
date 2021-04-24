@@ -150,7 +150,7 @@
                     <div class="widget-content">
                         <div class="w-content">
                             <div class="w-info">
-                                <h3 class="value">$ 0.00</h3>
+                                <h3 class="value">NGN {{number_format($balance, 2)}}</h3>
                                 <p class="">Wallet Balance</p>
                             </div>
                             <div class="">
