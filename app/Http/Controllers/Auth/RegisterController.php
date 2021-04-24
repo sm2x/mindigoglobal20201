@@ -81,7 +81,6 @@ class RegisterController extends Controller
         
         $sponsors_data = User::where('user_code', $data['user_code'])->first();
 
-            dd($sponsors_data);
 
         $notification = Notification::create([
             '_for' => $sponsors_data->id,
