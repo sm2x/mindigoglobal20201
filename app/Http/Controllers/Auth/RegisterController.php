@@ -86,13 +86,13 @@ class RegisterController extends Controller
         $notification = Notification::create([
             '_for' => $sponsors_data->id,
             'title' => "New Registration",
-            'log' => 'Someone just signed up with your code'
+            'body' => 'Someone just signed up with your code'
         ]);
         
         $notification = Notification::create([
             '_for' => $user->id,
             'title' => "Welcome",
-            'log' => 'You just signed up welcome to Mindigoglobal'
+            'body' => 'You just signed up welcome to Mindigoglobal'
         ]);
 
 
