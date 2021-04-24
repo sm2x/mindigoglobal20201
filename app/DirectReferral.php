@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class DirectReferral extends Model
 {
     //
+
+    protected $guarded = [];
 }
