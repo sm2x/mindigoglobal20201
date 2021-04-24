@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use Auth;
+
+use App\BinaryTree;
+
 class AdminPageController extends Controller
 {
     /**
@@ -64,9 +68,14 @@ class AdminPageController extends Controller
     
     public function genealogy()
     {
+        $user_id = Auth::user()->id;
 
         $admin_accounts = User::where('role', 'admin')->latest()->get();
-        //
+
+        $parent = BinaryTree::where('user_id', $user_id)->first();
+
+        // dd($parent);
+        
         $data = [
             'category_name' => 'dashboard',
             'page_name' => 'analytics',
@@ -75,7 +84,8 @@ class AdminPageController extends Controller
         ];
 
         return view('admin.genealogy',[
-            'admin_accounts' => $admin_accounts
+            'admin_accounts' => $admin_accounts,
+            'parent' => $parent
         ])->with($data);
     }
 

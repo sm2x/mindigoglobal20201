@@ -84,6 +84,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
     Route::get('/single_member', 'AdminPageController@single_member')->name('admin.single_member');
     Route::get('/payouts', 'AdminPageController@payouts')->name('admin.payouts');
     Route::get('/genealogy', 'AdminPageController@genealogy')->name('admin.genealogy');
+    Route::get('/genealogy2/{user_code}', 'AdminPageController@genealogy2')->name('admin.genealogy2');
     Route::get('/orders', 'AdminPageController@orders')->name('admin.orders');
     Route::get('/single_order', 'AdminPageController@single_order')->name('admin.single_order');
     Route::get('/support', 'AdminPageController@support')->name('admin.support');

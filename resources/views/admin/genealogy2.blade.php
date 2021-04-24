@@ -14,9 +14,8 @@
 @section('content')
 
         <style>
-            
             .tf-gap-lg{
-            width: 40px;
+            width: 90px;
             }
 
             .tf-tree{
@@ -44,71 +43,6 @@
             }
 
         </style>
-
-<?php
-
-
-try {
-    //code...
-
-   
-
-    if ($result[0]->position == 'L') {
-        # code...
-
-        $_11 = $result[0]->user_code??'Empty..';
-        $_12 = $result[1]->user_code??'Empty..';
-
-        $_11_id = $result[0]->user_id??'Empty..';
-        $_12_id = $result[1]->user_id??'Empty..';
-
-        $_11_name = $result[0]->users->name??'null';
-        $_12_name = $result[1]->users->name??'null';
-
-        $_11_color = 'success';
-        $_12_color = 'secondary';
-
-
-        
-
-
-    }
-
-    elseif($result[0]->position =='R'){
-        
-        $_11 = $result[1]->user_code??'Empty..';
-        $_12 = $result[0]->user_code??'Empty..';
-        
-        $_11_id = $result[1]->user_id??'Empty..';
-        $_12_id = $result[0]->user_id??'Empty..';
-
-        $_11_name = $result[1]->users->name??'null';
-        $_12_name = $result[0]->users->name??'null';
-
-
-        $_11_color = 'success';
-        $_12_color = 'success';
-
-    }
-  } catch (\Throwable $th) {
-    //throw $th;
-
-    $_11 = "Empty..";
-    $_12 = "Empty..";
-
-    $_11_color = 'secondary';
-    $_12_color = 'secondary';
-
-    $_11_name = 'null';
-    $_12_name = 'null';
-
-    $_11_id = 'null';
-    $_12_id = 'null';
-   
-  }
-
-
-?>
 
     <div class="layout-px-spacing">
 
@@ -179,7 +113,7 @@ try {
                 {{$_11}}
 
                 <br>
-                        <a href="{{route('admin.genealogy2', $_11)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_11)}}">==</a>
 
                 <?php
 
@@ -270,7 +204,7 @@ try {
                          {{$_21}}
 
                          <br>
-                        <a href="{{route('admin.genealogy2', $_21)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_21)}}">==</a>
 
                           <?php
 
@@ -360,7 +294,7 @@ try {
                             {{$_31}}
 
                             <br>
-                        <a href="{{route('admin.genealogy2', $_31)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_31)}}">==</a>
 
                             
                             
@@ -376,7 +310,7 @@ try {
                             {{$_32}}
 
                             <br>
-                        <a href="{{route('admin.genealogy2', $_32)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_32)}}">==</a>
                             
                             
                             
@@ -395,7 +329,7 @@ try {
                         {{$_22}}
 
                         <br>
-                        <a href="{{route('admin.genealogy2', $_22)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_22)}}">==</a>
 
                           <?php
 
@@ -479,7 +413,7 @@ try {
                             {{$_33}}
 
                             <br>
-                        <a href="{{route('admin.genealogy2', $_33)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_33)}}">==</a>
                              
                             
                             </span></li>
@@ -492,7 +426,7 @@ try {
                             {{$_34}}
 
                             <br>
-                        <a href="{{route('admin.genealogy2', $_34)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_34)}}">==</a>
                             
                             
                             </span></li>
@@ -512,7 +446,7 @@ try {
                 {{$_12}}
 
                 <br>
-                        <a href="{{route('admin.genealogy2', $_12)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_12)}}">==</a>
 
                 <?php
 
@@ -599,7 +533,7 @@ try {
                       {{$_23}}
 
                       <br>
-                        <a href="{{route('admin.genealogy2', $_23)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_23)}}">==</a>
 
                       <?php
 
@@ -683,7 +617,7 @@ try {
                         {{$_35}}
 
                         <br>
-                        <a href="{{route('admin.genealogy2', $_35)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_35)}}">==</a>
                         
                         
                         </span></li>
@@ -696,7 +630,7 @@ try {
                         {{$_36}}
 
                         <br>
-                        <a href="{{route('admin.genealogy2', $_36)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_36)}}">==</a>
                          
                         
                         </span></li>
@@ -711,7 +645,7 @@ try {
                      {{$_24}}
 
                       <br>
-                        <a href="{{route('admin.genealogy2', $_24)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_24)}}">==</a>
 
                       <?php
 
@@ -795,7 +729,7 @@ try {
                          {{$_37}}
 
                          <br>
-                        <a href="{{route('admin.genealogy2', $_37)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_37)}}">==</a>
                         
                         
                         </span></li>
@@ -806,7 +740,7 @@ try {
                          style="" class="border bg-{{$_38!='Empty..'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                          {{$_38}}
                          <br>
-                        <a href="{{route('admin.genealogy2', $_38)}}">==</a>
+                        <a href="{{route('admin.geneaology2', $_38)}}">==</a>
                         
                         
                         </span></li>
