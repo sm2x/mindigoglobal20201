@@ -84,7 +84,7 @@ class RegisterController extends Controller
 
 
         $notification = Notification::create([
-            '_for' => $sponsor_data->id,
+            '_for' => $sponsors_data->id,
             'title' => "New Registration",
             'log' => 'Someone just signed up with your code'
         ]);
