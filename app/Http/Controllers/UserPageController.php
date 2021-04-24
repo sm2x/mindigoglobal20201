@@ -47,13 +47,23 @@ class UserPageController extends Controller
 
         $balance = $credit - $debit;
 
+        $direct_referrals = DirectReferral::with('referrees')->where('referrer_id', Auth::user()->id)->get();
+
 
         $notificationz = Notification::where('user_id', $user_id)->latest()->paginate(15);
 
 
+
+        $my_order = Order::where('user_id', $user_id)->first();
+
+     
+
+
         return view('user.home',[
             'notificationz' => $notificationz,
-            'balance' => $balance
+            'balance' => $balance,
+            'my_order' => $my_order,
+            'direct_referrals' => $direct_referrals
         ])->with($data);
     }
 
