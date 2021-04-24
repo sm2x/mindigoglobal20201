@@ -94,6 +94,19 @@ class UserPageController extends Controller
         return view('user.genealogy')->with($data);
     }
 
+    public function genealogy2($code)
+    {
+        //
+         $data = [
+            'category_name' => 'dashboard',
+            'page_name' => 'analytics',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+        ];
+
+        return view('user.genealogy2')->with($data);
+    }
+
     
 
 

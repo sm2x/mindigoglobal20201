@@ -28,10 +28,12 @@ Route::get('/', function() {
 
 Route::get('/affiliate/{user_code}', 'UserPageController@affiliate_reg')->name('user.affiliate_reg');
 
+
 Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
 
     Route::get('/', 'UserPageController@home')->name('user.home');
     Route::get('/my_account', 'UserPageController@my_account')->name('user.my_account');
+    Route::get('/genealogy2/{code}', 'UserPageController@genealogy2')->name('user.genealogy2');
     Route::get('/my_profile', 'UserPageController@my_profile')->name('user.my_profile');
     Route::get('/my_accounts', 'UserPageController@my_accounts')->name('user.my_accounts');
     Route::get('/genealogy', 'UserPageController@genealogy')->name('user.genealogy');
@@ -69,6 +71,8 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
 
 
 });
+
+
 
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(){
 

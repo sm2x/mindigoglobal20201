@@ -14,7 +14,7 @@
                 <div class="col-md-4">
                     <div class="card stacked mt-5">
                         <div class="card-header pt-0">
-                            <span style="width: 230px;" class="border-warning card-price">${{number_format($pack->reg_fee)}}</span>
+                            <span style="width: 230px;" class="border-warning card-price">NGN {{number_format($pack->reg_fee)}}</span>
                             <h3 class="card-title mt-3 mb-1">{{$pack->title}}</h3>
                             <p>{{$pack->description}}</p>
                         </div>
