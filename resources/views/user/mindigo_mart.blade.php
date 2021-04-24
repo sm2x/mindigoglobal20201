@@ -42,14 +42,21 @@
                                             
                                             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
                                             <input type="hidden" name="orderID" value="345">
-                                            <input type="hidden" name="amount" value="{{$pack->reg_fee * 100 * 460}}"> {{-- required in kobo --}}
+                                            <input type="hidden" name="amount" value="{{$pack->reg_fee * 100}}"> {{-- required in kobo --}}
                                             <input type="hidden" name="quantity" value="1">
                                             <input type="hidden" name="currency" value="NGN">
-                                            <input type="hidden" name="callback_url" value="{{config('app.url')}}user/purchase_success">
-                                            <input type="hidden" name="metadata" value="{{ json_encode($array = [
-                                            'key_name' => 'value',
+                                            <input type="hidden" name="callback_url" value="{{config('app.url')}}user/process_order">
+                                            <input type="hidden" name="metadata" value="{{ json_encode($array = 
+                                                [
+                                                'package' => $pack->title,
+                                                'user_code' => Auth::user()->user_code,
+                                                'user_id' => Auth::user()->id,
+                                                'package_id' => $pack->id,
+                                                
+                                                
+                                                ]
                                             
-                                            ]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                            ) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
                                             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
                                             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
 
@@ -62,7 +69,18 @@
                                             </p>
                                         
                                 </form>
+
                         </div>
+                        
+                                <div class="c p-3 d-flex justify-content-center">
+                                    <a href="" class="btn btn-warning btn-lg" href="">Offline Payments</a> 
+
+                                </div>
+
+                                <div class="c p-3 d-flex justify-content-center">
+                                    <a href="" class="btn btn-warning btn-lg" href="">Multiple Purchase</a> 
+
+                                </div>
                     </div>
                 </div>
 

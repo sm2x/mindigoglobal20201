@@ -55,6 +55,12 @@ class UserPageController extends Controller
     public function my_account()
     {
         //
+
+        $direct_referrals = DirectReferral::with('referrees')->where('referrer_id', Auth::user()->id)->get();
+
+        $weekNo = Carbon::now()->weekOfYear;
+
+
          $data = [
             'category_name' => 'dashboard',
             'page_name' => 'analytics',
@@ -62,7 +68,9 @@ class UserPageController extends Controller
             'scrollspy_offset' => '',
         ];
 
-        return view('user.my_account')->with($data);
+        return view('user.my_account',[
+            'direct_referrals' => $direct_referrals
+        ])->with($data);
     }
 
 
@@ -107,6 +115,7 @@ class UserPageController extends Controller
         return view('user.genealogy2')->with($data);
     }
 
+
     
 
 
@@ -125,6 +134,19 @@ class UserPageController extends Controller
         return view('user.mindigo_mart',[
             'packs' => $packs
         ])->with($data);
+    }
+
+    public function purchase_success()
+    {
+        $data = [
+            'category_name' => 'pages',
+            'page_name' => 'error404',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+
+        ];
+        // $pageName = 'error404';
+        return view('pages.pages.pages_error404')->with($data);
     }
 
 

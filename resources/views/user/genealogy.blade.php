@@ -55,6 +55,8 @@
                         data-toggle="tooltip" data-placement="top" title="TESTING"
                         style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                         <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 1</a>
+                        <br>
+                        <span class="font-weight-bold">+</span>
                         </span>
                         <ul>
                             <li>
@@ -62,6 +64,8 @@
                                 data-toggle="tooltip" data-placement="top" title="TESTING"
                                 style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 2</a>
+                                <br>
+                                <span class="font-weight-bold">+</span>
                                 </span>
                                         <ul>
                                             <li>
@@ -69,6 +73,8 @@
                                                 data-toggle="tooltip" data-placement="top" title="TESTING"
                                                 style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 4</a>
+                                                <br>
+                                                <span class="font-weight-bold">+</span>
                                                 </span>
 
                                                         <ul>
@@ -77,6 +83,8 @@
                                                                 data-toggle="tooltip" data-placement="top" title="TESTING"
                                                                 style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                                 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 8</a>
+                                                                <br>
+                                                                <span class="font-weight-bold">+</span>
                                                                 </span>
                                                                         
                                                             </li>
@@ -85,6 +93,8 @@
                                                                 data-toggle="tooltip" data-placement="top" title="TESTING"
                                                                 style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                                 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 9</a>
+                                                                <br>
+                                                                <span class="font-weight-bold">+</span>
                                                                 </span>
                                                             </li>
                                                         </ul>
@@ -96,6 +106,8 @@
                                                 data-toggle="tooltip" data-placement="top" title="TESTING"
                                                 style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 5</a>
+                                                <br>
+                                                <span class="font-weight-bold">+</span>
                                                 </span>
                                                             <ul>
                                                                 <li>
@@ -103,6 +115,8 @@
                                                                     data-toggle="tooltip" data-placement="top" title="TESTING"
                                                                     style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                                     <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 10</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
                                                                     </span>
                                                                 </li>
                                                                 <li>
@@ -110,6 +124,8 @@
                                                                     data-toggle="tooltip" data-placement="top" title="TESTING"
                                                                     style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                                     <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 11</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
                                                                     </span>
                                                                 </li>
                                                             </ul>
@@ -123,6 +139,8 @@
                                 data-toggle="tooltip" data-placement="top" title="TESTING"
                                 style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 3</a>
+                                <br>
+                                <span class="font-weight-bold">+</span>
                                 </span>
 
                                     <ul>
@@ -131,6 +149,8 @@
                                             data-toggle="tooltip" data-placement="top" title="TESTING"
                                             style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                             <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 6</a>
+                                            <br>
+                                            <span class="font-weight-bold">+</span>
                                             </span>
                                                             <ul>
                                                                 <li>
@@ -138,6 +158,8 @@
                                                                     data-toggle="tooltip" data-placement="top" title="TESTING"
                                                                     style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                                     <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 12</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
                                                                     </span>
                                                                 </li>
                                                                 <li>
@@ -145,6 +167,8 @@
                                                                     data-toggle="tooltip" data-placement="top" title="TESTING"
                                                                     style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                                     <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 13</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
                                                                     </span>
                                                                 </li>
                                                             </ul>
@@ -154,6 +178,8 @@
                                             data-toggle="tooltip" data-placement="top" title="TESTING"
                                             style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                             <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 7</a>
+                                            <br>
+                                            <span class="font-weight-bold">+</span>
                                             </span>
 
                                                             <ul>
@@ -162,6 +188,8 @@
                                                                     data-toggle="tooltip" data-placement="top" title="TESTING"
                                                                     style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                                     <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 14</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
                                                                     </span>
                                                                 </li>
                                                                 <li>
@@ -169,6 +197,8 @@
                                                                     data-toggle="tooltip" data-placement="top" title="TESTING"
                                                                     style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
                                                                     <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 15</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
                                                                     </span>
                                                                 </li>
                                                             </ul>
@@ -191,6 +221,8 @@
             <button type="button" id="launch_modal" class="d-none btn btn-primary btn-sm mb-2 mr-2" data-toggle="modal" data-target=".bd-example-modal-sm">Add A Node</button>
         </div>
 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> </a>
+<br>
+<span class="font-weight-bold">+</span>
             <div class="row">
                 <div class="col-md-6">
                     
@@ -312,6 +344,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     <a target="_blank" href="{{route('user.genealogy2', 123)}}"> </button></a>
+                    <br>
+                    <span class="font-weight-bold">+</span>
                 </div>
                 <div class="modal-body">
 
@@ -350,6 +384,8 @@
                     <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Refractor</button>
                     <button type="button" class="btn btn-primary">Submit</button>
                 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> </div></a>
+                <br>
+                <span class="font-weight-bold">+</span>
                 </form>
             </div>
         </div>
@@ -392,12 +428,18 @@
         function addNode(data) {
 
             <a target="_blank" href="{{route('user.genealogy2', 123)}}"> // alert(data);</a>
+            <br>
+            <span class="font-weight-bold">+</span>
 
             <a target="_blank" href="{{route('user.genealogy2', 123)}}"> $('#launch_modal').trigger('click');</a>
+            <br>
+            <span class="font-weight-bold">+</span>
 
             $('#selected_node').val(data);
 
         <a target="_blank" href="{{route('user.genealogy2', 123)}}"> }</a>
+        <br>
+        <span class="font-weight-bold">+</span>
         
         
     </script>

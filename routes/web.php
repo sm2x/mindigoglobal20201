@@ -29,6 +29,7 @@ Route::get('/', function() {
 Route::get('/affiliate/{user_code}', 'UserPageController@affiliate_reg')->name('user.affiliate_reg');
 
 
+
 Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
 
     Route::get('/', 'UserPageController@home')->name('user.home');
@@ -38,6 +39,8 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
     Route::get('/my_accounts', 'UserPageController@my_accounts')->name('user.my_accounts');
     Route::get('/genealogy', 'UserPageController@genealogy')->name('user.genealogy');
     Route::get('/mindigo_mart', 'UserPageController@mindigo_mart')->name('user.mindigo_mart');
+
+    Route::get('/purchase_success', 'UserPageController@purchase_success')->name('user.purchase_success');
 
     Route::get('/mindigo_resources', 'UserPageController@mindigo_resources')->name('user.mindigo_resources');
     
@@ -49,7 +52,7 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
 
     //actions 
 
-    Route::get('/purchase_action', 'OrderController@purchase_action')->name('user.purchase_action');
+    Route::get('/process_order', 'OrderController@process_order')->name('user.purchase_action');
 
 
 
@@ -110,15 +113,17 @@ Route::group(['/test'] , function() {
     });
     
     Route::get('/sales', function() {
+
+        return redirect('/login');   
         // $category_name = '';
-        $data = [
-            'category_name' => 'dashboard',
-            'page_name' => 'sales',
-            'has_scrollspy' => 0,
-            'scrollspy_offset' => '',
-        ];
-        // $pageName = 'sales';
-        return view('dashboard')->with($data);
+        // $data = [
+        //     'category_name' => 'dashboard',
+        //     'page_name' => 'sales',
+        //     'has_scrollspy' => 0,
+        //     'scrollspy_offset' => '',
+        // ];
+        // // $pageName = 'sales';
+        // return view('dashboard')->with($data);
     });
 
 
@@ -1403,7 +1408,9 @@ Route::get('/reg', function() {
         'scrollspy_offset' => '',
     ];
     // $pageName = 'auth_default';
-    return view('pages.authentication.auth_register')->with($data);
+    return view('pages.authentication.auth_register',[
+        'user_code' => ''
+    ])->with($data);
 })->name('reg');
 
 

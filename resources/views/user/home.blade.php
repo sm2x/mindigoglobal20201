@@ -342,29 +342,27 @@
 
                         <div class="mt-container mx-auto">
                             <div class="timeline-line">
+
+                                @forelse($notificationz as $notify)
                                 
                                 <div class="item-timeline timeline-new">
                                     <div class="t-dot">
                                         <div class="t-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
                                     </div>
 
-                                    @forelse($notificationz as $notify)
+                                    
 
                                         
                                     <div class="t-content">
                                         <div class="t-uppercontent">
-                                            <h5>Logs</h5>
-                                            <span class="">27 Feb, 2020</span>
+                                            <h5>{{$notify->title}}</h5>
+                                            <span class="">{{$notify->created_at->diffForHumans()}}</span>
                                         </div>
-                                        <p><span>Updated</span> Server Logs</p>
-                                        <div class="tags">
-                                            <div class="badge badge-primary">Logs</div>
-                                            <div class="badge badge-success">CPanel</div>
-                                            <div class="badge badge-warning">Update</div>
-                                        </div>
+                                        <p>{{$notify->body}}</p>
+
                                     </div>
 
-
+                                    </div>
 
                                     @empty
 
@@ -376,7 +374,7 @@
                                     @endforelse
 
 
-                                </div>
+                                
 
                                                                      
                             </div>                                    

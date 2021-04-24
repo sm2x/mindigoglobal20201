@@ -6,10 +6,8 @@
 
 @section('content')
 
-    <div class="layout-px-spacing">
+    <div class=" pt-5">
 
-
-        <h2 class="mt-5 ">Hi, {{Auth::user()->name}}</h2>
 
 
         <div class="row">
@@ -86,18 +84,39 @@
                                                    <th>Member Code</th>
                                                   
                                                    <th>Status</th>
-                                                   <th class="text-center">Action</th>
+                                                   <th class="text-center">Commision</th>
                                                </tr>
                                            </thead>
                                            <tbody>
-                                               <tr>
+
+                                            @forelse($direct_referrals as $referral)
+
+                                            <tr>
                                                  
-                                                   <td>John</td>
-                                                  
-                                                   <td>KYZ</td>
-                                                   <td><span class="shadow-none badge badge-secondary">Not registered</span></td>
-                                                   <td class="text-center"><button class="btn btn-sm btn-outline-primary">Copy</button></td>
-                                               </tr>
+                                                 <td>{{$referral->referrees->name}}</td>
+                                                
+                                                 <td>{{$referral->referree}}</td>
+                                                 <td><span class="shadow-none badge badge-dark">pending</span></td>
+                                                 <td class="text-center"><button class="btn btn-sm btn-outline-primary">NGN 5,000</button></td>
+                                             </tr>
+
+
+
+                                            @empty
+
+                                            <div class="c">
+                                                <h6 class="text-center font-weight-bold">Share Links</h6>
+                                                    <a target="_blank" class="btn btn-primary btn-sm btn-bloc" href="https://www.facebook.com/sharer/sharer.php?u=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">facebook</a>
+                                                    <a target="_blank" class="btn btn-info btn-sm btn-bloc" href="https://twitter.com/intent/tweet?url=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}&text=Join us today">twitter</a>
+                                                    <a target="_blank" class="btn btn-danger btn-sm btn-bloc" href="https://wa.me/?text=Hello%20from%20Mindigoglobal%20Join%20us%20https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">whatsapp</a>
+                                                </div>
+
+                                       
+
+
+                                            @endforelse
+
+
                                               
                                            </tbody>
                                            <tfoot>

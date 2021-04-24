@@ -83,7 +83,7 @@
 
                             </div>
                         </form>                        
-                        <p class="terms-conditions">© 2021 All Rights Reserved. <a href="index.html">Mindigoglobal</a> is a product of vicSystems. <a href="javascript:void(0);"></a> <a href="javascript:void(0);">Privacy</a>, and <a href="javascript:void(0);">Terms</a>.</p>
+                        <p class="terms-conditions">© 2021 All Rights Reserved. <a href="index.html">Mindigoglobal</a> is a product of vicSystems. <a href="{{config('app.url')}}/pages/privacy_policy"></a> <a href="{{config('app.url')}}/pages/privacy_policy">Privacy</a>, and <a href="{{config('app.url')}}/pages/privacy_policy">Terms</a>.</p>
 
                     </div>                    
                 </div>
