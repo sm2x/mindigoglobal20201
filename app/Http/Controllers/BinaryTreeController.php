@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\BinaryTree;
+use App\User;
+use App\Order;
 use Illuminate\Http\Request;
 
 class BinaryTreeController extends Controller
@@ -14,18 +16,32 @@ class BinaryTreeController extends Controller
      */
     public function initialize(Request $request)
     {
+
+       
+
+        $validatedData = $request->validate([
+                   
+            'user_code' => 'unique:binary_trees,user_code','exists:users,user_code',
+     
+        ]);
+
+        $user_data = User::where('user_code', $request->user_code)->first();
+
+       $my_order = Order::where('user_id', $user_data->id)->first();
         //
         $position = 'L';
         $legs = '00';
 
         $binaryTree = BinaryTree::Create([
-            'user_id' => $request->user_id,
+            'user_id' => $user_data->id,
             'user_code' => $request->user_code,
             'position' => $position,  
             'legs' => $legs,        
-            'pack_name' => $user_order->pack_name,
-            'pack_id' => $user_order->pack_id,
+            'pack_name' => $my_order->package,
+            'pack_id' => $my_order->pack_id,
         ]);
+
+        return back()->with('b_message','Node Initialized');
 
     }
 

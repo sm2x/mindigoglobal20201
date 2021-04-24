@@ -90,6 +90,10 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
     Route::get('/single_support', 'AdminPageController@single_support')->name('admin.single_support');
     Route::get('/audit_trail', 'AdminPageController@audit_trail')->name('admin.audit_trail');
 
+    //initialize nod
+
+    Route::post('/initialize', 'BinaryTreeController@initialize')->name('admin.initialize');
+
 
 
 

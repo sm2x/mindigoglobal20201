@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+
 class AdminPageController extends Controller
 {
     /**
@@ -62,6 +64,8 @@ class AdminPageController extends Controller
     
     public function genealogy()
     {
+
+        $admin_accounts = User::where('role', 'admin')->latest()->get();
         //
         $data = [
             'category_name' => 'dashboard',
@@ -71,7 +75,7 @@ class AdminPageController extends Controller
         ];
 
         return view('admin.genealogy',[
-            
+            'admin_accounts' => $admin_accounts
         ])->with($data);
     }
 

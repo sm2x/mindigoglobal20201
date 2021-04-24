@@ -46,108 +46,212 @@
 
     <div class="layout-px-spacing">
 
-       <h3 class="mt-3">My Genealogy Tree</h3>
+       <h3 class="mt-3">Genealogy Tree</h3>
+
+
+
+<div class="card col-md-6 mx-auto">
+    <div class="card-body">
+
+        @if(session()->has('b_message'))
+            <div class="alert alert-success">
+                {{ session()->get('b_message') }}
+            </div>
+        @endif
+
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+            <p class="alert alert-warning">{{ $error }}</p>
+            @endforeach
+        @endif
+
+
+        <form method="post" action="{{route('admin.initialize')}}">
+
+        @csrf
+                <div class="form-group">
+                    <label for="">Admin Accounts</label>
+                    <select name="user_code" id="" class="form-control">
+                    
+                        <option value="">Select an account</option>
+
+                        @foreach($admin_accounts as $account)
+                            <option value="{{$account->user_code}}">{{$account->name}}</option>
+                        @endforeach
+
+                        
+                    </select>
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-danger btn-lg">INITIALIZE NODE</button>
+                </div> 
+        </form>
+    </div>
+</div>
 
         <div class="tf-tree text-center">
             <ul>
                 <li>
-                <span 
+                        <span 
                         data-toggle="tooltip" data-placement="top" title="TESTING"
                         style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
-                        
-                        1
-                    
-                        
+                        <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 1</a>
+                        <br>
+                        <span class="font-weight-bold">+</span>
                         </span>
-
-                <ul>
-                    <li>
-                    <span 
-                        data-toggle="tooltip" data-placement="top" title="TESTING"
-                        style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
-                        
-                        1
-                    
-                        
-                        </span>
-
                         <ul>
-                    <li>
-                    <span 
-                        data-toggle="tooltip" data-placement="top" title="TESTING"
-                        style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
-                        
-                        1
-                    
-                        
-                        </span>
-                    
-                    </li>
-                    <li>
-                    
-                    <span 
-                        data-toggle="tooltip" data-placement="top" title="TESTING"
-                        style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
-                        
-                        1
-                    
-                        
-                        </span>
-                    
-                    </li>
-                </ul>
-                    
-                    </li>
-                    <li>
-                    
-                    <span 
+                            <li>
+                                <span 
+                                data-toggle="tooltip" data-placement="top" title="TESTING"
+                                style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 2</a>
+                                <br>
+                                <span class="font-weight-bold">+</span>
+                                </span>
+                                        <ul>
+                                            <li>
+                                                <span 
+                                                data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 4</a>
+                                                <br>
+                                                <span class="font-weight-bold">+</span>
+                                                </span>
 
-                    onclick="addNode(this.id)"
+                                                        <ul>
+                                                            <li>
+                                                                <span 
+                                                                data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                                style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                                <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 8</a>
+                                                                <br>
+                                                                <span class="font-weight-bold">+</span>
+                                                                </span>
+                                                                        
+                                                            </li>
+                                                            <li>
+                                                                <span 
+                                                                data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                                style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                                <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 9</a>
+                                                                <br>
+                                                                <span class="font-weight-bold">+</span>
+                                                                </span>
+                                                            </li>
+                                                        </ul>
 
-                    id="Gideon"
-                        data-toggle="tooltip" data-placement="top" title="TESTING"
-                        style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
-                        
-                        Gideon
-                    
-                        
-                        </span>
 
-                        <ul>
-                    <li>
-                    <span 
-                        data-toggle="tooltip" data-placement="top" title="TESTING"
-                        style="" class="border border-primary bg-secondary card tf-nc tf-gap-lg shadow text-center mx-auto">
-                        
-                        1
-                    
-                        
-                        </span>
-                    
-                    </li>
-                    <li>
-                    
-                    <span 
+                                            </li>
+                                            <li>
+                                                <span 
+                                                data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 5</a>
+                                                <br>
+                                                <span class="font-weight-bold">+</span>
+                                                </span>
+                                                            <ul>
+                                                                <li>
+                                                                    <span 
+                                                                    data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                                    style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                                    <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 10</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span 
+                                                                    data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                                    style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                                    <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 11</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                            </li>
+                                        </ul>
 
-                         onclick="addNode(this.id)"
+                            </li>
 
-                         id="Attah"
+                            <li>
+                                <span 
+                                data-toggle="tooltip" data-placement="top" title="TESTING"
+                                style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 3</a>
+                                <br>
+                                <span class="font-weight-bold">+</span>
+                                </span>
 
-                        data-toggle="tooltip" data-placement="top" title="TESTING"
-                        style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
-                        
-                        +
+                                    <ul>
+                                        <li>
+                                            <span 
+                                            data-toggle="tooltip" data-placement="top" title="TESTING"
+                                            style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                            <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 6</a>
+                                            <br>
+                                            <span class="font-weight-bold">+</span>
+                                            </span>
+                                                            <ul>
+                                                                <li>
+                                                                    <span 
+                                                                    data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                                    style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                                    <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 12</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span 
+                                                                    data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                                    style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                                    <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 13</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span 
+                                            data-toggle="tooltip" data-placement="top" title="TESTING"
+                                            style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                            <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 7</a>
+                                            <br>
+                                            <span class="font-weight-bold">+</span>
+                                            </span>
 
-                        
-                    
-                        
-                        </span>
-                    
-                    </li>
-                </ul>
-                    
-                    </li>
-                </ul>
+                                                            <ul>
+                                                                <li>
+                                                                    <span 
+                                                                    data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                                    style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                                    <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 14</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span 
+                                                                    data-toggle="tooltip" data-placement="top" title="TESTING"
+                                                                    style="" class="border border-primary bg-warning card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                                                    <a target="_blank" href="{{route('user.genealogy2', 123)}}"> 15</a>
+                                                                    <br>
+                                                                    <span class="font-weight-bold">+</span>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                        </li>
+                                    </ul>
+
+
+                            </li>
+                            
+                        </ul>
+                                
+
                 </li>
             </ul>
         </div>
@@ -157,7 +261,9 @@
         
             <button type="button" id="launch_modal" class="d-none btn btn-primary btn-sm mb-2 mr-2" data-toggle="modal" data-target=".bd-example-modal-sm">Add A Node</button>
         </div>
-
+<a target="_blank" href="{{route('user.genealogy2', 123)}}"> </a>
+<br>
+<span class="font-weight-bold">+</span>
             <div class="row">
                 <div class="col-md-6">
                     
@@ -278,7 +384,9 @@
                     <h5 class="modal-title" id="mySmallModalLabel">Attach a Node?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>
+                    <a target="_blank" href="{{route('user.genealogy2', 123)}}"> </button></a>
+                    <br>
+                    <span class="font-weight-bold">+</span>
                 </div>
                 <div class="modal-body">
 
@@ -316,7 +424,9 @@
                 <div class="modal-footer">
                     <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Refractor</button>
                     <button type="button" class="btn btn-primary">Submit</button>
-                </div>
+                <a target="_blank" href="{{route('user.genealogy2', 123)}}"> </div></a>
+                <br>
+                <span class="font-weight-bold">+</span>
                 </form>
             </div>
         </div>
@@ -358,13 +468,19 @@
 
         function addNode(data) {
 
-            // alert(data);
+            <a target="_blank" href="{{route('user.genealogy2', 123)}}"> // alert(data);</a>
+            <br>
+            <span class="font-weight-bold">+</span>
 
-            $('#launch_modal').trigger('click');
+            <a target="_blank" href="{{route('user.genealogy2', 123)}}"> $('#launch_modal').trigger('click');</a>
+            <br>
+            <span class="font-weight-bold">+</span>
 
             $('#selected_node').val(data);
 
-        }
+        <a target="_blank" href="{{route('user.genealogy2', 123)}}"> }</a>
+        <br>
+        <span class="font-weight-bold">+</span>
         
         
     </script>
