@@ -106,28 +106,42 @@ class UserPageController extends Controller
 
     public function genealogy()
     {
-        //
-         $data = [
+        $user_id = Auth::user()->id;
+
+        $parent = BinaryTree::where('user_id', $user_id)->first();
+
+        // dd($parent);
+        
+        $data = [
             'category_name' => 'dashboard',
             'page_name' => 'analytics',
             'has_scrollspy' => 0,
             'scrollspy_offset' => '',
         ];
 
-        return view('user.genealogy')->with($data);
+        return view('user.genealogy',[
+            'parent' => $parent
+        ])->with($data);
     }
 
     public function genealogy2($code)
     {
-        //
-         $data = [
+        $user_id = Auth::user()->id;
+
+        $parent = BinaryTree::where('user_code', $code)->first();
+
+        // dd($parent);
+        
+        $data = [
             'category_name' => 'dashboard',
             'page_name' => 'analytics',
             'has_scrollspy' => 0,
             'scrollspy_offset' => '',
         ];
 
-        return view('user.genealogy2')->with($data);
+        return view('user.genealogy2',[
+            'parent' => $parent
+        ])->with($data);
     }
 
 

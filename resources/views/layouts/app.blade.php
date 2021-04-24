@@ -39,7 +39,7 @@
 
                 @if(Auth::user()->role == 'user')
 
-                    @include('inc.user_sidebar')
+                    @include('inc.sidebar')
 
                 @elseif(Auth::user()->role == 'admin')
 
