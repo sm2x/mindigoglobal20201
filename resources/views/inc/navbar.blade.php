@@ -42,7 +42,7 @@
 
                 <?php
 
-                    $notifications  = \App\Notification::where('user_id', Auth::user()->id)->where('status', 'read')->get();
+                    $notifications  = \App\Notification::where('user_id', Auth::user()->id)->where('status', 'unread')->get();
 
                 ?>
                 
