@@ -16,15 +16,15 @@ class CreateNotificationsTable extends Migration
         Schema::create('notifications', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->bigInteger('_for')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('title');
             $table->string('category')->default('User Activity');
             $table->string('body');
-            $table->bigInteger('_by')->unsigned()->nullable();
+            $table->bigInteger('by_whom')->unsigned()->nullable();
             $table->string('status')->default('unread');
 
-            $table->foreign('_for')->references('id')->on('users');
-            $table->foreign('_by')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('by_whom')->references('id')->on('users');
             $table->timestamps();
         });
     }
