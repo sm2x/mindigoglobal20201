@@ -62,7 +62,7 @@
 										{{$user_data->name}}
 									</h1>
 									<p class="description">
-										We care to deliver adaptive services and solutions to our customers to achieve and satisfy their needs.
+										I will love to introduce you to an amazing business opportunity.
 									</p>
 									<div class="cta-subscribe cta-subscribe-1 box-form mt-40">
 										<div class="box-content">
