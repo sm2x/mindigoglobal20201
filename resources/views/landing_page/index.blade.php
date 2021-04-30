@@ -92,7 +92,7 @@
 												</div><!-- .form-group end -->
 												
 												<div class="form-group">
-													<input style="background-color: #d49719;" type="submit" class="form-control btn-warning" value="Get Started">
+													<input style="background-color: #000000;" type="submit" class="form-control " value="Get Started">
 												</div><!-- .form-group end -->
 											</form><!-- #form-email-subscribe end -->
 										</div><!-- .box-content end -->
