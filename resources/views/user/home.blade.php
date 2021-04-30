@@ -100,7 +100,7 @@
 
         <div class="row layout-top-spacing">
 
-            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+            <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="widget widget-one">
                     <div class="widget-heading">
                         <h6 class="">Weekly Earnnigs Report</h6>
@@ -145,7 +145,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
                 <div class="widget widget-card-four">
                     <div class="widget-content">
                         <div class="w-content">
@@ -169,7 +169,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
                 <div class="widget widget-account-invoice-two">
                     <div class="widget-content">
 

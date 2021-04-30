@@ -66,7 +66,7 @@ class AdminOrderSeeder extends Seeder
                     'ip_address' => '127.0.0.1',
                     'package' => 'Admin Package',
                     'sponsors_id' => 'MNG0003',
-                    'user_id' => '10002',
+                    'user_id' => '10003',
                     'pack_id' => '1',
                     'pack_title' => 'Admin Package',
                     'mobile' => '0909900990',
