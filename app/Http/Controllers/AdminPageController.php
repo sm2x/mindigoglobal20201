@@ -89,6 +89,30 @@ class AdminPageController extends Controller
         ])->with($data);
     }
 
+    
+    public function genealogy2($code)
+    {
+        $user_id = Auth::user()->id;
+
+        $parent = BinaryTree::where('user_code', $code)->first();
+
+        $admin_accounts = User::where('role', 'admin')->latest()->get();
+
+        // dd($parent);
+        
+        $data = [
+            'category_name' => 'dashboard',
+            'page_name' => 'analytics',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+        ];
+
+        return view('admin.genealogy2',[
+            'parent' => $parent,
+            'admin_accounts' => $admin_accounts,
+        ])->with($data);
+    }
+
     public function orders()
     {
         //

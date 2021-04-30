@@ -203,7 +203,7 @@ try {
                       {{$_11}}
 
                       <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_11)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_11)}}">==</a>
 
                       <?php
 
@@ -294,7 +294,7 @@ try {
                               {{$_21}}
 
                               <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_21)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_21)}}">==</a>
 
                                 <?php
 
@@ -384,7 +384,7 @@ try {
                                   {{$_31}}
 
                                   <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_31)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_31)}}">==</a>
 
                                   
                                   
@@ -400,7 +400,7 @@ try {
                                   {{$_32}}
 
                                   <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_32)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_32)}}">==</a>
                                   
                                   
                                   
@@ -419,7 +419,7 @@ try {
                               {{$_22}}
 
                               <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_22)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_22)}}">==</a>
 
                                 <?php
 
@@ -503,7 +503,7 @@ try {
                                   {{$_33}}
 
                                   <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_33)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_33)}}">==</a>
                                   
                                   
                                   </span></li>
@@ -516,7 +516,7 @@ try {
                                   {{$_34}}
 
                                   <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_34)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_34)}}">==</a>
                                   
                                   
                                   </span></li>
@@ -536,7 +536,7 @@ try {
                       {{$_12}}
 
                       <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_12)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_12)}}">==</a>
 
                       <?php
 
@@ -623,7 +623,7 @@ try {
                             {{$_23}}
 
                             <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_23)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_23)}}">==</a>
 
                             <?php
 
@@ -707,7 +707,7 @@ try {
                               {{$_35}}
 
                               <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_35)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_35)}}">==</a>
                               
                               
                               </span></li>
@@ -720,7 +720,7 @@ try {
                               {{$_36}}
 
                               <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_36)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_36)}}">==</a>
                               
                               
                               </span></li>
@@ -735,7 +735,7 @@ try {
                           {{$_24}}
 
                             <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_24)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_24)}}">==</a>
 
                             <?php
 
@@ -819,7 +819,7 @@ try {
                               {{$_37}}
 
                               <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_37)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_37)}}">==</a>
                               
                               
                               </span></li>
@@ -830,7 +830,7 @@ try {
                               style="" class="border bg-{{$_38!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                               {{$_38}}
                               <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_38)}}">==</a>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38)}}">==</a>
                               
                               
                               </span></li>
@@ -1057,19 +1057,9 @@ try {
 
         function addNode(data) {
 
-            <a target="_blank" href="{{route('user.genealogy2', 123)}}"> // alert(data);</a>
-            <br>
-            <span class="font-weight-bold">+</span>
-
-            <a target="_blank" href="{{route('user.genealogy2', 123)}}"> $('#launch_modal').trigger('click');</a>
-            <br>
-            <span class="font-weight-bold">+</span>
-
-            $('#selected_node').val(data);
-
-        <a target="_blank" href="{{route('user.genealogy2', 123)}}"> }</a>
-        <br>
-        <span class="font-weight-bold">+</span>
+        
+        }
+     
         
         
     </script>

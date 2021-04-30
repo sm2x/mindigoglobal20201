@@ -21,7 +21,7 @@ class LandingPageController extends Controller
 
 
 
-        return view('user.landing',[
+        return view('landing_page.index',[
             'user_data' => $user_data
         ]);
     }
