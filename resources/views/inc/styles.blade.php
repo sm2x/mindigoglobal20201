@@ -994,6 +994,9 @@
       </style>
       @break
 
+      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset('plugins/select2/select2.min.css')}}">
+
     @default
         <script>console.log('No custom Styles available.')</script>
 @endswitch

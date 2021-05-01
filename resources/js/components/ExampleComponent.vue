@@ -63,16 +63,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="country">Country</label>
-                                            <select v-model="nationality" class="form-control " id="country">
-                                                <option>All Countries</option>
-                                                <option selected>United States</option>
-                                                <option value="India">India</option>
-                                                <option value="Japan">Japan</option>
-                                                <option value="China">China</option>
-                                                <option value="Brazil">Brazil</option>
-                                                <option value="Norway">Norway</option>
-                                                <option value="Canada">Canada</option>
-                                            </select>
+                                              <Select2 class="form-control" v-model="myValue" :options="myOptions" :settings="{ settingOption: value, settingOption: value }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -133,10 +125,27 @@
                                         <div class="form-group">
                                             <label for="country">Bank Name</label>
                                             <select class="form-control" id="country">
-                                                <option>All Countries</option>
-                                                <option selected>First Bank Nigeria</option>
-                                                <option>HSBC</option>
-                                                
+                                               <option value="access">Access Bank</option>
+                                                <option value="citibank">Citibank</option>
+                                                <option value="diamond">Diamond Bank</option>
+                                                <option value="ecobank">Ecobank</option>
+                                                <option value="fidelity">Fidelity Bank</option>
+                                                <option value="fcmb">First City Monument Bank (FCMB)</option>
+                                                <option value="fsdh">FSDH Merchant Bank</option>
+                                                <option value="gtb">Guarantee Trust Bank (GTB)</option>
+                                                <option value="heritage">Heritage Bank</option>
+                                                <option value="Keystone">Keystone Bank</option>
+                                                <option value="rand">Rand Merchant Bank</option>
+                                                <option value="skye">Skye Bank</option>
+                                                <option value="stanbic">Stanbic IBTC Bank</option>
+                                                <option value="standard">Standard Chartered Bank</option>
+                                                <option value="sterling">Sterling Bank</option>
+                                                <option value="suntrust">Suntrust Bank</option>
+                                                <option value="union">Union Bank</option>
+                                                <option value="uba">United Bank for Africa (UBA)</option>
+                                                <option value="unity">Unity Bank</option>
+                                                <option value="wema">Wema Bank</option>
+                                                <option value="zenith">Zenith Bank</option>
                                             </select>
                                         </div>
                                     </div>
@@ -234,12 +243,21 @@
 
 <script>
 
+import Select2 from 'v-select2-component';
+
+Vue.component('Select2', Select2);
+
+
+
 
     export default {
       
 
         data() {
             return {
+
+                      myValue: '',
+                    myOptions: [{}], // or [{id: key, text: value}, {id: key, text: value}]
 
                 loading: false,
                 msg: 'Loading...',
@@ -274,6 +292,13 @@
 
         methods: {
 
+             myChangeEvent(val){
+                    console.log(val);
+                },
+                mySelectEvent({id, text}){
+                    console.log({id, text})
+                },
+
             getUserInfo(){
 
      
@@ -294,6 +319,43 @@
                 )).catch(function (error) {
                         console.log(error);
                     });
+            },
+
+            convertIt(dataMe){
+                var data = $.map(dataMe, function (obj) {
+                obj.id = obj.id || obj.name; // replace pk with your identifier
+
+                return obj;
+                });
+            },
+
+            getCountries(){
+                    axios.get('https://restcountries.eu/rest/v2/all')
+               .then((response)=>(
+
+                        this.myOptions = response.data,
+
+                                    
+                            $.map(this.myOptions, function (obj) {
+                            obj.id = obj.id || obj.name; // replace pk with your identifier
+
+                            // console.log(obj);
+                            }),
+
+                            $.map(this.myOptions, function (obj) {
+                            obj.text = obj.text || obj.name; // replace pk with your identifier
+
+                            // console.log(obj);
+                            }),
+                      
+                    
+                    // this.user_profile = response.data,
+                    console.log(this.myOptions)
+                    //  this.results = response.data
+                )).catch(function (error) {
+                        console.log(error);
+                    });
+
             },
 
            
@@ -337,6 +399,7 @@
         
         mounted() {
             this.getUserInfo()
+            this.getCountries()
             console.log('Component mounted.')
         },
 
