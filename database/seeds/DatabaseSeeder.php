@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UserSeeder::class);
         // $this->call(MindigoPackSeeder::class);
-        $this->call(AdminOrderSeeder::class);
+        // $this->call(AdminOrderSeeder::class);
+        $this->call(DirectReferralSeeder::class);
     }
 }

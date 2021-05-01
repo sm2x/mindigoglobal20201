@@ -158,16 +158,87 @@ try {
 </div>
 
 
+<div class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="parent_code_title">Add new node</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="post" action="">
+
+                        @csrf
+
+                            <div class="form-group text-center">
+                                <label >Parent Node</label>
+                                <input id="parent_code" name="parent" value="new" type="text" class="form-control" readonly>
+                            </div> 
+
+                            <div class="form-group text-center">
+                                <label for="">Position</label>
+                                    <select name="user_code" id="legs" class="form-control">
+                                    
+                                      
+
+                                    </select>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <label for="">My Referrals</label>
+                                    <select name="user_code" id="" class="form-control">
+                                    
+                                        <option value="">Select an account</option>
+
+                                        @forelse($direct_referrals as $referral)
+
+                                        <option class="font-weight-bold" value="{{$referral->referree}}">
+                                        
+                                        {{$referral->referree}} 
+
+                                        [{{$referral->referrees->name}}]
+                                        
+                                        </option>
+
+                                        @empty
+
+                                        <option value="">NO Refferals Yet</option>
+
+                                        @endforelse
+
+                                    </select>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-danger  btn-block">Create Node</button>
+                            </div> 
+
+                            <div class="form-group text-center">
+                                <a id="myAnchor" href="" class="btn btn-outline-danger  btn-block">View Node</a>
+                            </div> 
+                    </form>
+
+                </div>
+                <!-- <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> View</button>
+                    <button type="button" class="btn btn-primary">Create Node</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
 
 <div class="top mt-5">
-      <div class="tf-tree example">
+      <div class="tf-tree ">
               <ul>
                 <li>
                   <span 
                   data-toggle="tooltip" data-placement="top" title="{{$parent->users->name??'Empty'}}"
-                    style="" class="border border-primary bg-{{$parent->status??'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                     class=" bg-{{$parent->status??'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto" >
                   
-                  {{$parent->user_code??'Empty'}}
+                     <span onclick="clickedNode(this.id)" id="user_code">{{$parent->user_code??'Empty'}}</span>
                 
                   
                   </span>
@@ -177,12 +248,12 @@ try {
 
                       data-toggle="tooltip" data-placement="top" title="{{$_11_name}}"
 
-                        style="" class="border bg-{{$_11!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                        style="" class="border bg-{{$_11!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                       
-                      {{$_11}}
+                      <span onclick="clickedNode(this.id)" id="user_code">{{$_11}}</span>
 
-                      <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_11)}}">==</a>
+                      <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_11)}}">view</a>  -->
 
                       <?php
 
@@ -214,7 +285,7 @@ try {
                             $_22_name = $_11children[1]->users->name??'null';
 
                             $_21_color = 'success';
-                            $_22_color = 'secondary';
+                            $_22_color = 'warning';
 
 
                           }elseif($_11children[0]->position == 'R'){
@@ -243,8 +314,8 @@ try {
                           $_21 = "Empty";
                           $_22 = "Empty";
 
-                          $_21_color = 'secondary';
-                          $_22_color = 'secondary';
+                          $_21_color = 'warning';
+                          $_22_color = 'warning';
 
                           $_21_name = 'null';
                           $_22_name = 'null';
@@ -267,13 +338,13 @@ try {
 
                               data-toggle="tooltip" data-placement="top" title="{{$_21_name}}"
 
-                              style="" class="border bg-{{$_21!='Empty'?'success':'secondary'}} card  tf-nc tf-gap-lg shadow text-center mx-auto">
+                              style="" class="border bg-{{$_21!='Empty'?'success':'warning'}} card  tf-nc tf-gap-lg shadow text-center mx-auto">
                               
                               
-                              {{$_21}}
+                              <span onclick="clickedNode(this.id)" id="user_code">{{$_21}}</span>
 
-                              <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_21)}}">==</a>
+                              <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_21)}}">view</a>  -->
 
                                 <?php
 
@@ -306,7 +377,7 @@ try {
                                             $_32_name = $_21children[1]->users->name??'null';
 
                                             $_31_color = 'success';
-                                            $_32_color = 'secondary';
+                                            $_32_color = 'warning';
 
 
                                           }elseif($_21children[0]->position =='R'){
@@ -331,8 +402,8 @@ try {
                                           $_31 = "Empty";
                                           $_32 = "Empty";
 
-                                          $_31_color = 'secondary';
-                                          $_32_color = 'secondary';
+                                          $_31_color = 'warning';
+                                          $_32_color = 'warning';
 
                                           $_31_name = 'null';
                                           $_32_name = 'null';
@@ -358,12 +429,12 @@ try {
 
                                   data-toggle="tooltip" data-placement="top" title="{{$_31_name}}"
 
-                                    style="" class="border  bg-{{$_31!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                    style="" class="border  bg-{{$_31!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  {{$_31}}
+                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_31}}</span>
 
-                                  <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_31)}}">==</a>
+                                  <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_31)}}">view</a>  -->
 
                                   
                                   
@@ -374,12 +445,12 @@ try {
                                   
                                   data-toggle="tooltip" data-placement="top" title="{{$_32_name}}"
 
-                                    style="" class="border  bg-{{$_32!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                    style="" class="border  bg-{{$_32!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  {{$_32}}
+                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_32}}</span>
 
-                                  <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_32)}}">==</a>
+                                  <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_32)}}">view</a>  -->
                                   
                                   
                                   
@@ -392,13 +463,13 @@ try {
 
                               data-toggle="tooltip" data-placement="top" title="{{$_22_name}}"
 
-                              style="" class="border bg-{{$_22!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                              style="" class="border bg-{{$_22!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                               
                               
-                              {{$_22}}
+                              <span onclick="clickedNode(this.id)" id="user_code">{{$_22}}</span>
 
-                              <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_22)}}">==</a>
+                              <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_22)}}">view</a>  -->
 
                                 <?php
 
@@ -431,7 +502,7 @@ try {
                                         $_34_name = $_22children[1]->users->name??'null';
 
                                         $_33_color = 'success';
-                                        $_34_color = 'secondary';
+                                        $_34_color = 'warning';
 
 
                                       }elseif($_22children[0]->position =='R'){
@@ -456,8 +527,8 @@ try {
                                       $_33 = "Empty";
                                       $_34 = "Empty";
 
-                                      $_33_color = 'secondary';
-                                      $_34_color = 'secondary';
+                                      $_33_color = 'warning';
+                                      $_34_color = 'warning';
 
                                       $_33_name = 'null';
                                       $_34_name = 'null';
@@ -477,12 +548,12 @@ try {
 
                                   data-toggle="tooltip" data-placement="top" title="{{$_33_name}}"
 
-                                    style="" class="border bg-{{$_33!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                    style="" class="border bg-{{$_33!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  {{$_33}}
+                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_33}}</span>
 
-                                  <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_33)}}">==</a>
+                                  <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_33)}}">view</a>  -->
                                   
                                   
                                   </span></li>
@@ -490,12 +561,12 @@ try {
                                   
                                   data-toggle="tooltip" data-placement="top" title="{{$_34_name}}"
 
-                                  style="" class="border bg-{{$_34!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                  style="" class="border bg-{{$_34!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  {{$_34}}
+                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_34}}</span>
 
-                                  <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_34)}}">==</a>
+                                  <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_34)}}">view</a>  -->
                                   
                                   
                                   </span></li>
@@ -510,12 +581,12 @@ try {
                       
                       data-toggle="tooltip" data-placement="top" title="{{$_12_name}}"
                       
-                        style="" class="border bg-{{$_12!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                        style="" class="border bg-{{$_12!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                       
-                      {{$_12}}
+                      <span onclick="clickedNode(this.id)" id="user_code">{{$_12}}</span>
 
-                      <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_12)}}">==</a>
+                      <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_12)}}">view</a>  -->
 
                       <?php
 
@@ -548,7 +619,7 @@ try {
                               $_24_name = $_12children[1]->users->name??'null';
 
                               $_23_color = 'success';
-                              $_24_color = 'secondary';
+                              $_24_color = 'warning';
 
 
                             }elseif($_12children[0]->position =='R'){
@@ -573,8 +644,8 @@ try {
                             $_23 = "Empty";
                             $_24 = "Empty";
 
-                            $_23_color = 'secondary';
-                            $_24_color = 'secondary';
+                            $_23_color = 'warning';
+                            $_24_color = 'warning';
 
                             $_23_name = 'null';
                             $_24_name = 'null';
@@ -596,13 +667,13 @@ try {
 
                             data-toggle="tooltip" data-placement="top" title="{{$_23_name}}"
 
-                            style="" class="border bg-{{$_23!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                            style="" class="border bg-{{$_23!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                             
                             
-                            {{$_23}}
+                            <span onclick="clickedNode(this.id)" id="user_code">{{$_23}}</span>
 
-                            <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_23)}}">==</a>
+                            <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_23)}}">view</a>  -->
 
                             <?php
 
@@ -635,7 +706,7 @@ try {
                                     $_36_name = $_23children[1]->users->name??'null';
 
                                     $_35_color = 'success';
-                                    $_36_color = 'secondary';
+                                    $_36_color = 'warning';
 
 
                                   }elseif($_23children[0]->position =='R'){
@@ -660,8 +731,8 @@ try {
                                   $_35 = "Empty";
                                   $_36 = "Empty";
 
-                                  $_35_color = 'secondary';
-                                  $_36_color = 'secondary';
+                                  $_35_color = 'warning';
+                                  $_36_color = 'warning';
 
                                   $_35_name = 'null';
                                   $_36_name = 'null';
@@ -681,12 +752,12 @@ try {
 
                               data-toggle="tooltip" data-placement="top" title="{{$_35_name}}"
                               
-                              style="" class="border bg-{{$_35!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                              style="" class="border bg-{{$_35!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                               
-                              {{$_35}}
+                              <span onclick="clickedNode(this.id)" id="user_code">{{$_35}}</span>
 
-                              <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_35)}}">==</a>
+                              <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_35)}}">view</a>  -->
                               
                               
                               </span></li>
@@ -694,12 +765,12 @@ try {
                               
                               data-toggle="tooltip" data-placement="top" title="{{$_36_name}}"
 
-                              style="" class="border bg-{{$_36!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                              style="" class="border bg-{{$_36!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                               
-                              {{$_36}}
+                              <span onclick="clickedNode(this.id)" id="user_code">{{$_36}}</span>
 
-                              <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_36)}}">==</a>
+                              <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_36)}}">view</a>  -->
                               
                               
                               </span></li>
@@ -708,13 +779,13 @@ try {
                         <li>
                             <span   
                             data-toggle="tooltip" data-placement="top" title="{{$_24_name}}"
-                            style="" class="border bg-{{$_24!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                            style="" class="border bg-{{$_24!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                             
                           
-                          {{$_24}}
+                          <span onclick="clickedNode(this.id)" id="user_code">{{$_24}}</span>
 
-                            <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_24)}}">==</a>
+                            <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_24)}}">view</a>  -->
 
                             <?php
 
@@ -747,7 +818,7 @@ try {
                                           $_38_name = $_24children[1]->users->name??'null';
 
                                           $_37_color = 'success';
-                                          $_38_color = 'secondary';
+                                          $_38_color = 'warning';
 
 
                                         }elseif($_24children[0]->position =='R'){
@@ -772,8 +843,8 @@ try {
                                         $_37 = "Empty";
                                         $_38 = "Empty";
 
-                                        $_37_color = 'secondary';
-                                        $_38_color = 'secondary';
+                                        $_37_color = 'warning';
+                                        $_38_color = 'warning';
 
                                         $_37_name = 'null';
                                         $_38_name = 'null';
@@ -793,12 +864,12 @@ try {
 
                               data-toggle="tooltip" data-placement="top" title="{{$_37_name}}"
 
-                              style="" class="border bg-{{$_37!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                              style="" class="border bg-{{$_37!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                               
-                              {{$_37}}
+                              <span onclick="clickedNode(this.id)" id="user_code">{{$_37}}</span>
 
-                              <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_37)}}">==</a>
+                              <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_37)}}">view</a>  -->
                               
                               
                               </span></li>
@@ -806,10 +877,11 @@ try {
                               
                               data-toggle="tooltip" data-placement="top" title="{{$_38_name}}"
 
-                              style="" class="border bg-{{$_38!='Empty'?'success':'secondary'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                              {{$_38}}
-                              <br>
-                              <a class="text-white font-weight-bold" href="{{route('admin.genealogy2', $_38)}}">==</a>
+                              style="" class="border bg-{{$_38!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+
+                              <span onclick="clickedNode(this.id)" id="user_code">{{$_38}}</span>
+                              <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38)}}">view</a>  -->
                               
                               
                               </span></li>
@@ -945,60 +1017,6 @@ try {
     </div>
 
 
-    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mySmallModalLabel">Attach a Node?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    <a target="_blank" href="{{route('user.genealogy2', 123)}}"> </button></a>
-                    <br>
-                    <span class="font-weight-bold">+</span>
-                </div>
-                <div class="modal-body">
-
-                    <form action="">
-                        @csrf
-
-                        <div class="form-group">
-                            <label for="">Node</label>
-                            <input id="selected_node" type="text" class="form-control shadow">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Select Downline</label>
-                            <select class="form-control form-control-sm" name="" id="">
-                                <option value="">--Select Downline</option>
-                                <option value="">MNG 232233 :: VICTOR ASUQUO</option>
-                                <option value="">MNG 232233 :: VICTOR ASUQUO</option>
-                                <option value="">MNG 232233 :: VICTOR ASUQUO</option>
-                                <option value="">MNG 232233 :: VICTOR ASUQUO</option>
-                                <option value="">MNG 232233 :: VICTOR ASUQUO</option>
-                            </select>
-                        </div>
-
-                       
-
-
-                  
-                    <p class="modal-text">
-                    
-                    
-                    </p>
-
-
-                </div>
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Refractor</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                <a target="_blank" href="{{route('user.genealogy2', 123)}}"> </div></a>
-                <br>
-                <span class="font-weight-bold">+</span>
-                </form>
-            </div>
-        </div>
-    </div>
     
 @endsection
 
@@ -1033,22 +1051,102 @@ try {
 
 
     <script>
+    
 
-        function addNode(data) {
+        function clickedNode(data) {
 
-            <a target="_blank" href="{{route('user.genealogy2', 123)}}"> // alert(data);</a>
-            <br>
-            <span class="font-weight-bold">+</span>
+          var msg = document.getElementById(data).textContent;
 
-            <a target="_blank" href="{{route('user.genealogy2', 123)}}"> $('#launch_modal').trigger('click');</a>
-            <br>
-            <span class="font-weight-bold">+</span>
+          document.getElementById('parent_code').value=msg;
 
-            $('#selected_node').val(data);
+          document.getElementById('parent_code_title').textContent=msg;
 
-        <a target="_blank" href="{{route('user.genealogy2', 123)}}"> }</a>
-        <br>
-        <span class="font-weight-bold">+</span>
+          document.getElementById("myAnchor").href = "{{config('app.url')}}admin/genealogy2/" + msg;
+
+          
+
+          $.ajax({
+
+              url: "{{config('app.url')}}check_legs/" + msg,
+              headers: {  'Access-Control-Allow-Origin': '*' },
+              type: 'GET',
+              success: function(res) {
+
+                  console.log(res);
+
+                  if(res == '00'){
+                      console.log('empty empty');
+
+                      $('#legs').empty();
+
+                      $('#legs').append($('<option>', {
+                          value: 'L',
+                          text: 'left'
+                      }));
+
+                      $('#legs').append($('<option>', {
+                          value: 'R',
+                          text: 'right'
+                      }));
+
+                      $('#btnSubmit').removeAttr("disabled");
+                  }
+
+
+                  if(res == '01'){
+                    
+                      console.log('1 empty');
+                      $('#legs').empty();
+                      $('#legs').append($('<option>', {
+                          value: 'L',
+                          text: 'left'
+                      }));
+
+                      $('#btnSubmit').removeAttr("disabled");
+                  }
+
+
+                  if(res == '10'){
+                      console.log('empty 1');
+                      $('#legs').empty();
+                      $('#legs').append($('<option>', {
+                          value: 'R',
+                          text: 'right'
+                      }));
+
+                      $('#btnSubmit').removeAttr("disabled");
+                  }
+
+                  if(res == '11'){
+
+                      console.log('empty 1');
+                      $('#legs').empty();
+                      $('#legs').append($('<option>', {
+                          value: '',
+                          text: 'this node is full'
+                      }));
+                    
+                  }
+
+                  if(res == null){
+
+                    console.log('empty 1');
+                    $('#legs').empty();
+                    $('#legs').append($('<option>', {
+                        value: '',
+                        text: 'Node has not been placed'
+                    }));
+
+                    }
+                  
+              }
+              });
+
+          $('.bd-example-modal-sm1').modal();
+
+        
+        }
+     
         
         
     </script>

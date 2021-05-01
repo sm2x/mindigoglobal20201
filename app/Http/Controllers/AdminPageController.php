@@ -10,6 +10,8 @@ use Auth;
 
 use App\BinaryTree;
 
+use App\DirectReferral;
+
 class AdminPageController extends Controller
 {
     /**
@@ -74,6 +76,15 @@ class AdminPageController extends Controller
 
         $parent = BinaryTree::where('user_id', $user_id)->first();
 
+        
+        $my_code_n = Auth::user()->user_code;
+
+        $all_nodes = BinaryTree::pluck('user_id');
+        
+
+        $direct_referrals = DirectReferral::whereNotIn('referree_id',$all_nodes)->where('referree_points','!=', null)->get();
+
+
         // dd($parent);
         
         $data = [
@@ -85,6 +96,7 @@ class AdminPageController extends Controller
 
         return view('admin.genealogy',[
             'admin_accounts' => $admin_accounts,
+            'direct_referrals' => $direct_referrals,
             'parent' => $parent
         ])->with($data);
     }
@@ -95,6 +107,11 @@ class AdminPageController extends Controller
         $user_id = Auth::user()->id;
 
         $parent = BinaryTree::where('user_code', $code)->first();
+
+        $all_nodes = BinaryTree::pluck('user_id');
+        
+
+        $direct_referrals = DirectReferral::whereNotIn('referree_id',$all_nodes)->where('referree_points','!=', null)->get();
 
         $admin_accounts = User::where('role', 'admin')->latest()->get();
 
@@ -110,6 +127,7 @@ class AdminPageController extends Controller
         return view('admin.genealogy2',[
             'parent' => $parent,
             'admin_accounts' => $admin_accounts,
+            'direct_referrals' => $direct_referrals,
         ])->with($data);
     }
 

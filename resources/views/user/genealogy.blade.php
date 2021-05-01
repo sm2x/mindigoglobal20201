@@ -90,10 +90,10 @@ try {
 
 
 
-<!-- <div class="card col-md-6 mx-auto">
-    <div class="card-body">
+<div class=" col-md-6 mx-auto">
+    <div class="">
 
-        @if(session()->has('b_message'))
+        @if(session()->has('node_message'))
             <div class="alert alert-success">
                 {{ session()->get('b_message') }}
             </div>
@@ -108,7 +108,7 @@ try {
 
 
     </div>
-</div> -->
+</div>
 
 
     
@@ -192,7 +192,7 @@ try {
                   data-toggle="tooltip" data-placement="top" title="{{$parent->users->name??'Empty'}}"
                      class=" bg-{{$parent->status??'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto" >
                   
-                  {{$parent->user_code??'Empty'}}
+                     <span onclick="clickedNode(this.id)" id="user_code">{{$parent->user_code??'Empty'}}</span>
                 
                   
                   </span>
@@ -1021,7 +1021,7 @@ try {
 
           $.ajax({
 
-              url: "{{config('app.url')}}user/check_legs/" + msg,
+              url: "{{config('app.url')}}check_legs/" + msg,
               headers: {  'Access-Control-Allow-Origin': '*' },
               type: 'GET',
               success: function(res) {
