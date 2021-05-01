@@ -87,6 +87,20 @@ class BinaryTreeController extends Controller
         //
     }
 
+    public function check_legs($id)
+    {
+        # code...
+
+        $node = BinaryTree::where('id', $id)->first();
+
+        $node_legs = $node->legs;
+
+
+        return $node_legs;
+
+        
+    }
+
     /**
      * Store a newly created resource in storage.
      *

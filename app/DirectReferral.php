@@ -19,4 +19,6 @@ class DirectReferral extends Model
     {
         return $this->belongsTo('App\User', 'referrer_id', 'id');
     }
+
+
 }

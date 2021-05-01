@@ -17,6 +17,45 @@
     <!-- Styles -->
     @include('inc.styles')  
 
+    <style>
+
+     
+  .tf-tree .tf-gap-lg{
+  width: 80px;
+  }
+
+  
+  .tf-tree{
+  font-size: 8pt;
+ 
+
+  }
+
+  .tf-tree .card {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 8pt;
+
+  color: white;
+  }
+
+
+  .tf-nc:before,
+  .tf-nc:after {
+  /* css here */
+  outline: 2px solid white;
+  }
+
+
+
+  li li:before {
+  /* css here */
+
+  outline: 2px solid white;
+  }
+
+</style>
+
 </head>
 <body {{ ($has_scrollspy) ? scrollspy($scrollspy_offset) : '' }} class=" {{ ($page_name === 'alt_menu') ? 'alt-menu' : '' }} {{ ($page_name === 'error404') ? 'error404 text-center' : '' }} {{ ($page_name === 'error500') ? 'error500 text-center' : '' }} {{ ($page_name === 'error503') ? 'error503 text-center' : '' }} {{ ($page_name === 'maintenence') ? 'maintanence text-center' : '' }}">
     

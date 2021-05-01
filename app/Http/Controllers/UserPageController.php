@@ -110,6 +110,13 @@ class UserPageController extends Controller
 
         $parent = BinaryTree::where('user_id', $user_id)->first();
 
+        $my_code_n = Auth::user()->user_code;
+
+        $all_nodes = BinaryTree::pluck('user_id');
+        
+
+        $direct_referrals = DirectReferral::with('referrees')->where('referrer_id', Auth::user()->id)->whereNotIn('referree_id',$all_nodes)->where('referree_points','!=', null)->get();
+
         // dd($parent);
         
         $data = [
@@ -120,7 +127,8 @@ class UserPageController extends Controller
         ];
 
         return view('user.genealogy',[
-            'parent' => $parent
+            'parent' => $parent,
+            'direct_referrals' => $direct_referrals
         ])->with($data);
     }
 
@@ -129,6 +137,13 @@ class UserPageController extends Controller
         $user_id = Auth::user()->id;
 
         $parent = BinaryTree::where('user_code', $code)->first();
+
+        $my_code_n = Auth::user()->user_code;
+
+        $all_nodes = BinaryTree::pluck('user_id');
+        
+
+        $direct_referrals = DirectReferral::with('referrees')->where('referrer_id', Auth::user()->id)->whereNotIn('referree_id',$all_nodes)->where('referree_points','!=', null)->get();
 
         // dd($parent);
         
@@ -140,7 +155,8 @@ class UserPageController extends Controller
         ];
 
         return view('user.genealogy2',[
-            'parent' => $parent
+            'parent' => $parent,
+            'direct_referrals' => $direct_referrals
         ])->with($data);
     }
 
