@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\UserProfile;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,21 @@ class UserProfileController extends Controller
      public function getUserInfo(Request $request)
      {
         
-        $user_profile = UserProfile::where('user_id', $request->user_id)->first();
+     try {
+         //code...
+         $user_profile = User::where('id', $request->user_id)->first();
+
+         return $user_profile;
+         
+     } catch (\Throwable $th) {
+         //throw $th;
+
+         return $th;
+     }
         
 
 
-        return $user_profile;
+        return $request->all();
      }
 
 

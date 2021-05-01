@@ -24,7 +24,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label for="fullName">Full Name</label>
-                                                        <input type="text" class="form-control mb-4" id="fullName" placeholder="Full Name" v-model="name">
+                                                        <input type="text" class="form-control mb-4" id="fullName" placeholder="Full Name" v-model="name" readonly>
                                                     </div>
                                                 </div>
 
@@ -32,11 +32,11 @@
                                                 <label for="">Gender</label>
                                                     <div class="form-group ">
                                                     
-                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                        <div class="custom-control custom-radio custom-control">
                                                             <input type="radio" id="customRadioInline1" name="gender" value="male" class="custom-control-input">
                                                             <label class="custom-control-label" for="customRadioInline1">Male</label>
                                                         </div>
-                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                        <div class="custom-control custom-radio custom-control">
                                                             <input type="radio" id="customRadioInline2" name="gender" value="female" class="custom-control-input">
                                                             <label class="custom-control-label" for="customRadioInline2">Female</label>
                                                         </div>
@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="profession">Bio</label>
-                                                <input type="text" class="form-control mb-4" id="profession" placeholder="Designer" v-model="bio">
+                                                <input type="text" class="form-control mb-4" id="profession" placeholder="Designer" v-model="bio" >
                                             </div>
                                            
                                         </div>
@@ -56,21 +56,14 @@
                                 
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-                <div id="contact" class="section contact">
-                    <div class="info">
-                        <h5 class="">Contact</h5>
-                        <div class="row">
+
+                         <div class="row">
                             <div class="col-md-11 mx-auto">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="country">Country</label>
-                                            <select v-model="nationality" class="form-control" id="country">
+                                            <select v-model="nationality" class="form-control " id="country">
                                                 <option>All Countries</option>
                                                 <option selected>United States</option>
                                                 <option value="India">India</option>
@@ -126,6 +119,8 @@
                     </div>
                 </div>
             </div>
+            
+         
 
             <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                 <form id="contact" class="section contact">
@@ -281,17 +276,17 @@
 
             getUserInfo(){
 
-                alert(this.user_id);
+     
 
                 axios.post('/getUserInfo',{
                         user_id: this.user_id
                 })
                .then((response)=>(
 
-                        thils.name = response.data.name,
-                        thils.bio = response.data.bio,
-                        thils.gender = response.data.gender,
-                        thils.nationality = response.data.nationality,
+                        this.name = response.data.name,
+                        this.bio = response.data.bio,
+                        this.gender = response.data.gender,
+                        this.nationality = response.data.nationality,
 
                     // this.user_profile = response.data,
                     console.log(response)
@@ -304,7 +299,6 @@
            
            updateProfile(){
 
-                alert(this.user_id);
 
                 axios.post('/updateProfile',{
                         name: this.name,
