@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\BinaryTree;
 use App\User;
 use App\Order;
+use App\DirectReferral;
+use Auth;
 use Illuminate\Http\Request;
 
 class BinaryTreeController extends Controller
@@ -32,7 +34,7 @@ class BinaryTreeController extends Controller
         $position = 'L';
         $legs = '00';
 
-        $binaryTree = BinaryTree::Create([
+        $binaryTree = BinaryTree::create([
             'user_id' => $user_data->id,
             'user_code' => $request->user_code,
             'position' => $position,  
@@ -41,7 +43,28 @@ class BinaryTreeController extends Controller
             'pack_id' => $my_order->pack_id,
         ]);
 
-        return back()->with('b_message','Node Initialized');
+        // $node = BinaryTree::find($binaryTree->id);
+
+        // $node = new BinaryTree( $binaryTree->toArray());
+
+        $binaryTree->saveAsRoot();
+
+
+        // BinaryTree::fixTree();
+
+        return back()->with('node_message','Node Initialized');
+
+    }
+
+
+    public function getChildren($id)
+    {
+        # code...
+
+        $node = BinaryTree::find($id);
+
+        return $node->descendants;
+
 
     }
 
@@ -49,6 +72,7 @@ class BinaryTreeController extends Controller
     public function add_node(Request $request)
    
     {
+
         //
         // check if he is a direct referree
 
@@ -63,10 +87,30 @@ class BinaryTreeController extends Controller
                 'user_code' => 'unique:binary_trees,user_code','exists:orders,sponsors_id',
                 'user_id' => 'unique:binary_trees,user_id',
             ]);
-                
-            $parent_id = BinaryTree::where('user_code', $request->parent)->first()->pluck('id');
 
-            $node = BinaryTree::find($parent_id);
+           
+
+
+                
+            $parent = BinaryTree::where('user_code', $request->parent)->first();
+
+            $parent_id = $parent->id;
+
+            
+
+            $parent_data = BinaryTree::where('user_code', $request->parent)->first();
+
+
+
+            $node = BinaryTree::find($parent_data->id);
+
+            // $node = new BinaryTree($node);
+
+            // dd($node->children->count());
+
+            // return $node->children->count();
+
+
     
           
     
@@ -76,23 +120,27 @@ class BinaryTreeController extends Controller
     
             //look for user code order data
     
-            $user_order = Order::where('spoonsors_id', $user_data->user_code)->first();
+            $user_order = Order::where('sponsors_id', $user_data->user_code)->first();
     
             //if left and right are full
     
             if ($node->children()->count() <= 1 ) {
                 # code...
-                $binaryTree = BinaryTree::Create([
+                $binaryTree = BinaryTree::create([
                     'user_id' => $user_data->id,
                     'user_code' => $request->user_code,
                     'position' => $request->position,        
-                    'package_name' => $user_order->pack_title,
-                    'package_id' => $user_order->pack_id,
+                    'pack_name' => $user_order->pack_title,
+                    'pack_id' => $user_order->pack_id,
                 ]);
+
+                $binaryTree = BinaryTree::find($binaryTree->id);
+
+                // BinaryTree::fixTree();
         
                 $node->appendNode($binaryTree);
     
-                $referree_data = DirectReferral::where('referree', $user_code)->update([
+                $referree_data = DirectReferral::where('referree', $request->user_code)->update([
                     'position' => $request->position
                 ]);
     
@@ -100,22 +148,22 @@ class BinaryTreeController extends Controller
     
                 if ($request->position == 'L') {
                     # code...
-                    $node = BinaryTree::find($parent_id)->update([
+                    $node2 = BinaryTree::where('id',$parent_id)->update([
                         'legs' => '10',
                     ]);
                 }
                 //update legs information
                 if ($request->position == 'R') {
                     # code...
-                    $node = BinaryTree::find($parent_id)->update([
+                    $node2 = BinaryTree::where('id',$parent_id)->update([
                         'legs' => '01',
                     ]);
                 }
     
-                $node = BinaryTree::find($parent_id);
+                // $node = BinaryTree::find($parent_id);
     
                 if ($node->children()->count() > 1 ) {
-                    $node = BinaryTree::find($parent_id)->update([
+                    $node2 = BinaryTree::where('id',$parent_id)->update([
                         'legs' => '11',
                     ]);
                 }
@@ -162,7 +210,10 @@ class BinaryTreeController extends Controller
 
                 //else if node add is descendant of right_group
 
-                //add into right id column with respective points
+                //add into right id column with respective 
+                
+
+
     
     
     
@@ -172,7 +223,7 @@ class BinaryTreeController extends Controller
                 
             }else{
     
-                $node = BinaryTree::find($parent_id)->update([
+                $node = BinaryTree::where('id',$parent_id)->update([
                     'legs' => '11',
                 ]);
     

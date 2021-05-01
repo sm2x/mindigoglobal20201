@@ -84,6 +84,35 @@ class AdminPageController extends Controller
 
         $direct_referrals = DirectReferral::whereNotIn('referree_id',$all_nodes)->where('referree_points','!=', null)->get();
 
+        // $node = BinaryTree::find($parent->id);
+
+        // $node = new BinaryTree($node->toArray());
+        
+        // $result = BinaryTree::find($parent->id)->descendants->toTree();
+
+      
+
+        // return $node->ancestors;
+
+        try {
+            //code...
+            $result = BinaryTree::find($parent->id)->descendants->toTree();
+        } catch (\Throwable $th) {
+            //throw $th;
+            $result = null;
+        }
+
+    
+        
+    
+
+        
+
+    
+
+
+
+
 
         // dd($parent);
         
@@ -97,6 +126,7 @@ class AdminPageController extends Controller
         return view('admin.genealogy',[
             'admin_accounts' => $admin_accounts,
             'direct_referrals' => $direct_referrals,
+            'result' => $result,
             'parent' => $parent
         ])->with($data);
     }

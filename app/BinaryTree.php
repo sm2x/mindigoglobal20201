@@ -12,7 +12,7 @@ class BinaryTree extends Model
     use NodeTrait;
 
     protected $fillable = [
-        'user_code', 'legs', 'status', 'pack_name', 'pack_id', '_lft', '_rgt', 'position', 'user_id',
+        'user_code', 'legs', 'status', 'pack_name', 'pack_id', '_lft', '_rgt', 'position', 'user_id', 'parent_id',
     ];
 
    

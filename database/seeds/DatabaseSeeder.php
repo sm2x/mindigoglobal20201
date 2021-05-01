@@ -11,9 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
-        // $this->call(MindigoPackSeeder::class);
-        // $this->call(AdminOrderSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(MindigoPackSeeder::class);
+        $this->call(AdminOrderSeeder::class);
         $this->call(DirectReferralSeeder::class);
     }
 }

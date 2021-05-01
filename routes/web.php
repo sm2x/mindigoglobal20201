@@ -1439,3 +1439,9 @@ Route::get('/landingPage/{user_code}', 'LandingPageController@landingPage');
 
 Route::get('/check_legs/{id}', 'BinaryTreeController@check_legs')->name('check_legs');
 
+Route::post('/add_node', 'BinaryTreeController@add_node')->name('add_node');
+
+Route::get('/getChildren/{id}', 'BinaryTreeController@getChildren')->name('getChildren');
+
+
+

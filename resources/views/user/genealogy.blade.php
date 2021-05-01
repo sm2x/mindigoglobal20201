@@ -1,8 +1,4 @@
 @extends('layouts.app')
-
-
-@section('content')
-
 <link href="{{asset('assets/css/elements/miscellaneous.css')}}" rel="stylesheet" type="text/css" />
       <link href="{{asset('assets/css/elements/breadcrumb.css')}}" rel="stylesheet" type="text/css" />
         
@@ -15,7 +11,41 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
 
-  
+@section('content')
+
+        <style>
+
+
+            
+            .tf-gap-lg{
+            width: 40px;
+            }
+
+            .tf-tree{
+            font-size: 8pt;
+            
+            }
+
+            .tf-tree .card{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+            color: white;
+            }
+
+            .tf-nc:before,
+            .tf-nc:after {
+            /* css here */
+            outline: 2px solid white;
+            }
+
+            li li:before {
+            /* css here */
+
+            outline: 2px solid white;
+            }
+
+        </style>
 
 <?php
 
@@ -26,6 +56,8 @@ try {
    
 
     if ($result[0]->position == 'L') {
+
+     
         # code...
 
         $_11 = $result[0]->user_code??'Empty';
@@ -38,7 +70,7 @@ try {
         $_12_name = $result[1]->users->name??'null';
 
         $_11_color = 'success';
-        $_12_color = 'warning';
+        $_12_color = 'secondary';
 
 
         
@@ -47,6 +79,8 @@ try {
     }
 
     elseif($result[0]->position =='R'){
+
+      
         
         $_11 = $result[1]->user_code??'Empty';
         $_12 = $result[0]->user_code??'Empty';
@@ -68,8 +102,8 @@ try {
     $_11 = "Empty";
     $_12 = "Empty";
 
-    $_11_color = 'warning';
-    $_12_color = 'warning';
+    $_11_color = 'secondary';
+    $_12_color = 'secondary';
 
     $_11_name = 'null';
     $_12_name = 'null';
@@ -82,20 +116,18 @@ try {
 
 ?>
 
-
-
     <div class="layout-px-spacing">
 
        <h3 class="mt-3">Genealogy Tree</h3>
 
 
 
-<div class=" col-md-6 mx-auto">
-    <div class="">
+<div class="card col-md-6 mx-auto">
+    <div class="card-body">
 
         @if(session()->has('node_message'))
             <div class="alert alert-success">
-                {{ session()->get('b_message') }}
+                {{ session()->get('node_message') }}
             </div>
         @endif
 
@@ -106,13 +138,12 @@ try {
         @endif
 
 
-
+   
     </div>
 </div>
 
 
-    
-    <div class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -123,7 +154,7 @@ try {
                 </div>
                 <div class="modal-body">
 
-                    <form method="post" action="">
+                    <form method="post" action="{{route('add_node')}}">
 
                         @csrf
 
@@ -134,7 +165,7 @@ try {
 
                             <div class="form-group text-center">
                                 <label for="">Position</label>
-                                    <select name="user_code" id="legs" class="form-control">
+                                    <select name="position" id="legs" class="form-control">
                                     
                                       
 
@@ -185,14 +216,14 @@ try {
 
 
 <div class="top mt-5">
-      <div class="tf-tree ">
-              <ul>
+      <div class="tf-tree example ">
+              <ul class="">
                 <li>
                   <span 
                   data-toggle="tooltip" data-placement="top" title="{{$parent->users->name??'Empty'}}"
                      class=" bg-{{$parent->status??'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto" >
                   
-                     <span onclick="clickedNode(this.id)" id="user_code">{{$parent->user_code??'Empty'}}</span>
+                     <span onclick="clickedNode(this.id)" id="{{$parent->user_code??'Empty'}}">{{$parent->user_code??'Empty'}}</span>
                 
                   
                   </span>
@@ -204,7 +235,7 @@ try {
 
                         style="" class="border bg-{{$_11!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                       
-                      <span onclick="clickedNode(this.id)" id="user_code">{{$_11}}</span>
+                      <span onclick="clickedNode(this.id)" id="{{$_11}}">{{$_11}}</span>
 
                       <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_11)}}">view</a>  -->
@@ -214,6 +245,7 @@ try {
                         try {
                           //code...
                           $_11node = App\BinaryTree::where('user_id', $_11_id)->first();
+
 
                         $_11children = $_11node->children;
 
@@ -295,7 +327,7 @@ try {
                               style="" class="border bg-{{$_21!='Empty'?'success':'warning'}} card  tf-nc tf-gap-lg shadow text-center mx-auto">
                               
                               
-                              <span onclick="clickedNode(this.id)" id="user_code">{{$_21}}</span>
+                              <span onclick="clickedNode(this.id)" id="{{$_21}}">{{$_21}}</span>
 
                               <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_21)}}">view</a>  -->
@@ -385,7 +417,7 @@ try {
 
                                     style="" class="border  bg-{{$_31!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_31}}</span>
+                                  <span onclick="clickedNode(this.id)" id="{{$_31}}">{{$_31}}</span>
 
                                   <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_31)}}">view</a>  -->
@@ -401,7 +433,7 @@ try {
 
                                     style="" class="border  bg-{{$_32!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_32}}</span>
+                                  <span onclick="clickedNode(this.id)" id="{{$_32}}">{{$_32}}</span>
 
                                   <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_32)}}">view</a>  -->
@@ -420,7 +452,7 @@ try {
                               style="" class="border bg-{{$_22!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                               
                               
-                              <span onclick="clickedNode(this.id)" id="user_code">{{$_22}}</span>
+                              <span onclick="clickedNode(this.id)" id="{{$_22}}">{{$_22}}</span>
 
                               <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_22)}}">view</a>  -->
@@ -504,7 +536,7 @@ try {
 
                                     style="" class="border bg-{{$_33!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_33}}</span>
+                                  <span onclick="clickedNode(this.id)" id="{{$_33}}">{{$_33}}</span>
 
                                   <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_33)}}">view</a>  -->
@@ -517,7 +549,7 @@ try {
 
                                   style="" class="border bg-{{$_34!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_34}}</span>
+                                  <span onclick="clickedNode(this.id)" id="{{$_34}}">{{$_34}}</span>
 
                                   <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_34)}}">view</a>  -->
@@ -537,7 +569,7 @@ try {
                       
                         style="" class="border bg-{{$_12!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                       
-                      <span onclick="clickedNode(this.id)" id="user_code">{{$_12}}</span>
+                      <span onclick="clickedNode(this.id)" id="{{$_12}}">{{$_12}}</span>
 
                       <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_12)}}">view</a>  -->
@@ -624,7 +656,7 @@ try {
                             style="" class="border bg-{{$_23!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                             
                             
-                            <span onclick="clickedNode(this.id)" id="user_code">{{$_23}}</span>
+                            <span onclick="clickedNode(this.id)" id="{{$_23}}">{{$_23}}</span>
 
                             <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_23)}}">view</a>  -->
@@ -1008,6 +1040,8 @@ try {
     
 
         function clickedNode(data) {
+
+          
 
           var msg = document.getElementById(data).textContent;
 
