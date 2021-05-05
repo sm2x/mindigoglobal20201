@@ -33,11 +33,11 @@
                                                     <div class="form-group ">
                                                     
                                                         <div class="custom-control custom-radio custom-control">
-                                                            <input type="radio" id="customRadioInline1" name="gender" value="male" class="custom-control-input">
+                                                            <input type="radio" id="customRadioInline1" v-model="gender" value="male" class="custom-control-input">
                                                             <label class="custom-control-label" for="customRadioInline1">Male</label>
                                                         </div>
                                                         <div class="custom-control custom-radio custom-control">
-                                                            <input type="radio" id="customRadioInline2" name="gender" value="female" class="custom-control-input">
+                                                            <input type="radio" id="customRadioInline2" v-model="gender" value="female" class="custom-control-input">
                                                             <label class="custom-control-label" for="customRadioInline2">Female</label>
                                                         </div>
                                                     </div>
