@@ -127,11 +127,11 @@
                         </div>
                        
                     </div>
-                        <div class="c">
+                        <div class="c text-center">
                         <h6 class="text-center font-weight-bold">Share Links</h6>
                             <a target="_blank" class="btn btn-primary btn-sm btn-bloc" href="https://www.facebook.com/sharer/sharer.php?u=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">facebook</a>
                             <a target="_blank" class="btn btn-info btn-sm btn-bloc" href="https://twitter.com/intent/tweet?url=https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}&text=Join us today">twitter</a>
-                            <a target="_blank" class="btn btn-danger btn-sm btn-bloc" href="https://wa.me/?text=Hello%20from%20Mindigoglobal%20Join%20us%20https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">whatsapp</a>
+                            <a target="_blank" class="btn btn-success btn-sm btn-bloc" href="https://wa.me/?text=Hello%20from%20Mindigoglobal%20Join%20us%20https://app.mindigoglobal.com/affiliate/{{Auth::user()->user_code}}">whatsapp</a>
                         </div>
 
                         <div class="c p-1 mt-3 d-flex justify-content-center">
@@ -139,18 +139,20 @@
                             <a target="_blank" class="btn btn-outline-success btn-sm btn-bloc" href="{{config('app.url')}}landingPage/{{Auth::user()->user_code}}">View Landing Page</a>
                         </div>
 
-                        <div class="c p-1 mt-3 d-flex justify-content-center">
-                            <input type="text" class="form-control" value="{{config('app.url')}}affiliate/{{Auth::user()->user_code}}">
+                        <div class="c p-1 mt-3 text-center">
+                            <input type="text" class="form-control form-control-sm" value="{{config('app.url')}}affiliate/{{Auth::user()->user_code}}">
+                            <br>
+                            <button class="btn btn-primary btn-sm  text-center">copy</button>
                         </div>
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
                 <div class="widget widget-card-four">
                     <div class="widget-content">
                         <div class="w-content">
                             <div class="w-info">
-                                <h3 class="value">NGN {{number_format($balance, 2)}}</h3>
+                                <h3 class="value">NGN <br>{{number_format($balance, 2)}}</h3>
                                 <p class="">Wallet Balance</p>
                             </div>
                             <div class="">
@@ -169,7 +171,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
                 <div class="widget widget-account-invoice-two">
                     <div class="widget-content">
 
@@ -179,8 +181,9 @@
                             <div class="account-box">
                                 <div class="info">
                                     
-                                    <h5>{{$my_order->pack_title}}</h5>
-                                    <p class="inv-balance">User Code</p>
+                                    <h5>{{$my_order->pack_title}}</h5> <br>
+
+                                    <p class="inv-balance">{{Auth::user()->user_code}}</p>
                                 </div>
                                 <div class="acc-action">
                                     <div class="">
