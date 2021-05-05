@@ -12,9 +12,11 @@
                             <div class="col-lg-11 mx-auto">
                                 <div class="row">
                                     <div class="col-xl-2 col-lg-12 col-md-4">
+                                      
                                         <div class="upload mt-4 pr-md-4">
-                                            <input type="file" id="input-file-max-fs" class="dropify" data-default-file="" data-max-file-size="2M" />
-                                            <p class="mt-2"><i class="flaticon-cloud-upload mr-1"></i> Upload Picture</p>
+                                            <label for="">Profile Picture</label>
+                                            <input type="file"  ref="file" @change="onChangeFileUpload()" id="file" class="dropify" data-default-file=""  data-max-file-size="2M" />
+                                            
                                         </div>
                                     </div>
                                     <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
@@ -24,7 +26,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label for="fullName">Full Name</label>
-                                                        <input type="text" class="form-control mb-4" id="fullName" placeholder="Full Name" v-model="name" readonly>
+                                                        <input type="text" class="form-control mb-4" id="fullName" placeholder="Full Name" v-model="this.user_name" readonly>
                                                     </div>
                                                 </div>
 
@@ -59,53 +61,61 @@
 
                          <div class="row">
                             <div class="col-md-11 mx-auto">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="country">Country</label>
-                                              <Select2 class="form-control" v-model="myValue" :options="myOptions" :settings="{ settingOption: value, settingOption: value }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="country">Country</label>
+                                                <Select2 class="form-control" v-model="myValue" :options="myOptions" :settings="{ settingOption: value, settingOption: value }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
 
+                                            </div>
                                         </div>
+                                
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="location">Address</label>
+                                                <input type="text" class="form-control mb-4" id="location" v-mode="address" placeholder="Enter address">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="phone">Phone</label>
+                                                <input type="text" class="form-control mb-4" v-model="phone" placeholder="Write your phone number here" value="+1 (530) 555-12121">
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="address">Address</label>
-                                            <input type="text" class="form-control mb-4" id="address" placeholder="Address" value="New York" >
+
+                                    <hr>
+
+                                    <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="email">Next of Kin Name:</label>
+                                                    <input type="text" class="form-control mb-4" v-model="nok_fullname" placeholder="Next of kin name" value="">
+                                                </div>
+                                            </div>                                    
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="website1">Next of Kin Address</label>
+                                                    <input type="text" class="form-control mb-4" v-model="nok_address" placeholder="Next of Kin address">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="website1">Next of Kin Relationship</label>
+                                                    <input type="text" class="form-control mb-4" v-model="nok_relationship" placeholder="Next of kin relationship">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="website1">Next Phone number</label>
+                                                    <input type="text" class="form-control mb-4" v-model="nok_phone" placeholder="Next of kin phone number">
+                                                </div>
+                                            </div>
+                                            
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="location">Location</label>
-                                            <input type="text" class="form-control mb-4" id="location" placeholder="Location">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" class="form-control mb-4" id="phone" placeholder="Write your phone number here" value="+1 (530) 555-12121">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="email">Next of Kin Name:</label>
-                                            <input type="text" class="form-control mb-4" id="email" placeholder="Next of kin name" value="">
-                                        </div>
-                                    </div>                                    
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="website1">Next of Kin Address</label>
-                                            <input type="text" class="form-control mb-4" id="website1" placeholder="Next of Kin address">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="website1">Next of Kin Relationship</label>
-                                            <input type="text" class="form-control mb-4" id="website1" placeholder="Next of kin relationship">
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <button @click="updateProfile()" class="btn btn-primary float-right">update</button>
+                                <button @click="updateProfile()" class="btn btn-primary float-right">Update</button>
                             </div>
                         </div>
                     </div>
@@ -124,7 +134,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="country">Bank Name</label>
-                                            <select class="form-control" id="country">
+                                            <select v-model="bank_name" class="form-control" id="country">
                                                <option value="access">Access Bank</option>
                                                 <option value="citibank">Citibank</option>
                                                 <option value="diamond">Diamond Bank</option>
@@ -152,25 +162,25 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="address">Account Name</label>
-                                            <input type="text" class="form-control mb-4" id="address" placeholder="Supply Account Name" value="" >
+                                            <input type="text" class="form-control mb-4" v-model="account_name" placeholder="Supply Account Name" value="" >
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="website1">Account Number</label>
-                                            <input type="text" class="form-control mb-4" id="website1" placeholder="Supply Account Number">
+                                            <input type="text" class="form-control mb-4" v-model="account_number" placeholder="Supply Account Number">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="website1">Sort Code:</label>
-                                            <input type="text" class="form-control mb-4" id="website1" placeholder="Sort code of bank">
+                                            <input type="text" class="form-control mb-4" v-model="sort_code" placeholder="Sort code of bank">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary float-right">update</button>
+                                <button @click="updateProfile()" class="btn btn-primary float-right">Update Profile</button>
                             </div>
                         </div>
                     </div>
@@ -245,6 +255,9 @@
 
 import Select2 from 'v-select2-component';
 
+import VueToastify from "vue-toastify";
+Vue.use(VueToastify);
+
 Vue.component('Select2', Select2);
 
 
@@ -262,33 +275,28 @@ Vue.component('Select2', Select2);
                 loading: false,
                 msg: 'Loading...',
 
-                name: '',
+                file: '',
                 bio: '',   
                 gender: '',
                 nationality: '',
-                // state: '',
-                // lga: '',
-                // marital_status: '',
-                // home_address: '',
-                // phone1: '',
-                // nok_fullname: '',
-                // nok_gender: '',
-                // nok_phone: '',
-                // nok_relationship: '',
-                // nok_address: '',
-                // recipient_code: '',
-                // Auth_Code: '',
-                // bank_code: '',
-                // account_name: '',
-                // account_number: '',
-                // account_type: '',
+                adddress: '',
+                phone:'',
+                nok_fullname: '',
+                nok_address: '',
+                nok_relationship: '',
+                nok_phone: '',
 
-                user_profile: ''
-
+                recipient_code: '',
+                Auth_Code: '',
+                bank_code: '',
+                account_name: '',
+                account_number: '',
+                sort_code: '',
+         
             }
         },
 
-          props: ['user_id'],
+          props: ['user_id', 'user_name'],
 
         methods: {
 
@@ -303,18 +311,34 @@ Vue.component('Select2', Select2);
 
      
 
-                axios.post('/getUserInfo',{
-                        user_id: this.user_id
-                })
+                axios.post('/getUserInfo')
                .then((response)=>(
 
-                        this.name = response.data.name,
-                        this.bio = response.data.bio,
-                        this.gender = response.data.gender,
-                        this.nationality = response.data.nationality,
+                    this.bio = response.data.bio,
+                    // this.gender = response.data.gender,
+                    this.myValue = response.data.nationality,
+                    // this.adddress = response.data.adddress,
+                    // this.phone = response.data.phone,
+                    // this.nok_fullname = response.data.nok_fullname,
+                    // this.nok_address = response.data.nok_address,
+                    // this.nok_relationship = response.data.nok_relationship,
+                    // this.nok_phone = response.data.nok_phone,
+                    // this.recipient_code = response.data.recipient_code,
+                    // this.Auth_Code = response.data.Auth_Code,
+                    // this.bank_code = response.data.bank_code,
+                    // this.account_name = response.data.account_name,
+                    // this.account_number = response.data.account_number,
+                    // this.sort_code = response.data.sort_code,
+
+                        console.log(response)
+
+                        // this.name = response.data.name,
+                        // this.bio = response.data.bio,
+                        // this.gender = response.data.gender,
+                        // this.nationality = response.data.nationality,
 
                     // this.user_profile = response.data,
-                    console.log(response)
+               
                     //  this.results = response.data
                 )).catch(function (error) {
                         console.log(error);
@@ -361,38 +385,45 @@ Vue.component('Select2', Select2);
            
            updateProfile(){
 
+            let formData = new FormData();
+            formData.append('file', this.file);
 
-                axios.post('/updateProfile',{
-                        name: this.name,
-                        bio: this.bio,
-                        gender: this.gender,
-                        nationality: this.nationality,
-                        // state
-                        // lga
-                        // marital_status
-                        // home_address
-                        // phone1
-                        // nok_fullname
-                        // nok_gender
-                        // nok_phone
-                        // nok_relationship
-                        // nok_address
-                        // recipient_code
-                        // Auth_Code
-                        // bank_code
-                        // account_name
-                        // account_number
-                        // account_type
-                })
+            formData.append('bio', this.bio);
+            formData.append('gender', this.gender);
+            formData.append('nationality', this.myValue);
+            formData.append('address', this.address);
+            formData.append('phone', this.phone);
+            formData.append('nok_fullname', this.nok_fullname);
+            formData.append('nok_address', this.nok_address);
+            formData.append('nok_relationship', this.nok_relationship);
+            formData.append('nok_phone', this.nok_phone);
+            formData.append('recipient_code', this.recipient_code);
+            formData.append('Auth_Code', this.Auth_Code);
+            formData.append('bank_code', this.bank_code);
+            formData.append('account_name', this.account_name);
+            formData.append('account_number', this.account_number);
+            formData.append('sort_code', this.sort_code);
+
+                axios.post('/updateProfile',
+                        formData,
+                        {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
+                        })
                .then((response)=>(
 
-                    this.states = response.data,
-                    console.log(this.states)
+                    // this.states = response.data,
+                    console.log(response)
                     //  this.results = response.data
                 )).catch(function (error) {
                         console.log(error);
                     });
             },
+
+            onChangeFileUpload(){
+                this.file = this.$refs.file.files[0];
+            }
 
 
         },

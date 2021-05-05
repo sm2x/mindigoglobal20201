@@ -190,7 +190,7 @@ try {
 
                                         @empty
 
-                                        <option value="">NO Refferals Yet</option>
+                                        <option value="">NO Referals Yet</option>
 
                                         @endforelse
 

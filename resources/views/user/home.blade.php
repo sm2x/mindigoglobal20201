@@ -103,7 +103,7 @@
             <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="widget widget-one">
                     <div class="widget-heading">
-                        <h6 class="">Weekly Earnnigs Report</h6>
+                        <h6 class="">Weekly Earnigs Report</h6>
                     </div>
                     <div class="w-chart">
                         <div class="w-chart-section">

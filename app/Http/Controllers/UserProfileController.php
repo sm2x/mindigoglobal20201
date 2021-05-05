@@ -17,22 +17,21 @@ class UserProfileController extends Controller
 
      public function getUserInfo(Request $request)
      {
+
+        $user_id = Auth::user()->id;
         
-     try {
-         //code...
-         $user_profile = User::where('id', $request->user_id)->first();
+        try {
+            //code...
+            $user_profile = UserProfile::where('user_id', $user_id)->first();
 
-         return $user_profile;
-         
-     } catch (\Throwable $th) {
-         //throw $th;
+            return $user_profile;
+            
+        } catch (\Throwable $th) {
+            //throw $th;
 
-         return $th;
-     }
-        
-
-
-        return $request->all();
+            return $th;
+        }
+      
      }
 
 
@@ -40,41 +39,46 @@ class UserProfileController extends Controller
     public function updateProfile(Request $request)
     {
         //
+        try {
+            
+            $user_id = Auth::user()->id;
 
-       
+            $image = $request->file('file');
 
+            $newname = rand(233,9000).'.'.$image->getClientOriginalExtension();
+    
+            $image->move(public_path('avatars'), $newname);
+    
+            // return  $request->all();
 
-        $user_id = Auth::user()->id;
+            $profile = UserProfile::updateOrCreate([
+                    'user_id' => $user_id
+                    ],[
+                    'bio' => $request->bio,
+                    'gender' => $request->gender,
+                    'nationality' => $request->nationality,
+                    'address' => $request->address,
+                    'phone' => $request->phone,
+                    'nok_fullname' => $request->nok_fullname,
+                    'nok_address' => $request->nok_address,
+                    'nok_relationship' => $request->nok_relationship,
+                    'nok_phone' => $request->nok_phone,
+                    'recipient_code' => $request->recipient_code,
+                    'Auth_Code' => $request->Auth_Code,
+                    'bank_code' => $request->bank_code,
+                    'account_name' => $request->account_name,
+                    'account_number' => $request->account_number,
+                    'sort_code' => $request->sort_code
+    
+            ]);
+    
+            return $profile;
+            
+        } catch (\Throwable $th) {
+            //throw $th;
 
-        $profile = UserProfile::updateOrCreate([
-                'user_id' => $user_id
-             ],[
-            'user_id' => $user_id,
-            // 'name' => $request->name,
-            // 'bio' => $request->bio,
-            'gender' => $request->gender,
-            'nationality' => $request->nationality
-            // 'state' => $request->state,
-            // 'lga' => $request->lga,
-            // 'marital_status' => $request->marital_status,
-            // 'home_address' => $request->home_address,
-            // 'phone1' => $request->phone1,
-            // 'nok_fullname' => $request->nok_fullname,
-            // 'nok_gender' => $request->nok_gender,
-            // 'nok_phone' => $request->nok_phone,
-            // 'nok_relationship' => $request->nok_relationship,
-            // 'nok_address' => $request->nok_address,
-            // 'recipient_code' => $request->recipient_code,
-            // 'Auth_Code' => $request->Auth_Code,
-            // 'bank_name' => $request->bank_name,
-            // 'bank_code' => $request->bank_code,
-            // 'account_name' => $request->account_name,
-            // 'account_number' => $request->account_number,
-            // 'account_type' => $request->account_type
-        ]);
-
-        return $profile;
-        
+            return $th;
+        }
     
     }
 

@@ -15,7 +15,7 @@
 
 
 
-                            <example-component :user_id='{{Auth::user()->id}}'></example-component>
+                            <example-component  user_name="{{Auth::user()->name}}"  user_id='{{Auth::user()->id}}'></example-component>
 
 
                       
