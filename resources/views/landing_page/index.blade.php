@@ -40,7 +40,7 @@
 		
 			<div class="banner-parallax " data-banner-height="650">
 				<img src="images/files/parallax-bg/img-66.jpg" alt="">
-				<div class="overlay-colored color-bg-dark opacity-40"></div><!-- .overlay-colored end -->
+				<div class="overlay-colored color-bg-dark opacity-20"></div><!-- .overlay-colored end -->
 				<div class="slide-content">
 					<div style="min-height: 690px;" class="container ">
 						<div class="row">
@@ -48,7 +48,7 @@
 
 								<div class="banner-center-box">
 									<div class="img-featured-1 img-bg">
-										<img src="images/files/img-featured-1/img-2.jpg" alt="">
+										<img src="{{config('app.url')}}avatars/{{$user_data->avatar??avatar.png}}" alt="">
 									</div><!-- .img-featured-1 end -->								
 								</div><!-- .banner-center-box end -->
 
@@ -418,12 +418,12 @@
 		
 							<h1>
 								
-								Exprience freedom and timeless wisdom...
+								Experience freedom and timeless wisdom...
 							</h1>
 							<p class="description">
 							
 							</p>
-							<a class="btn x-large colorful hover-dark rounded mt-20 move-top" href="#">Get Started</a>
+							<a class="btn x-large colorful hover-dark rounded mt-20 move-top" href="{{config('app.url')}}/affiliate/{{$user_data->user_code}}">Get Started</a>
 		
 						</div><!-- .col-md-6 end -->
 					</div><!-- .row end -->
