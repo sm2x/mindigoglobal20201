@@ -42,15 +42,15 @@
                                                         <div class="carousel-item">
                                                         <h1>2/3</h1>
                                                         <h1>Purchase Mindigo Pack</h1>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi libero repudiandae suscr nemo eos.</p>
-                                                            <img class="d-block w-100" src="{{asset('storage/img/600x300.jp')}}" alt="Second slide">
+                                                      
+                                                            <img class="d-block w-100" src="{{config('app.url')}}welcome_screen/purchase.png" alt="Second slide">
                                                             <a href="{{route('user.mindigo_mart')}}" class="btn btn-primary shadow">Get Started</a>
                                                         </div>
                                                         <div class="carousel-item">
                                                         <h1>3/3</h1>
                                                         <h1>Begin your journey</h1>
                                                         <p>Promote your links. Share on Facebook, Instagram and Twitter</p>
-                                                            <img class="d-block w-100" src="{{asset('storage/img/600x300.jp')}}" alt="Third slide">
+                                                            <img class="d-block w-100" src="{{config('app.url')}}welcome_screen/promote.png" alt="Third slide">
                                                         </div>
                                                     </div>
                                                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

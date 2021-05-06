@@ -1441,7 +1441,7 @@ Route::get('/receive', 'UserProfileController@getUserInfo');
 Route::get('/landingPage/{user_code}', 'LandingPageController@landingPage');
 
 
-Route::get('/record_landing_page_leads', 'LandingPageLeedController@record_landing_page_leads');
+Route::get('/record_landing_page_leads', 'LandingPageLeedController@record_landing_page_leads')->name('record_landing_page_leads');
 
 
 Route::get('/check_legs/{id}', 'BinaryTreeController@check_legs')->name('check_legs');
