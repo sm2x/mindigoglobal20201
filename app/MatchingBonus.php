@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class MatchingBonus extends Model
 {
     //
+
+    protected $guarded = [];
 }

@@ -73,6 +73,8 @@ class UserPageController extends Controller
 
         $direct_referrals = DirectReferral::with('referrees')->where('referrer_id', Auth::user()->id)->get();
 
+        $user_wallet = UserWallet::where('user_id', Auth::user()->id)->get();
+
         $weekNo = Carbon::now()->weekOfYear;
 
 
@@ -84,7 +86,8 @@ class UserPageController extends Controller
         ];
 
         return view('user.my_account',[
-            'direct_referrals' => $direct_referrals
+            'direct_referrals' => $direct_referrals,
+            'user_wallet' => $user_wallet
         ])->with($data);
     }
 

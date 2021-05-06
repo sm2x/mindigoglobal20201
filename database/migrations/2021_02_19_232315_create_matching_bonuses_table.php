@@ -19,7 +19,7 @@ class CreateMatchingBonusesTable extends Migration
             $table->string('total_left_points')->default('0');
             $table->string('total_right_points')->default('0');
             $table->string('aggregate')->default('0');
-            $table->string('points_left')->default('0');
+            $table->string('new_bonus')->default('0');
             $table->string('total_bonus')->default('0');
 
             $table->foreign('owners_id')->references('id')->on('users');

@@ -199,7 +199,7 @@
 
                                 <h4 class="p-5 text-white">You have no package yet</h4>
 
-                                <a class="btn btn-success" href="">PURCHASE NOW.</a>
+                                <a class="btn btn-success" href="{{route('user.mindigo_mart')}}">PURCHASE NOW.</a>
 
 
                             @endif
@@ -242,7 +242,7 @@
                                 <div class="w-browser-details">
                                     
                                     <div class="w-browser-info">
-                                        <h6>Mindigo Partner</h6>
+                                        <h6>CONSULTANT</h6>
                                         <p class="browser-count">25%</p>
                                     </div>
 
@@ -263,7 +263,7 @@
                                 <div class="w-browser-details">
                                     
                                     <div class="w-browser-info">
-                                        <h6>Mindigo Master</h6>
+                                        <h6>SAPPHIRE</h6>
                                         <p class="browser-count">15%</p>
                                     </div>
 
@@ -285,7 +285,7 @@
                                 <div class="w-browser-details">
                                     
                                     <div class="w-browser-info">
-                                        <h6>Mindigo Titan</h6>
+                                        <h6>RUBY</h6>
                                         <p class="browser-count">15%</p>
                                     </div>
 

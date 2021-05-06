@@ -16,9 +16,9 @@
                 <div class="widget widget-card-four">
                     <div class="widget-content">
                         <div class="w-content">
-                            <div class="w-info">
-                                <h3 class="value">$ 0.00</h3>
-                                <p class="">Direct Referral Bonus</p>
+                        <div class="w-info">
+                                <h3 class="value">NGN <br> {{number_format($user_wallet->where('description', 'Referral Bonus')->sum('amount'), 2)}}</h3>
+                                <p class="">Matching Bonus</p>
                             </div>
                             <div class="">
                                 <div class="w-icon">
@@ -41,7 +41,7 @@
                     <div class="widget-content">
                         <div class="w-content">
                             <div class="w-info">
-                                <h3 class="value">$ 0.00</h3>
+                                <h3 class="value">NGN <br> {{number_format($user_wallet->where('description', 'Matching Bonus')->sum('amount'), 2)}}</h3>
                                 <p class="">Matching Bonus</p>
                             </div>
                             <div class="">
@@ -62,7 +62,7 @@
 
         </div>
 
-        <div class="col-md-10 mx-auto">
+        <div class="col-md-12 mx-auto">
                    
                    <div class="row ">
                        <div class="col-lg-12">
