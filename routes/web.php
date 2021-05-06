@@ -1429,6 +1429,10 @@ Route::post('updateProfile', 'UserProfileController@updateProfile');
 
 Route::post('/getUserInfo', 'UserProfileController@getUserInfo');
 
+Route::post('/upload_avatar', 'UserProfileController@upload_avatar');
+
+
+
 
 
 Route::get('/receive', 'UserProfileController@getUserInfo');
@@ -1442,6 +1446,9 @@ Route::get('/check_legs/{id}', 'BinaryTreeController@check_legs')->name('check_l
 Route::post('/add_node', 'BinaryTreeController@add_node')->name('add_node');
 
 Route::get('/getChildren/{id}', 'BinaryTreeController@getChildren')->name('getChildren');
+
+
+
 
 
 

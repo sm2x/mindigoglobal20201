@@ -73,13 +73,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="location">Address</label>
-                                                <input type="text" class="form-control mb-4" id="location" v-mode="address" placeholder="Enter address">
+                                                <input type="text" class="form-control mb-4" id="location" v-model="address" placeholder="Enter address">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="phone">Phone</label>
-                                                <input type="text" class="form-control mb-4" v-model="phone" placeholder="Write your phone number here" value="+1 (530) 555-12121">
+                                                <input type="text" class="form-control mb-4" v-model="phone" placeholder="Write your phone number here" >
                                             </div>
                                         </div>
 
@@ -91,7 +91,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="email">Next of Kin Name:</label>
-                                                    <input type="text" class="form-control mb-4" v-model="nok_fullname" placeholder="Next of kin name" value="">
+                                                    <input type="text" class="form-control mb-4" v-model="nok_fullname" placeholder="Next of kin name" >
                                                 </div>
                                             </div>                                    
                                             <div class="col-md-6">
@@ -125,7 +125,7 @@
          
 
             <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-                <form id="contact" class="section contact">
+             
                     <div class="info">
                         <h5 class="">Bank Details</h5>
                         <div class="row">
@@ -135,6 +135,7 @@
                                         <div class="form-group">
                                             <label for="country">Bank Name</label>
                                             <select v-model="bank_name" class="form-control" id="country">
+                                           
                                                <option value="access">Access Bank</option>
                                                 <option value="citibank">Citibank</option>
                                                 <option value="diamond">Diamond Bank</option>
@@ -184,7 +185,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                
             </div>
 
            <!-- 
@@ -279,7 +280,7 @@ Vue.component('Select2', Select2);
                 bio: '',   
                 gender: '',
                 nationality: '',
-                adddress: '',
+                address: '',
                 phone:'',
                 nok_fullname: '',
                 nok_address: '',
@@ -317,17 +318,18 @@ Vue.component('Select2', Select2);
                     this.bio = response.data.bio,
                     // this.gender = response.data.gender,
                     this.myValue = response.data.nationality,
-                    // this.adddress = response.data.adddress,
-                    // this.phone = response.data.phone,
-                    // this.nok_fullname = response.data.nok_fullname,
-                    // this.nok_address = response.data.nok_address,
-                    // this.nok_relationship = response.data.nok_relationship,
-                    // this.nok_phone = response.data.nok_phone,
+                    this.address = response.data.address,
+                    this.phone = response.data.phone,
+                    this.nok_fullname = response.data.nok_fullname,
+                    this.nok_address = response.data.nok_address,
+                    this.nok_relationship = response.data.nok_relationship,
+                    this.nok_phone = response.data.nok_phone,
                     // this.recipient_code = response.data.recipient_code,
                     // this.Auth_Code = response.data.Auth_Code,
                     // this.bank_code = response.data.bank_code,
-                    // this.account_name = response.data.account_name,
-                    // this.account_number = response.data.account_number,
+                    this.bank_name = response.data.bank_name,
+                    this.account_name = response.data.account_name,
+                    this.account_number = response.data.account_number,
                     // this.sort_code = response.data.sort_code,
 
                         console.log(response)
@@ -382,29 +384,51 @@ Vue.component('Select2', Select2);
 
             },
 
+            upload_avatar(){
+
+    
+
+            },
+
            
            updateProfile(){
 
+                axios.post('/updateProfile',{
+                    bio:  this.bio,
+                    gender:  this.gender,
+                    nationality:  this.myValue,
+                    address:  this.address,
+                    phone:  this.phone,
+                    nok_fullname:  this.nok_fullname,
+                    nok_address:  this.nok_address,
+                    nok_relationship:  this.nok_relationship,
+                    nok_phone:  this.nok_phone,
+                    recipient_code:  this.recipient_code,
+                    Auth_Code:  this.Auth_Code,
+                    bank_code:  this.bank_code,
+                    account_name:  this.account_name,
+                    account_number:  this.account_number,
+                    sort_code:  this.sort_code
+
+                }).then((response)=>(
+
+                    // this.states = response.data,
+                    console.log(response)
+                    //  this.results = response.data
+                )).catch(function (error) {
+                        console.log(error);
+                    });
+            },
+
+            onChangeFileUpload(){
+
+            this.file = this.$refs.file.files[0];
+
             let formData = new FormData();
+
             formData.append('file', this.file);
 
-            formData.append('bio', this.bio);
-            formData.append('gender', this.gender);
-            formData.append('nationality', this.myValue);
-            formData.append('address', this.address);
-            formData.append('phone', this.phone);
-            formData.append('nok_fullname', this.nok_fullname);
-            formData.append('nok_address', this.nok_address);
-            formData.append('nok_relationship', this.nok_relationship);
-            formData.append('nok_phone', this.nok_phone);
-            formData.append('recipient_code', this.recipient_code);
-            formData.append('Auth_Code', this.Auth_Code);
-            formData.append('bank_code', this.bank_code);
-            formData.append('account_name', this.account_name);
-            formData.append('account_number', this.account_number);
-            formData.append('sort_code', this.sort_code);
-
-                axios.post('/updateProfile',
+                 axios.post('/upload_avatar',
                         formData,
                         {
                             headers: {
@@ -419,10 +443,6 @@ Vue.component('Select2', Select2);
                 )).catch(function (error) {
                         console.log(error);
                     });
-            },
-
-            onChangeFileUpload(){
-                this.file = this.$refs.file.files[0];
             }
 
 

@@ -34,6 +34,23 @@ class UserProfileController extends Controller
       
      }
 
+     public function upload_avatar(Request $request)
+     {
+        $user_id = Auth::user()->id;
+
+        $image = $request->file('file');
+
+        $newname = rand(233,9000).'.'.$image->getClientOriginalExtension();
+
+        $image->move(public_path('avatars'), $newname);
+
+        
+        return $newname;
+         
+        
+
+     }
+
 
 
     public function updateProfile(Request $request)
@@ -43,11 +60,7 @@ class UserProfileController extends Controller
             
             $user_id = Auth::user()->id;
 
-            $image = $request->file('file');
-
-            $newname = rand(233,9000).'.'.$image->getClientOriginalExtension();
-    
-            $image->move(public_path('avatars'), $newname);
+  
     
             // return  $request->all();
 
