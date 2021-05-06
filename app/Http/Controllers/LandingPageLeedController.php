@@ -33,9 +33,12 @@ class LandingPageLeedController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function record_landing_page_leads(Request $request)
     {
         //
+
+
+        
     }
 
     /**

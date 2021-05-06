@@ -74,26 +74,28 @@
 											<div class="cs-notifications">
 												<div class="cs-notifications-content"></div>
 											</div><!-- .cs-notifications end -->
-											<form method="post" acttion="" class="redirected">
+											<form method="post" acttion="{{route('record_landing_page_leads')}}" class="redirected">
 
 											@csrf
 												<div class="form-group">
 													<!-- <i class="fas fa-envelope field-icon"></i> -->
-													<input type="email" name="esEmail" placeholder="Full name" id="esEmail"
+													<input type="email" name="full_name" placeholder="Full name" id="esEmail"
 														class="form-control">
 												</div><!-- .form-group end -->
 
 												<div class="form-group">
 													<!-- <i class="fas fa-envelope field-icon"></i> -->
-													<input type="email" name="esEmail" placeholder="Email Address" id="esEmail"
+													<input type="email" name="email" placeholder="Email Address" id="esEmail"
 														class="form-control">
 												</div><!-- .form-group end -->
 
 												<div class="form-group">
 													<!-- <i class="fas fa-envelope field-icon"></i> -->
-													<input type="email" name="esEmail" placeholder="Phone" id="esEmail"
+													<input type="email" name="phone" placeholder="Phone" id="esEmail"
 														class="form-control">
 												</div><!-- .form-group end -->
+
+												<input type="hidden" name="referrer_code" value="{{$user_data->user_code}}">
 												
 												<div class="form-group">
 													<input style="background-color: #987C1E;" type="submit" class="form-control " value="Get Started">

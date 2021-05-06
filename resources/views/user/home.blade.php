@@ -35,8 +35,8 @@
                                                         <div class="carousel-item active">
                                                         <h1>1/3</h1>
                                                             <h1>Update Profile</h1>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi libero repudiandae suscr nemo eos.</p>
-                                                            <img class="d-block w-100" src="{{asset('storage/img/600x300.jp')}}" alt="First slide">
+                                                           
+                                                            <img class="d-block w-100" src="{{config('app.url')}}welcome_screen/update_profile.png" alt="First slide">
                                                             <a href="{{route('user.my_profile')}}" class="btn btn-primary shadow">Get Started</a>
                                                         </div>
                                                         <div class="carousel-item">
