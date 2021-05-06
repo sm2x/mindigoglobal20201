@@ -48,7 +48,7 @@
 
 								<div class="banner-center-box">
 									<div class="img-featured-1 img-bg">
-										<img src="images/files/img-featured-1/img-1.jpg" alt="">
+										<img src="images/files/img-featured-1/img-2.jpg" alt="">
 									</div><!-- .img-featured-1 end -->								
 								</div><!-- .banner-center-box end -->
 
