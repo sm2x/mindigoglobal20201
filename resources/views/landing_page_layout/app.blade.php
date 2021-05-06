@@ -58,7 +58,7 @@
 		
 								<div class="fb-row">
 									<div class="copyrights-message">
-										<span>Copyright © 2020</span> <a href="javascript:;" target="_blank">MinidigoGlobal.</a> <span>All Rights Reserved.</span>
+										<span>Copyright © 2021</span> <a href="javascript:;" target="_blank">mindigo.co.uk.</a> <span>All Rights Reserved.</span>
 									</div><!-- .copyrights-message end -->
 									<ul class="social-icons x4 grey-bg hover-colorful-bg animated rounded">
 										<li><a class="si-twitter" href="#"><i class="fa fa-twitter"></i><i class="fa fa-twitter"></i></a></li>
