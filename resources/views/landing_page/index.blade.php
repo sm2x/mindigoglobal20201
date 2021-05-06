@@ -38,11 +38,11 @@
 		============================================= -->
 		<section id="banner">
 		
-			<div class="banner-parallax" data-banner-height="650">
+			<div class="banner-parallax " data-banner-height="650">
 				<img src="images/files/parallax-bg/img-66.jpg" alt="">
 				<div class="overlay-colored color-bg-dark opacity-40"></div><!-- .overlay-colored end -->
 				<div class="slide-content">
-					<div class="container">
+					<div style="height: 690px;" class="container ">
 						<div class="row">
 							<div class="col-md-6 col-md-push-6">
 
@@ -55,7 +55,7 @@
 							</div><!-- .col-md-6 -->
 							<div class="col-md-6 col-md-pull-6">
 							
-								<div class="banner-center-box text-white">
+								<div class="pt-0 banner-center-box text-white">
 									<h1>
 										<span class="heading-300">Hi, I am</span>
 										<br>
