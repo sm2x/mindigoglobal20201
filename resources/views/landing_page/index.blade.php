@@ -39,7 +39,7 @@
 		<section id="banner">
 		
 			<div class="banner-parallax" data-banner-height="650">
-				<img src="images/files/parallax-bg/img-6.jpg" alt="">
+				<img src="images/files/parallax-bg/img-66.jpg" alt="">
 				<div class="overlay-colored color-bg-dark opacity-40"></div><!-- .overlay-colored end -->
 				<div class="slide-content">
 					<div class="container">
