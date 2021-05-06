@@ -140,6 +140,87 @@ class UserPageController extends Controller
             $result = null;
         }
 
+
+
+     
+
+        $node_children = $parent->children;
+
+        if ($node_children[0]->position == 'L') {
+            # code...
+            // $total_left_points 
+
+            $left_node = $node_children[0]->id;
+
+            $left_group = BinaryTree::descendantsAndSelf($node_children[0]);
+
+            // echo 'first left=';
+
+            $left_group_ids = $left_group->pluck('user_id');
+
+            $left_groups = DirectReferral::with('referrees')->whereIn('referree_id', $left_group_ids )->get();
+
+ 
+        }
+
+        if ($node_children[0]->position == 'R') {
+
+          
+            # code...
+            // $total_left_points 
+
+            $right_node = $node_children[0]->id;
+
+            $right_group = BinaryTree::descendantsAndSelf($node_children[0]);
+
+            // echo 'first left=';
+
+            $right_group_ids = $right_group->pluck('user_id');
+
+            $right_groups = DirectReferral::with('referrees')->whereIn('referree_id', $right_group_ids )->get();
+
+ 
+        }
+
+        if ($node_children[1]->position == 'L') {
+            # code...
+            // $total_left_points 
+
+            $left_node = $node_children[1]->id;
+
+            $left_group = BinaryTree::descendantsAndSelf($node_children[1]);
+
+            // echo 'first left=';
+
+            $left_group_ids = $left_group->pluck('user_id');
+
+            $left_groups = DirectReferral::with('referrees')->whereIn('referree_id', $left_group_ids )->get();
+
+ 
+        }
+
+        if ($node_children[1]->position == 'R') {
+
+          
+            # code...
+            // $total_left_points 
+
+            $right_node = $node_children[1]->id;
+
+            $right_group = BinaryTree::descendantsAndSelf($node_children[1]);
+
+            // echo 'first left=';
+
+            $right_group_ids = $right_group->pluck('user_id');
+
+            $right_groups = DirectReferral::with('referrees')->whereIn('referree_id', $right_group_ids )->get();
+
+ 
+        }
+
+       
+
+      
     
         
     
@@ -162,7 +243,10 @@ class UserPageController extends Controller
         return view('user.genealogy',[
             'parent' => $parent,
             'direct_referrals' => $direct_referrals,
-            'result' => $result
+            'result' => $result,
+            'right_groups' => $right_groups,
+            'left_groups' => $left_groups
+
         ])->with($data);
     }
 
@@ -172,6 +256,8 @@ class UserPageController extends Controller
 
         $parent = BinaryTree::where('user_code', $code)->first();
 
+        $parent2 = BinaryTree::where('user_id', $user_id)->first();
+
         $my_code_n = Auth::user()->user_code;
 
         $all_nodes = BinaryTree::pluck('user_id');
@@ -180,6 +266,80 @@ class UserPageController extends Controller
         $direct_referrals = DirectReferral::with('referrees')->where('referrer_id', Auth::user()->id)->whereNotIn('referree_id',$all_nodes)->where('referree_points','!=', null)->get();
 
         // dd($parent);
+
+
+        $node_children = $parent2->children;
+
+        if ($node_children[0]->position == 'L') {
+            # code...
+            // $total_left_points 
+
+            $left_node = $node_children[0]->id;
+
+            $left_group = BinaryTree::descendantsAndSelf($node_children[0]);
+
+            // echo 'first left=';
+
+            $left_group_ids = $left_group->pluck('user_id');
+
+            $left_groups = DirectReferral::whereIn('referree_id', $left_group_ids )->get();
+
+ 
+        }
+
+        if ($node_children[0]->position == 'R') {
+            # code...
+            // $total_left_points 
+
+            $right_node = $node_children[0]->id;
+
+            $right_group = BinaryTree::descendantsAndSelf($node_children[0]);
+
+            // echo 'first left=';
+
+            $right_group_ids = $left_group->pluck('user_id');
+
+            $right_groups = DirectReferral::whereIn('referree_id', $right_group_ids )->get();
+
+ 
+        }
+
+        if ($node_children[1]->position == 'L') {
+            # code...
+            // $total_left_points 
+
+            $left_node = $node_children[1]->id;
+
+            $left_group = BinaryTree::descendantsAndSelf($node_children[1]);
+
+            // echo 'first left=';
+
+            $left_group_ids = $left_group->pluck('user_id');
+
+            $left_groups = DirectReferral::whereIn('referree_id', $left_group_ids )->get();
+
+ 
+        }
+
+        if ($node_children[1]->position == 'R') {
+            # code...
+            // $total_left_points 
+
+            $right_node = $node_children[1]->id;
+
+            $right_group = BinaryTree::descendantsAndSelf($node_children[1]);
+
+            // echo 'first left=';
+
+            $right_group_ids = $left_group->pluck('user_id');
+
+            $right_groups = DirectReferral::whereIn('referree_id', $right_group_ids )->get();
+
+ 
+        }
+    
+        
+    
         
         $data = [
             'category_name' => 'dashboard',
@@ -190,7 +350,9 @@ class UserPageController extends Controller
 
         return view('user.genealogy2',[
             'parent' => $parent,
-            'direct_referrals' => $direct_referrals
+            'direct_referrals' => $direct_referrals,
+            'right_groups' => $right_groups,
+            'left_groups' => $left_groups
         ])->with($data);
     }
 

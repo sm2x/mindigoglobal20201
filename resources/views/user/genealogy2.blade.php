@@ -88,6 +88,28 @@ try {
 
        <h3 class="mt-3">Genealogy Tree</h3>
 
+       <div class="card col-md-6 mx-auto">
+    <div class="card-body text-center">
+
+    <a href="{{ url()->previous()}}" class="btn btn-primary">Go Back</a>
+
+        <!-- @if(session()->has('node_message'))
+            <div class="alert alert-success">
+                {{ session()->get('node_message') }}
+            </div>
+        @endif
+
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+            <p class="alert alert-warning">{{ $error }}</p>
+            @endforeach
+        @endif -->
+
+
+   
+    </div>
+</div>
+
 
 
 <!-- <div class="card col-md-6 mx-auto">
@@ -170,7 +192,7 @@ try {
                             </div> 
 
                             <div class="form-group text-center">
-                                <button class="btn btn-outline-danger  btn-block">View Node</button>
+                            <a id="myAnchor" href="" class="btn btn-outline-danger  btn-block">View Node</a>
                             </div> 
                     </form>
 
@@ -857,8 +879,8 @@ try {
         </div>
 <a target="_blank" href="{{route('user.genealogy2', 123)}}"> </a>
 <br>
-<span class="font-weight-bold">+</span>
-            <div class="row">
+
+<div class="row">
                 <div class="col-md-6">
                     
                          <div class="row layout-spacing layout-top-spacing">
@@ -868,6 +890,7 @@ try {
                                         <div class="row">
                                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                             <h4>LEFT GROUPS</h4>
+                                            <h4>Total Points: {{$left_groups->sum('referree_points')}}</h4>
                                             </div>                  
                                         </div>
                                     </div>
@@ -879,23 +902,42 @@ try {
                                                         
                                                         <th>Fullname</th>
                                                         <th>Member Code</th>
+                                                        <th>Points</th>
                                                        
                                                         <th>Status</th>
-                                                        <th class="text-center">Action</th>
+                                                        <!-- <th class="text-center">Action</th> -->
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+
+                                                
+                                                @forelse($left_groups as $left_group)
+
+                                                <tr>
                                                       
-                                                        <td>John</td>
-                                                       
-                                                        <td>KYZ</td>
-                                                        <td><span class="shadow-none badge badge-primary">Approved</span></td>
-                                                        <td class="text-center"><button class="btn btn-sm btn-outline-primary">Copy</button></td>
-                                                    </tr>
+                                                      <td>{{$left_group->referrees->name}}</td>
+                                                     
+                                                      <td>{{$left_group->referree}}</td>
+                                                      <td>{{$left_group->referree_points}}</td>
+                                                      <td><span class="shadow-none badge badge-primary">Approved</span></td>
+                                                      <!-- <td class="text-center"><button class="btn btn-sm btn-outline-primary">Copy</button></td> -->
+                                                  </tr>
+
+
+                                                @empty
+
+                                                <tr>
+                                                
+                                                  <td>No Referrals yet...</td>
+                                                </tr>
+
+
+                                                @endforelse    
+
                                                    
                                                 </tbody>
                                                 <tfoot>
+                                            
                                                     <tr>
                                                        
                                                         <th>Fullname</th>
@@ -921,6 +963,8 @@ try {
                                         <div class="row">
                                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                             <h4>RIGHT GROUPS</h4>
+
+                                            <h4>Total Points: {{$right_groups->sum('referree_points')}}</h4>
                                             </div>                  
                                         </div>
                                     </div>
@@ -932,20 +976,35 @@ try {
                                                         
                                                         <th>Fullname</th>
                                                         <th>Member Code</th>
+                                                        <th>Points</th>
                                                        
                                                         <th>Status</th>
-                                                        <th class="text-center">Action</th>
+                                                        <!-- <th class="text-center">Action</th> -->
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                @forelse($right_groups as $right_group)
+
                                                     <tr>
-                                                      
-                                                        <td>John</td>
-                                                       
-                                                        <td>KYZ</td>
-                                                        <td><span class="shadow-none badge badge-primary">Approved</span></td>
-                                                        <td class="text-center"><button class="btn btn-sm btn-outline-primary">Copy</button></td>
+                                                          
+                                                    <td>{{$right_group->referrees->name}}</td>
+                                                        
+                                                          <td>{{$right_group->referree}}</td>
+                                                          <td>{{$right_group->referree_points}}</td>
+                                                          <td><span class="shadow-none badge badge-primary">Approved</span></td>
+                                                          <!-- <td class="text-center"><button class="btn btn-sm btn-outline-primary">Copy</button></td> -->
+                                                      </tr>
+
+
+                                                    @empty
+
+                                                    <tr>
+
+                                                      <td>No Referrals yet...</td>
                                                     </tr>
+
+
+                                                    @endforelse   
                                                    
                                                 </tbody>
                                                 <tfoot>
@@ -966,7 +1025,6 @@ try {
                         </div>
                 </div>
             </div>
-
 
     </div>
 
