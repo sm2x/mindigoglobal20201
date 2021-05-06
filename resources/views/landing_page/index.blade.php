@@ -42,7 +42,7 @@
 				<img src="images/files/parallax-bg/img-66.jpg" alt="">
 				<div class="overlay-colored color-bg-dark opacity-40"></div><!-- .overlay-colored end -->
 				<div class="slide-content">
-					<div style="height: 690px;" class="container ">
+					<div style="min-height: 690px;" class="container ">
 						<div class="row">
 							<div class="col-md-6 col-md-push-6">
 
