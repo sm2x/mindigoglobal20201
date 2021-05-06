@@ -265,7 +265,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>SAPPHIRE</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -287,7 +287,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>RUBY</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -308,7 +308,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>EMERALD</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -329,7 +329,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>DIAMOND</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -350,7 +350,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>BLUE DIAMOND</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -371,7 +371,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>BLACK DIAMOND</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -392,7 +392,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>CROWN DIAMOND</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -413,7 +413,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>CROWN AMBASSADOR</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -435,7 +435,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>GLOBAL AMBASSADOR</h6>
-                                        <p class="browser-count">15%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
