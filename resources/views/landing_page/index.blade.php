@@ -2,6 +2,8 @@
 
 @section('content')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
 <div class="c">
 <!-- Header
 		============================================= -->
@@ -40,7 +42,7 @@
 		
 			<div class="banner-parallax " data-banner-height="650">
 				<img src="images/files/parallax-bg/img-66.jpg" alt="">
-				<div class="overlay-colored color-bg-dark opacity-20"></div><!-- .overlay-colored end -->
+				<div class="overlay-colored color-bg-dark opacity-40"></div><!-- .overlay-colored end -->
 				<div class="slide-content">
 					<div style="min-height: 690px;" class="container ">
 						<div class="row">
@@ -72,27 +74,29 @@
 											<div class="cs-notifications">
 												<div class="cs-notifications-content"></div>
 											</div><!-- .cs-notifications end -->
-											<form id="" class="redirected">
+											<form method="post" acttion="" class="redirected">
+
+											@csrf
 												<div class="form-group">
-													<i class="fas fa-envelope field-icon"></i>
+													<!-- <i class="fas fa-envelope field-icon"></i> -->
 													<input type="email" name="esEmail" placeholder="Full name" id="esEmail"
 														class="form-control">
 												</div><!-- .form-group end -->
 
 												<div class="form-group">
-													<i class="fas fa-envelope field-icon"></i>
+													<!-- <i class="fas fa-envelope field-icon"></i> -->
 													<input type="email" name="esEmail" placeholder="Email Address" id="esEmail"
 														class="form-control">
 												</div><!-- .form-group end -->
 
 												<div class="form-group">
-													<i class="fas fa-envelope field-icon"></i>
+													<!-- <i class="fas fa-envelope field-icon"></i> -->
 													<input type="email" name="esEmail" placeholder="Phone" id="esEmail"
 														class="form-control">
 												</div><!-- .form-group end -->
 												
 												<div class="form-group">
-													<input style="background-color: #000000;" type="submit" class="form-control " value="Get Started">
+													<input style="background-color: #987C1E;" type="submit" class="form-control " value="Get Started">
 												</div><!-- .form-group end -->
 											</form><!-- #form-email-subscribe end -->
 										</div><!-- .box-content end -->
@@ -277,7 +281,7 @@
 													<i class="fa fa-star"></i>
 												</div><!-- .rating end -->
 												<div class="ts-content">
-												I've been able to start and run my own online business. Mentoring other people from different parts of the world, courtesy of PureWeb Academy Community.
+												I've been able to start and run my own online business. Mentoring other people from different parts of the world, courtesy of MindigoGlobal Community.
 												</div><!-- .ts-content end -->
 												<div class="ts-person">
 													<div class="ts-img">
@@ -302,7 +306,7 @@
 													<i class="fa fa-star"></i>
 												</div><!-- .rating end -->
 												<div class="ts-content">
-												Coming in contact with PureWeb Academy team was the best thing that has happened to me, My perspective on life and business has changed
+												Coming in contact with MindigoGlobal team was the best thing that has happened to me, My perspective on life and business has changed
 												</div><!-- .ts-content end -->
 												<div class="ts-person">
 													<div class="ts-img">
@@ -352,7 +356,7 @@
 													<i class="fa fa-star"></i>
 												</div><!-- .rating end -->
 												<div class="ts-content">
-												PureWeb Academy team taught me digital marketing, entrepreneurship and online business. I now operate a technology and training company, training and empowering youths and women all over the country
+												MindigoGlobal team taught me digital marketing, entrepreneurship and online business. I now operate a technology and training company, training and empowering youths and women all over the country
 												</div><!-- .ts-content end -->
 												<div class="ts-person">
 													<div class="ts-img">
@@ -366,31 +370,7 @@
 											</div><!-- .testimonial-single-1 -->
 										</div><!-- .slide end -->
 									</li>
-									<li>
-										<div class="slide">
-											<div class="testimonial-single-1">
-												<div class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div><!-- .rating end -->
-												<div class="ts-content">
-													Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia.
-												</div><!-- .ts-content end -->
-												<div class="ts-person">
-													<div class="ts-img">
-														<img src="images/files/sliders/clients-testimonials/img-2.jpg" alt="">
-													</div><!-- .ts-img end -->
-													<div class="ts-name">
-														<h5>Maud Boyd</h5>
-														<span>Team Leader, Facebook</span>
-													</div><!-- .ts-name end -->
-												</div><!-- .ts-person end -->
-											</div><!-- .testimonial-single-1 -->
-										</div><!-- .slide end -->
-									</li>
+							
 								</ul><!-- .slick-slider end -->
 							</div><!-- .slider-testimonials end -->
 		
@@ -433,5 +413,6 @@
 		
 		</div><!-- .section-flat end -->
 </div>
+
 
 @endsection
