@@ -44,6 +44,21 @@ class UserProfileController extends Controller
 
         $image->move(public_path('avatars'), $newname);
 
+        try {
+            //code...
+           $user = User::where('id', $user_id)->update([
+                'avatar'=> $newname
+            ]);
+
+            return $user;
+        } catch (\Throwable $th) {
+            //throw $th;
+
+            return $th;
+        }
+
+
+
         
         return $newname;
          

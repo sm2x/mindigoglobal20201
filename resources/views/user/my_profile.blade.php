@@ -15,7 +15,7 @@
 
 
 
-                            <example-component  user_name="{{Auth::user()->name}}"  user_id='{{Auth::user()->id}}'></example-component>
+                            <example-component avatar="{{config('app.url')}}avatars/{{Auth::user()->avatar??avatar.png}}"  user_name="{{Auth::user()->name}}"  user_id='{{Auth::user()->id}}'></example-component>
 
 
                       

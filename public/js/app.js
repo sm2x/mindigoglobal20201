@@ -2165,6 +2165,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 Vue.use(vue_toastify__WEBPACK_IMPORTED_MODULE_1___default.a);
@@ -2172,6 +2179,7 @@ Vue.component('Select2', v_select2_component__WEBPACK_IMPORTED_MODULE_0__["defau
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      getAvatar: '',
       myValue: '',
       myOptions: [{}],
       // or [{id: key, text: value}, {id: key, text: value}]
@@ -2195,7 +2203,7 @@ Vue.component('Select2', v_select2_component__WEBPACK_IMPORTED_MODULE_0__["defau
       sort_code: ''
     };
   },
-  props: ['user_id', 'user_name'],
+  props: ['user_id', 'user_name', 'avatar'],
   methods: {
     myChangeEvent: function myChangeEvent(val) {
       console.log(val);
@@ -38327,7 +38335,7 @@ var render = function() {
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-lg-11 mx-auto" }, [
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-xl-2 col-lg-12 col-md-4" }, [
+                  _c("div", { staticClass: "col-xl-3 col-lg-12 col-md-4" }, [
                     _c("div", { staticClass: "upload mt-4 pr-md-4" }, [
                       _c("label", { attrs: { for: "" } }, [
                         _vm._v("Profile Picture")
@@ -38339,7 +38347,7 @@ var render = function() {
                         attrs: {
                           type: "file",
                           id: "file",
-                          "data-default-file": "",
+                          "data-default-file": this.avatar,
                           "data-max-file-size": "2M"
                         },
                         on: {
@@ -38353,9 +38361,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    {
-                      staticClass: "col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4"
-                    },
+                    { staticClass: "col-xl-9 col-lg-12 col-md-8 mt-md-0 mt-4" },
                     [
                       _c("div", { staticClass: "form" }, [
                         _c("div", { staticClass: "row" }, [
@@ -38797,246 +38803,248 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-xl-12 col-lg-12 col-md-12 layout-spacing" }, [
-      _c("div", { staticClass: "info" }, [
-        _c("h5", {}, [_vm._v("Bank Details")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-11 mx-auto" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "country" } }, [
-                    _vm._v("Bank Name")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
+      _c("div", { staticClass: "section social", attrs: { id: "social" } }, [
+        _c("div", { staticClass: "info" }, [
+          _c("h5", {}, [_vm._v("Bank Details..")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-11 mx-auto" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "country" } }, [
+                      _vm._v("Bank Name")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.bank_name,
+                            expression: "bank_name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { id: "country" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.bank_name = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c("option", { attrs: { value: "access" } }, [
+                          _vm._v("Access Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "citibank" } }, [
+                          _vm._v("Citibank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "diamond" } }, [
+                          _vm._v("Diamond Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "ecobank" } }, [
+                          _vm._v("Ecobank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "fidelity" } }, [
+                          _vm._v("Fidelity Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "fcmb" } }, [
+                          _vm._v("First City Monument Bank (FCMB)")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "fsdh" } }, [
+                          _vm._v("FSDH Merchant Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "gtb" } }, [
+                          _vm._v("Guarantee Trust Bank (GTB)")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "heritage" } }, [
+                          _vm._v("Heritage Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "Keystone" } }, [
+                          _vm._v("Keystone Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "rand" } }, [
+                          _vm._v("Rand Merchant Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "skye" } }, [
+                          _vm._v("Skye Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "stanbic" } }, [
+                          _vm._v("Stanbic IBTC Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "standard" } }, [
+                          _vm._v("Standard Chartered Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "sterling" } }, [
+                          _vm._v("Sterling Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "suntrust" } }, [
+                          _vm._v("Suntrust Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "union" } }, [
+                          _vm._v("Union Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "uba" } }, [
+                          _vm._v("United Bank for Africa (UBA)")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "unity" } }, [
+                          _vm._v("Unity Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "wema" } }, [
+                          _vm._v("Wema Bank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "zenith" } }, [
+                          _vm._v("Zenith Bank")
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "address" } }, [
+                      _vm._v("Account Name")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.bank_name,
-                          expression: "bank_name"
+                          value: _vm.account_name,
+                          expression: "account_name"
                         }
                       ],
-                      staticClass: "form-control",
-                      attrs: { id: "country" },
+                      staticClass: "form-control mb-4",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Supply Account Name",
+                        value: ""
+                      },
+                      domProps: { value: _vm.account_name },
                       on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.bank_name = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.account_name = $event.target.value
                         }
                       }
-                    },
-                    [
-                      _c("option", { attrs: { value: "access" } }, [
-                        _vm._v("Access Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "citibank" } }, [
-                        _vm._v("Citibank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "diamond" } }, [
-                        _vm._v("Diamond Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "ecobank" } }, [
-                        _vm._v("Ecobank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "fidelity" } }, [
-                        _vm._v("Fidelity Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "fcmb" } }, [
-                        _vm._v("First City Monument Bank (FCMB)")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "fsdh" } }, [
-                        _vm._v("FSDH Merchant Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "gtb" } }, [
-                        _vm._v("Guarantee Trust Bank (GTB)")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "heritage" } }, [
-                        _vm._v("Heritage Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "Keystone" } }, [
-                        _vm._v("Keystone Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "rand" } }, [
-                        _vm._v("Rand Merchant Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "skye" } }, [
-                        _vm._v("Skye Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "stanbic" } }, [
-                        _vm._v("Stanbic IBTC Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "standard" } }, [
-                        _vm._v("Standard Chartered Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "sterling" } }, [
-                        _vm._v("Sterling Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "suntrust" } }, [
-                        _vm._v("Suntrust Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "union" } }, [
-                        _vm._v("Union Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "uba" } }, [
-                        _vm._v("United Bank for Africa (UBA)")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "unity" } }, [
-                        _vm._v("Unity Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "wema" } }, [
-                        _vm._v("Wema Bank")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "zenith" } }, [
-                        _vm._v("Zenith Bank")
-                      ])
-                    ]
-                  )
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "website1" } }, [
+                      _vm._v("Account Number")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.account_number,
+                          expression: "account_number"
+                        }
+                      ],
+                      staticClass: "form-control mb-4",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Supply Account Number"
+                      },
+                      domProps: { value: _vm.account_number },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.account_number = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "website1" } }, [
+                      _vm._v("Sort Code:")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.sort_code,
+                          expression: "sort_code"
+                        }
+                      ],
+                      staticClass: "form-control mb-4",
+                      attrs: { type: "text", placeholder: "Sort code of bank" },
+                      domProps: { value: _vm.sort_code },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.sort_code = $event.target.value
+                        }
+                      }
+                    })
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "address" } }, [
-                    _vm._v("Account Name")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.account_name,
-                        expression: "account_name"
-                      }
-                    ],
-                    staticClass: "form-control mb-4",
-                    attrs: {
-                      type: "text",
-                      placeholder: "Supply Account Name",
-                      value: ""
-                    },
-                    domProps: { value: _vm.account_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.account_name = $event.target.value
-                      }
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary float-right",
+                  on: {
+                    click: function($event) {
+                      return _vm.updateProfile()
                     }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "website1" } }, [
-                    _vm._v("Account Number")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.account_number,
-                        expression: "account_number"
-                      }
-                    ],
-                    staticClass: "form-control mb-4",
-                    attrs: {
-                      type: "text",
-                      placeholder: "Supply Account Number"
-                    },
-                    domProps: { value: _vm.account_number },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.account_number = $event.target.value
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "website1" } }, [
-                    _vm._v("Sort Code:")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.sort_code,
-                        expression: "sort_code"
-                      }
-                    ],
-                    staticClass: "form-control mb-4",
-                    attrs: { type: "text", placeholder: "Sort code of bank" },
-                    domProps: { value: _vm.sort_code },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.sort_code = $event.target.value
-                      }
-                    }
-                  })
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary float-right",
-                on: {
-                  click: function($event) {
-                    return _vm.updateProfile()
                   }
-                }
-              },
-              [_vm._v("Update Profile")]
-            )
+                },
+                [_vm._v("Update Profile")]
+              )
+            ])
           ])
         ])
       ])

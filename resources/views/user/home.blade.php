@@ -3,6 +3,7 @@
 <link href="{{asset('plugins/animate/animate.css')}}" rel="stylesheet" type="text/css" />
       <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
       <link href="{{asset('assets/css/components/custom-modal.css')}}" rel="stylesheet" type="text/css" />  
+      
 
 @section('content')
 
@@ -100,7 +101,7 @@
 
         <div class="row layout-top-spacing">
 
-            <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 layout-spacing">
                 <div class="widget widget-one">
                     <div class="widget-heading">
                         <h6 class="">Weekly Earnigs Report</h6>
@@ -147,7 +148,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 layout-spacing">
                 <div class="widget widget-card-four">
                     <div class="widget-content">
                         <div class="w-content">
@@ -157,7 +158,7 @@
                             </div>
                             <div class="">
                                 <div class="w-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wallet"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +172,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 layout-spacing">
                 <div class="widget widget-account-invoice-two">
                     <div class="widget-content">
 
@@ -190,7 +191,7 @@
                                         <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></a>
                                         <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></a>
                                     </div>
-                                    <a class="bg-success" href="javascript:void(0);">{{Auth::user()->user_code}}</a>
+                                    <a class="bg-dark" href="javascript:void(0);">{{Auth::user()->user_code}}</a>
                                 </div>
                             </div>
 
@@ -298,6 +299,158 @@
                                 </div>
 
                             </div>
+
+                            <div class="browser-list">
+                                <div class="w-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                </div>
+                                <div class="w-browser-details">
+                                    
+                                    <div class="w-browser-info">
+                                        <h6>EMERALD</h6>
+                                        <p class="browser-count">15%</p>
+                                    </div>
+
+                                    <div class="w-browser-stats">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 0%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="browser-list">
+                                <div class="w-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                </div>
+                                <div class="w-browser-details">
+                                    
+                                    <div class="w-browser-info">
+                                        <h6>DIAMOND</h6>
+                                        <p class="browser-count">15%</p>
+                                    </div>
+
+                                    <div class="w-browser-stats">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 0%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="browser-list">
+                                <div class="w-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                </div>
+                                <div class="w-browser-details">
+                                    
+                                    <div class="w-browser-info">
+                                        <h6>BLUE DIAMOND</h6>
+                                        <p class="browser-count">15%</p>
+                                    </div>
+
+                                    <div class="w-browser-stats">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 0%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="browser-list">
+                                <div class="w-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                </div>
+                                <div class="w-browser-details">
+                                    
+                                    <div class="w-browser-info">
+                                        <h6>BLACK DIAMOND</h6>
+                                        <p class="browser-count">15%</p>
+                                    </div>
+
+                                    <div class="w-browser-stats">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 0%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="browser-list">
+                                <div class="w-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                </div>
+                                <div class="w-browser-details">
+                                    
+                                    <div class="w-browser-info">
+                                        <h6>CROWN DIAMOND</h6>
+                                        <p class="browser-count">15%</p>
+                                    </div>
+
+                                    <div class="w-browser-stats">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 0%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="browser-list">
+                                <div class="w-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                </div>
+                                <div class="w-browser-details">
+                                    
+                                    <div class="w-browser-info">
+                                        <h6>CROWN AMBASSADOR</h6>
+                                        <p class="browser-count">15%</p>
+                                    </div>
+
+                                    <div class="w-browser-stats">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 0%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            
+                            <div class="browser-list">
+                                <div class="w-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                </div>
+                                <div class="w-browser-details">
+                                    
+                                    <div class="w-browser-info">
+                                        <h6>GLOBAL AMBASSADOR</h6>
+                                        <p class="browser-count">15%</p>
+                                    </div>
+
+                                    <div class="w-browser-stats">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 0%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            
+
+
                             
                         </div>
 
@@ -407,7 +560,7 @@
         </div>
 
     </div>
-    @verified
+    <!-- @verified
 
 <script type="text/javascript">
     $(window).on('load', function() {
@@ -415,37 +568,13 @@
     });
 </script>
 
-@endverified
+@endverified -->
     
 
     
 @endsection  
 
-<script>
-        $('#yt-video-link').click(function () {
-            var src = 'https://www.youtube.com/embed/YE7VzlLtp-4';
-            $('#videoMedia1').modal('show');
-            $('<iframe>').attr({
-                'src': src,
-                'width': '560',
-                'height': '315',
-                'allow': 'encrypted-media'
-            }).css('border', '0').appendTo('#videoMedia1 .video-container');
-        });
-        $('#vimeo-video-link').click(function () {
-            var src = 'https://player.vimeo.com/video/1084537';
-            $('#videoMedia2').modal('show');
-            $('<iframe>').attr({
-                'src': src,
-                'width': '560',
-                'height': '315',
-                'allow': 'encrypted-media'
-            }).css('border', '0').appendTo('#videoMedia2 .video-container');
-        });
-        $('#videoMedia1 button, #videoMedia2 button').click(function () {
-            $('#videoMedia1 iframe, #videoMedia2 iframe').removeAttr('src');
-        });
-    </script>
+
 
 
 

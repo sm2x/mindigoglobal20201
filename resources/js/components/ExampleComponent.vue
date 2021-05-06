@@ -11,15 +11,15 @@
                         <div class="row">
                             <div class="col-lg-11 mx-auto">
                                 <div class="row">
-                                    <div class="col-xl-2 col-lg-12 col-md-4">
+                                    <div class="col-xl-3 col-lg-12 col-md-4">
                                       
                                         <div class="upload mt-4 pr-md-4">
                                             <label for="">Profile Picture</label>
-                                            <input type="file"  ref="file" @change="onChangeFileUpload()" id="file" class="dropify" data-default-file=""  data-max-file-size="2M" />
+                                            <input type="file"  ref="file" @change="onChangeFileUpload()" id="file"  v-bind:data-default-file="this.avatar" class="dropify"   data-max-file-size="2M" />
                                             
                                         </div>
                                     </div>
-                                    <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                                    <div class="col-xl-9 col-lg-12 col-md-8 mt-md-0 mt-4">
                                         <div class="form">
                                             <div class="row">
 
@@ -121,13 +121,15 @@
                     </div>
                 </div>
             </div>
-            
+         
          
 
             <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-             
+
+                <div id="social" class="section social">
+
                     <div class="info">
-                        <h5 class="">Bank Details</h5>
+                        <h5 class="">Bank Details..</h5>
                         <div class="row">
                             <div class="col-md-11 mx-auto">
                                 <div class="row">
@@ -185,6 +187,11 @@
                             </div>
                         </div>
                     </div>
+
+
+                </div>
+             
+
                 
             </div>
 
@@ -270,6 +277,8 @@ Vue.component('Select2', Select2);
         data() {
             return {
 
+                getAvatar: '',
+
                       myValue: '',
                     myOptions: [{}], // or [{id: key, text: value}, {id: key, text: value}]
 
@@ -297,7 +306,7 @@ Vue.component('Select2', Select2);
             }
         },
 
-          props: ['user_id', 'user_name'],
+          props: ['user_id', 'user_name', 'avatar'],
 
         methods: {
 
