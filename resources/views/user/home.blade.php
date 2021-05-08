@@ -214,7 +214,7 @@
                                 <div class="w-browser-details">
                                     <div class="w-browser-info">
                                         <h6>CONNECTOR</h6>
-                                        <p class="browser-count">0white font-weight-bold%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
                                     <div class="w-browser-stats">
                                         <div class="progress">
