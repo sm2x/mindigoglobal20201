@@ -14,7 +14,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.4",
-        "unicodeveloper/laravel-paystack": "^1.0"
+        "unicodeveloper/laravel-paystack": "^1.0",
+        "cartalyst/stripe-laravel": "^12.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
