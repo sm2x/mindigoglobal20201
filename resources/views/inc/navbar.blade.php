@@ -7,7 +7,7 @@
 
             <ul class="navbar-item theme-brand flex-row  text-center">
                 <li class="nav-item theme-logo">
-                    <a href="/analytics">
+                    <a href="https://mindigo.co.uk">
                         <img src="{{asset('img/90x90.jpg')}}" class="navbar-logo" alt="">
                     </a>
                 </li>
