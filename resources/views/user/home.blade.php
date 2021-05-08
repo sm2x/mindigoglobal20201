@@ -13,7 +13,7 @@
         <h2 class="mt-3 ">Hi, {{Auth::user()->name}}</h2>
 
          <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-success mb-2 mr-2" data-toggle="modal" data-target="#sliderModal">
+                                    <button type="button" class="btn btn-warning mb-2 mr-2" data-toggle="modal" data-target="#sliderModal">
                                       Get Started
                                     </button>
 
@@ -103,29 +103,17 @@
 
             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 layout-spacing">
                 <div class="widget widget-one">
-                    <div class="widget-heading">
-                        <h6 class="">Weekly Earnings Report</h6>
+             
+
+                    <div class="text-center">
+                        <h3>{{count($direct_referrals)}}</h3>
+
+                        <p>Total Referrals</p>
                     </div>
                     <div class="w-chart">
-                        <div class="w-chart-section">
-                            <div class="w-detail">
-                                <p class="w-title">Total Referrals</p>
-                                <p class="w-stats">{{count($direct_referrals)}}</p>
-                            </div>
-                            <div class="w-chart-render-one">
-                                <div id="total-users"></div>
-                            </div>
-                        </div>
+                   
 
-                        <div class="w-chart-section">
-                            <div class="w-detail">
-                                <p class="w-title">Pending Earnings</p>
-                                <p class="w-stats">NGN {{number_format($balance, 2)}}</p>
-                            </div>
-                            <div class="w-chart-render-one">
-                                <div id="paid-visits"></div>
-                            </div>
-                        </div>
+
                        
                     </div>
                         <div class="c text-center">
@@ -137,13 +125,13 @@
 
                         <div class="c p-1 mt-3 d-flex justify-content-center">
                      
-                            <a target="_blank" class="btn btn-outline-success btn-sm btn-bloc" href="{{config('app.url')}}landingPage/{{Auth::user()->user_code}}">View Landing Page</a>
+                            <a target="_blank" class="btn btn-outline-warning btn-sm btn-bloc" href="{{config('app.url')}}landingPage/{{Auth::user()->user_code}}">View Landing Page</a>
                         </div>
 
                         <div class="c p-1 mt-3 text-center">
                             <input type="text" class="form-control form-control-sm" value="{{config('app.url')}}affiliate/{{Auth::user()->user_code}}">
                             <br>
-                            <button class="btn btn-primary btn-sm  text-center">copy</button>
+                            <button class="btn btn-warning btn-sm  text-center">copy</button>
                         </div>
                 </div>
             </div>
@@ -155,15 +143,15 @@
                             <div class="w-info">
                                 <h3 class="value">NGN <br>{{number_format($balance, 2)}}</h3>
                                 <p class="">Wallet Balance</p>
+                                <hr>
+
+                                <h5 class="value">NGN <br>{{number_format($balance, 2)}}</h5>
+                                <p class="">Latest Transaction</p>
                             </div>
-                            <div class="">
-                                <div class="w-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wallet"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                </div>
-                            </div>
+    
                         </div>
                         <div class="pt-5 d-flex justify-content-center">
-                            <a href="" class="btn btn-primary shadow text-center btn-sm">View Summary</a>
+                            <a href="" class="btn btn-warning shadow text-center btn-sm">View Summary</a>
                         </div>
                         <!-- <div class="progress">
                             <div class="progress-bar bg-gradient-secondary" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"></div>
@@ -173,13 +161,13 @@
             </div>
 
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 layout-spacing">
-                <div class="widget widget-account-invoice-two">
-                    <div class="widget-content">
+                <div class="widget widget-account-invoice-two bg-warning">
+                    <div class="widget-content ">
 
 
                             @if($my_order)
 
-                            <div class="account-box">
+                            <div class="account-box ">
                                 <div class="info">
                                     
                                     <h5>{{$my_order->pack_title}}</h5> <br>
@@ -226,7 +214,7 @@
                                 <div class="w-browser-details">
                                     <div class="w-browser-info">
                                         <h6>CONNECTOR</h6>
-                                        <p class="browser-count">65%</p>
+                                        <p class="browser-count">0white font-weight-bold%</p>
                                     </div>
                                     <div class="w-browser-stats">
                                         <div class="progress">
@@ -244,7 +232,7 @@
                                     
                                     <div class="w-browser-info">
                                         <h6>CONSULTANT</h6>
-                                        <p class="browser-count">25%</p>
+                                        <p class="browser-count">0%</p>
                                     </div>
 
                                     <div class="w-browser-stats">
@@ -470,32 +458,32 @@
 
                         <div class="header">
                             <div class="header-body">
-                                <h6>Pending Tasks</h6>
-                                <p class="meta-date">Nov 2019</p>
+                                <h6>All Accounts: 1</h6>
+                              
                             </div>
-                            <div class="task-action">
-                                <div class="dropdown  custom-dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button" id="pendingTask" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                    </a>
+                           
+                        </div>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="pendingTask">
-                                        <a class="dropdown-item" href="javascript:void(0);">Add</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">View</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">Update</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">Clear All</a>
-                                    </div>
+                        <div class="p-1">
+
+                            <div class="card bg-dark">
+                                <div class="card-body text-white">
+
+                                <h6 class="text-white font-weight-bold">Account Code: {{Auth::user()->user_code}}</h6>
+                                <h6 class="text-white font-weight-bold">Wallet Balance: NGN {{number_format($balance, 2)}}</h6>
+                                
                                 </div>
                             </div>
+
+                        
+                        
                         </div>
 
-                        <div class="w-content">
-                            <div class="">                                            
-                                <p class="task-left">8</p>
-                                <p class="task-completed"><span>12 Done</span></p>
-                                <p class="task-hight-priority"><span>3 Task</span> with High priotity</p>
-                            </div>
-                        </div>
+
+
+           
+
+                        
                     </div>
                 </div>
 

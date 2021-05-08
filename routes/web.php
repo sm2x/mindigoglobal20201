@@ -1400,7 +1400,7 @@ Route::group(['/test'] , function() {
 // Route::get('/', 'HomeController@index');
 
 // Route::get('/register', function() {
-//     return redirect('/login');    
+//     return redirect('/reg');    
 // });
 // Route::get('/password/reset', function() {
 //     return redirect('/login');    

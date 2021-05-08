@@ -15,6 +15,8 @@ use App\Faq;
 use App\DirectReferral;
 use App\BinaryTree;
 
+use App\MultipleAccount;
+
 use Carbon\Carbon;
 
 use Auth;
@@ -55,6 +57,8 @@ class UserPageController extends Controller
 
 
         $my_order = Order::where('user_id', $user_id)->first();
+
+        $other_accounts = MultipleAccount::where('owners_id', Auth::user()->id)->get();
 
      
 
