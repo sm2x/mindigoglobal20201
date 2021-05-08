@@ -188,7 +188,7 @@
 
                                 <h4 class="p-5 text-white">You have no package yet</h4>
 
-                                <a class="btn btn-success" href="{{route('user.mindigo_mart')}}">PURCHASE NOW.</a>
+                                <a class="btn btn-success" href="{{route('user.mindigo_mart')}}">PURCHASE NOW</a>
 
 
                             @endif

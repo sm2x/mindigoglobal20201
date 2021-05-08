@@ -95,11 +95,14 @@
 														class="form-control">
 												</div><!-- .form-group end -->
 
-												<input type="hidden" name="referrer_code" value="{{$user_data->user_code}}">
-												
 												<div class="form-group">
-													<input style="background-color: #987C1E;" type="submit" class="form-control " value="Get Started">
-												</div><!-- .form-group end -->
+													<input type="hidden" name="referrer_code" value="{{$user_data->user_code}}">	
+												</div>
+												
+												<div class="form-group mt-2">
+													<input style="background-color: #987C1E;" type="submit" class="form-control mt-2" value="Get Started">
+												</div>
+												<!-- .form-group end -->
 											</form><!-- #form-email-subscribe end -->
 										</div><!-- .box-content end -->
 									</div><!-- .box-form end -->
@@ -203,8 +206,7 @@
 									Achievements Numbers
 								</h2>
 								<p class="description">
-									This should be used to tell a story and let your users know a little more about your product or service. How
-									can you benefit them?
+								
 								</p>
 							</div><!-- .section-title end -->
 							<a class="btn large white hover-dark rounded mt-10 move-top" href="#">Get Started</a>
