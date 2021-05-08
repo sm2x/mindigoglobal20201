@@ -15,7 +15,7 @@
                                       
                                         <div class="upload mt-4 pr-md-4">
                                             <label for="">Profile Picture</label>
-                                            <input type="file"  ref="file" @change="onChangeFileUpload()" id="file"  v-bind:data-default-file="this.avatar" class="dropify"   data-max-file-size="2M" />
+                                            <input type="file"  ref="file" @change="onChangeFileUpload()" id="file"  v-bind:data-default-file="this.avatar" class="dropify"   data-max-file-size="5M" />
                                             
                                         </div>
                                     </div>

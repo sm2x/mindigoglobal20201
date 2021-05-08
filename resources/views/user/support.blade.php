@@ -12,7 +12,7 @@
                             <div class="row">
                                 <div class="col-md-12">
 
-                                    <h2>Frequently Asked <span>Questions</span></h2>
+                                    <h2>Frequently Asked <span clas="text-warning">Questions</span></h2>
 
                                     <div class="row">
                                         

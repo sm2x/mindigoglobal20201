@@ -38348,7 +38348,7 @@ var render = function() {
                           type: "file",
                           id: "file",
                           "data-default-file": this.avatar,
-                          "data-max-file-size": "2M"
+                          "data-max-file-size": "5M"
                         },
                         on: {
                           change: function($event) {
