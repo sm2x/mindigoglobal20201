@@ -1249,7 +1249,24 @@ try {
                                         <div class="row">
                                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                             <h4>LEFT GROUPS</h4>
-                                            <h4>Total Points: {{$left_groups->sum('referree_points')}}</h4>
+
+                                            <?php
+
+                                                try {
+                                                  //code...
+
+                                                  $left_groups_points = $left_groups->sum('referree_points');
+
+
+                                                } catch (\Throwable $th) {
+                                                  //throw $th;
+                                                  $left_groups_points = 0;
+
+                                                  $left_groups = \App\DirectReferral::where('id', 22332232)->get();
+                                                }
+
+                                            ?>
+                                            <h4>Total Points: {{$left_groups_points}}</h4>
                                             </div>                  
                                         </div>
                                     </div>
@@ -1323,7 +1340,24 @@ try {
                                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                             <h4>RIGHT GROUPS</h4>
 
-                                            <h4>Total Points: {{$right_groups->sum('referree_points')}}</h4>
+                                            <?php
+
+                                                  try {
+                                                    //code...
+
+                                                    $right_groups_points = $right_groups->sum('referree_points');
+
+
+                                                  } catch (\Throwable $th) {
+                                                    //throw $th;
+                                                    $right_groups_points = 0;
+
+                                                    $right_groups = \App\DirectReferral::where('id', 22332232)->get();
+                                                  }
+
+                                                  ?>
+
+                                            <h4>Total Points: {{$right_groups_points}}</h4>
                                             </div>                  
                                         </div>
                                     </div>
