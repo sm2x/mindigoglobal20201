@@ -80,13 +80,7 @@
                                     </div>
                                 </div>
                                 <div class="d-sm-flex justify-content-between">
-                                    <div class="field-wrapper toggle-pass">
-                                        <p class="d-inline-block">Show Password</p>
-                                        <label class="switch s-primary">
-                                            <input type="checkbox" id="toggle-password" class="d-none">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
+                                   
                                     <div class="field-wrapper">
                                         <button type="submit" class="btn btn-warning" value="">Get Started!</button>
                                     </div>

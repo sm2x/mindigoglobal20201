@@ -6,7 +6,7 @@
         <div class="form-form">
             <div class="form-form-wrap">
                 <div class="form-container">
-                    <div class="form-content">
+                    <div class="form-content text-warning">
 
                         <h1 class="">Create an account now</h1>
                         <p class="signup-link">Already have an account? <a href="{{route('login')}}">Log in</a></p>
@@ -69,13 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="d-sm-flex justify-content-between">
-                                    <div class="field-wrapper toggle-pass">
-                                        <p class="d-inline-block">Show Password</p>
-                                        <label class="switch s-primary">
-                                            <input type="checkbox" id="toggle-password" class="d-none">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
+                                   
                                     <div class="field-wrapper">
                                         <button type="submit" class="btn btn-warning" value="">Get Started!</button>
                                     </div>
@@ -83,14 +77,14 @@
 
                             </div>
                         </form>                        
-                        <p class="terms-conditions">© 2021 All Rights Reserved. <a href="index.html">Mindigoglobal</a> is a product of vicSystems. <a href="{{config('app.url')}}/pages/privacy_policy"></a> <a href="{{config('app.url')}}/pages/privacy_policy">Privacy</a>, and <a href="{{config('app.url')}}/pages/privacy_policy">Terms</a>.</p>
+                        <p class="terms-conditions text-warning">© 2021 All Rights Reserved. <a href="index.html">Mindigoglobal</a> is a product of vicSystems. <a href="{{config('app.url')}}/pages/privacy_policy"></a> <a href="{{config('app.url')}}/pages/privacy_policy">Privacy</a>, and <a href="{{config('app.url')}}/pages/privacy_policy">Terms</a>.</p>
 
                     </div>                    
                 </div>
             </div>
         </div>
         <div class="form-image">
-            <div class="l-image">
+        <div style="background-color: black; background-image: url({{config('app.url')}}img/min.jpeg);" class="l-image ">
             </div>
         </div>
     </div>
