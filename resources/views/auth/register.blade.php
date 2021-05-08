@@ -88,7 +88,18 @@
 
                             </div>
                         </form>                        
-                        <p class="terms-conditions">© 2021 All Rights Reserved. <a href="index.html">Mindigoglobal</a> is a product of vicSystems. <a href="{{config('app.url')}}/pages/privacy_policy"></a> <a href="{{config('app.url')}}/pages/privacy_policy">Privacy</a>, and <a href="{{config('app.url')}}/pages/privacy_policy">Terms</a>.</p>
+                        <p class="terms-conditions text-warning">© 2021 All Rights Reserved. 
+                        <a href="https://mindigo.co.uk">Mindigoglobal</a>
+                        
+                         <!-- <a href="{{config('app.url')}}/pages/privacy_policy"></a> 
+                         
+                         <a href="{{config('app.url')}}/pages/privacy_policy">Privacy</a>,
+
+                          and <a href="{{config('app.url')}}/pages/privacy_policy">Terms</a> -->
+                          
+                          </p>
+                          
+                          <!-- <p class="terms-conditions">© 2021 All Rights Reserved. <a href="index.html">Mindigoglobal</a> is a product of vicSystems. <a href="{{config('app.url')}}/pages/privacy_policy"></a> <a href="{{config('app.url')}}/pages/privacy_policy">Privacy</a>, and <a href="{{config('app.url')}}/pages/privacy_policy">Terms</a>.</p> -->
 
                     </div>                    
                 </div>
