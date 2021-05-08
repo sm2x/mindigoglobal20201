@@ -407,7 +407,7 @@
 							<p class="description">
 							
 							</p>
-							<a class="btn x-large colorful hover-dark rounded mt-20 move-top" href="{{config('app.url')}}/affiliate/{{$user_data->user_code}}">Get Started</a>
+							<a class="btn x-large colorful hover-dark rounded mt-20 move-top" href="{{config('app.url')}}affiliate/{{$user_data->user_code}}">Get Started</a>
 		
 						</div><!-- .col-md-6 end -->
 					</div><!-- .row end -->
