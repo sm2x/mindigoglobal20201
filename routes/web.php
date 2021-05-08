@@ -54,6 +54,10 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
 
     Route::get('/process_order', 'OrderController@process_order')->name('user.purchase_action');
 
+    Route::get('/process_multiple_order', 'OrderController@process_multiple_order')->name('user.process_multiple_order');
+
+   
+
 
 
 

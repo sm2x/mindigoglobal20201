@@ -12,7 +12,7 @@
                     </a>
                 </li>
                 <li class="nav-item theme-text">
-                    <a href="/analytics" class="nav-link"> Mindiglobal </a>
+                    <a href="/analytics" class="nav-link"> MindigoGlobal </a>
                 </li>
             </ul>
 

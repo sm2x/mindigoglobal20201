@@ -17,7 +17,7 @@
                     <div class="widget-content">
                         <div class="w-content">
                         <div class="w-info">
-                                <h3 class="value">NGN <br> {{number_format($user_wallet->where('description', 'Referral Bonus')->sum('amount'), 2)}}</h3>
+                                <h3 class="value">NGN <br> {{number_format($user_wallet->where('description', 'Direct Commission')->sum('amount'), 2)}}</h3>
                                 <p class="">Matching Bonus</p>
                             </div>
                             <div class="">

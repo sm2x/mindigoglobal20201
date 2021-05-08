@@ -8,6 +8,7 @@ use App\Notification;
 use App\User;
 use Auth;
 use App\UserWallet;
+use App\MultipleAccount;
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
@@ -111,9 +112,100 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function process_multiple_order()
     {
         //
+
+        $paymentDetails = Paystack::getPaymentData();
+
+        $user_id = Auth::user()->id;
+
+        $user_data = User::where('id', $user_id)->first();
+
+        $name = $user_data->name;
+
+        $email = $user_data->email;
+
+        $password = $user_data->password;
+
+        $code = $user_data->user_code;
+
+        $referrer_bonus = 5000;
+
+        $referrer_points = 700;
+
+        $weekNo = Carbon::now()->weekOfYear;
+
+        $package_id = $paymentDetails['data']['metadata']['package_id'];
+
+        $package = $paymentDetails['data']['metadata']['package'];
+
+
+        $number_of_accounts = $paymentDetails['data']['metadata']['number_of_accounts'];
+
+        // dd($number_of_accounts);
+
+        for ($i=0; $i < $number_of_accounts ; $i++) { 
+            # code...
+            $regCode = "MNG" .rand(1110,9999);
+
+            $new_user = User::create([
+                'name' => $name,
+                'email' => $code.rand(323,1000).'@mindigo.co.uk',
+                'user_code' => $regCode,
+                'password' => $password
+                
+            ]);
+
+            $multiple_accounts = MultipleAccount::create([
+                'owners_id' => $user_id,
+                'account_id' => $new_user->id,
+                'account_code' => $new_user->user_code,
+                
+            ]);
+
+            $referral_bonus = DirectReferral::Create([
+                'referrer_id' => $user_id,
+                'referree_id' => $new_user->id,
+                'referral' => $code,
+                'referree' => $new_user->user_code,
+                'referrer_bonus' => $referrer_bonus,
+                'referree_points' => $referrer_points,
+                'referree_pack_id' => $package_id,
+                'weekInYear' =>    $weekNo
+                
+            ]);
+
+            $referrer_activity = Notification::create([
+                'user_id' => $user_id,
+                'title' => "New Direct Commission alert",
+                'body' => 'You just gained NGN ' .$referrer_bonus .' commission on your new account ['.$new_user->user_code.']. ',
+            ]);
+    
+             //credit upline wallet
+             UserWallet::Create([
+                'user_id' => $user_id,
+                'amount' => $referrer_bonus,
+                'description' => 'Direct Commission',
+                'credit' => '1',
+            ]);
+    
+            
+            //message to user
+            $referree_activity = Notification::create([
+                'user_id' => $new_user->id,
+                'title' => "New Package Purchased",
+                'body' => 'You just bought ' .$package,
+            ]);
+    
+        }
+
+
+
+
+
+
+
     }
 
     /**

@@ -216,8 +216,8 @@ try {
 
 
 <div class="top mt-5">
-      <div  class="tf-tree example ">
-              <ul style="widht:403px;" class="">
+      <div class="tf-tree example ">
+              <ul class="">
                 <li>
                   <span 
                   data-toggle="tooltip" data-placement="top" title="{{$parent->users->name??'Empty'}}"
@@ -411,65 +411,22 @@ try {
                                 
 
                               <ul>
-                                  <li>
+                                  <li><span 
+
+                                  data-toggle="tooltip" data-placement="top" title="{{$_31_name}}"
+
+                                    style="" class="border  bg-{{$_31!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                   
-                                  <span 
+                                  <span onclick="clickedNode(this.id)" id="{{$_31}}">{{$_31}}</span>
 
-                                      data-toggle="tooltip" data-placement="top" title="{{$_31_name}}"
-
-                                        style="" class="border  bg-{{$_31!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                                      
-                                      <span onclick="clickedNode(this.id)" id="{{$_31}}">{{$_31}}</span>
-
-                                      <!-- <br>
-                                    <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_31)}}">view</a>  -->
+                                  <!-- <br>
+                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_31)}}">view</a>  -->
 
                                   
-                                      </span>
-
-                                                <ul>
-
-                                                  <li>
-
-
-                                                    <span  
-
-                                                    data-toggle="tooltip" data-placement="top" title="{{$_41_name??0}}"
-
-                                                    style="" class="border bg-{{$_41??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                                                    
-                                                    <span onclick="clickedNode(this.id)" id="user_code">{{$_41??0}}</span>
-
-                                                    <!-- <br>
-                                                    <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_41??0)}}">view</a>  -->
-                                                    
-                                                    
-                                                    </span>
-
-                                                  </li>
-
-                                                  <li>
-
-                                    
-
-                                                    <span  
-                                                    
-                                                    data-toggle="tooltip" data-placement="top" title="{{$_38_name??'0'}}"
-
-                                                    style="" class="border bg-{{$_38??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-
-                                                    <span onclick="clickedNode(this.id)" id="user_code">{{$_38??0}}</span>
-                                                    <!-- <br>
-                                                    <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38??00)}}">view</a>  -->
-                                                    
-                                                    
-                                                    </span>
-
-                                                  </li>
-
-                                                </ul>
                                   
-                                  </li>
+                                  
+                                  
+                                  </span></li>
                                   <li><span 
                                   
                                   data-toggle="tooltip" data-placement="top" title="{{$_32_name}}"
@@ -483,51 +440,7 @@ try {
                                   
                                   
                                   
-                                  </span>
-                                  
-                                          <ul>
-
-                                                  <li>
-
-
-                                                    <span  
-
-                                                    data-toggle="tooltip" data-placement="top" title="{{$_41_name??0}}"
-
-                                                    style="" class="border bg-{{$_41??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                                                    
-                                                    <span onclick="clickedNode(this.id)" id="user_code">{{$_41??0}}</span>
-
-                                                    <!-- <br>
-                                                    <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_41??0)}}">view</a>  -->
-                                                    
-                                                    
-                                                    </span>
-
-                                                  </li>
-
-                                                  <li>
-
-
-
-                                                    <span  
-                                                    
-                                                    data-toggle="tooltip" data-placement="top" title="{{$_38_name??'0'}}"
-
-                                                    style="" class="border bg-{{$_38??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-
-                                                    <span onclick="clickedNode(this.id)" id="user_code">{{$_38??0}}</span>
-                                                    <!-- <br>
-                                                    <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38??00)}}">view</a>  -->
-                                                    
-                                                    
-                                                    </span>
-
-                                                  </li>
-
-                                          </ul>
-
-                                  </li>
+                                  </span></li>
                                 </ul>
                           
                           </li>
@@ -629,51 +542,7 @@ try {
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_33)}}">view</a>  -->
                                   
                                   
-                                  </span>
-                                  
-                                            <ul>
-
-                                              <li>
-
-
-                                                <span  
-
-                                                data-toggle="tooltip" data-placement="top" title="{{$_41_name??0}}"
-
-                                                style="" class="border bg-{{$_41??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                                                
-                                                <span onclick="clickedNode(this.id)" id="user_code">{{$_41??0}}</span>
-
-                                                <!-- <br>
-                                                <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_41??0)}}">view</a>  -->
-                                                
-                                                
-                                                </span>
-
-                                              </li>
-
-                                              <li>
-
-
-
-                                                <span  
-                                                
-                                                data-toggle="tooltip" data-placement="top" title="{{$_38_name??'0'}}"
-
-                                                style="" class="border bg-{{$_38??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-
-                                                <span onclick="clickedNode(this.id)" id="user_code">{{$_38??0}}</span>
-                                                <!-- <br>
-                                                <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38??00)}}">view</a>  -->
-                                                
-                                                
-                                                </span>
-
-                                              </li>
-
-                                            </ul>
-                                  
-                                  </li>
+                                  </span></li>
                                   <li><span  
                                   
                                   data-toggle="tooltip" data-placement="top" title="{{$_34_name}}"
@@ -686,52 +555,7 @@ try {
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_34)}}">view</a>  -->
                                   
                                   
-                                  </span>
-
-                                            <ul>
-
-                                                <li>
-
-
-                                                  <span  
-
-                                                  data-toggle="tooltip" data-placement="top" title="{{$_41_name??0}}"
-
-                                                  style="" class="border bg-{{$_41??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                                                  
-                                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_41??0}}</span>
-
-                                                  <!-- <br>
-                                                  <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_41??0)}}">view</a>  -->
-                                                  
-                                                  
-                                                  </span>
-
-                                                </li>
-
-                                                <li>
-
-
-
-                                                  <span  
-                                                  
-                                                  data-toggle="tooltip" data-placement="top" title="{{$_38_name??'0'}}"
-
-                                                  style="" class="border bg-{{$_38??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-
-                                                  <span onclick="clickedNode(this.id)" id="user_code">{{$_38??0}}</span>
-                                                  <!-- <br>
-                                                  <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38??00)}}">view</a>  -->
-                                                  
-                                                  
-                                                  </span>
-
-                                                </li>
-
-                                            </ul>
-                                    
-                                  
-                                  </li>
+                                  </span></li>
                                 </ul>
                           
                           </li>
@@ -916,113 +740,26 @@ try {
                               
                               style="" class="border bg-{{$_35!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                               
-                              <span onclick="clickedNode(this.id)" id="{{$_35}}">{{$_35}}</span>
+                              <span onclick="clickedNode(this.id)" id="user_code">{{$_35}}</span>
 
                               <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_35)}}">view</a>  -->
                               
                               
-                              </span>
-                              
-                                          <ul>
-
-                                              <li>
-
-
-                                                <span  
-
-                                                data-toggle="tooltip" data-placement="top" title="{{$_41_name??0}}"
-
-                                                style="" class="border bg-{{$_41??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                                                
-                                                <span onclick="clickedNode(this.id)" id="user_code">{{$_41??0}}</span>
-
-                                                <!-- <br>
-                                                <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_41??0)}}">view</a>  -->
-                                                
-                                                
-                                                </span>
-
-                                              </li>
-
-                                              <li>
-
-
-
-                                                <span  
-                                                
-                                                data-toggle="tooltip" data-placement="top" title="{{$_38_name??'0'}}"
-
-                                                style="" class="border bg-{{$_38??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-
-                                                <span onclick="clickedNode(this.id)" id="user_code">{{$_38??0}}</span>
-                                                <!-- <br>
-                                                <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38??00)}}">view</a>  -->
-                                                
-                                                
-                                                </span>
-
-                                              </li>
-
-                                          </ul>
-                              </li>
+                              </span></li>
                               <li><span  
                               
                               data-toggle="tooltip" data-placement="top" title="{{$_36_name}}"
 
                               style="" class="border bg-{{$_36!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                               
-                              <span onclick="clickedNode(this.id)" id="{{$_36}}">{{$_36}}</span>
+                              <span onclick="clickedNode(this.id)" id="user_code">{{$_36}}</span>
 
                               <!-- <br>
                               <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_36)}}">view</a>  -->
                               
                               
-                              </span>
-                              
-                                                <ul>
-
-                                                    <li>
-
-
-                                                      <span  
-
-                                                      data-toggle="tooltip" data-placement="top" title="{{$_41_name??0}}"
-
-                                                      style="" class="border bg-{{$_41??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                                                      
-                                                      <span onclick="clickedNode(this.id)" id="user_code">{{$_41??0}}</span>
-
-                                                      <!-- <br>
-                                                      <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_41??0)}}">view</a>  -->
-                                                      
-                                                      
-                                                      </span>
-
-                                                    </li>
-
-                                                    <li>
-
-
-
-                                                      <span  
-                                                      
-                                                      data-toggle="tooltip" data-placement="top" title="{{$_38_name??'0'}}"
-
-                                                      style="" class="border bg-{{$_38??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-
-                                                      <span onclick="clickedNode(this.id)" id="user_code">{{$_38??0}}</span>
-                                                      <!-- <br>
-                                                      <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38??00)}}">view</a>  -->
-                                                      
-                                                      
-                                                      </span>
-
-                                                    </li>
-
-                                                  </ul>
-                              
-                              </li>
+                              </span></li>
                             </ul>
                           </li>
                         <li>
@@ -1108,119 +845,124 @@ try {
                           
                             
                             </span>
+
                             <ul>
-                              <li><span  
+                                <li>
+                                
+                                    <span  
 
-                              data-toggle="tooltip" data-placement="top" title="{{$_37_name}}"
+                                    data-toggle="tooltip" data-placement="top" title="{{$_37_name}}"
 
-                              style="" class="border bg-{{$_37!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                              
-                              <span onclick="clickedNode(this.id)" id="{{$_37}}">{{$_37}}</span>
+                                    style="" class="border bg-{{$_37!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                    
+                                    <span onclick="clickedNode(this.id)" id="user_code">{{$_37}}</span>
 
-                              <!-- <br>
-                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_37)}}">view</a>  -->
-                              
-                              
-                              </span>
-                                      <ul>
+                                    <!-- <br>
+                                    <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_37)}}">view</a>  -->
+                                    
+                                    
+                                    </span>
 
-                                            <li>
-
-
-                                              <span  
-
-                                              data-toggle="tooltip" data-placement="top" title="{{$_41_name??0}}"
-
-                                              style="" class="border bg-{{$_41??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-                                              
-                                              <span onclick="clickedNode(this.id)" id="user_code">{{$_41??0}}</span>
-
-                                              <!-- <br>
-                                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_41??0)}}">view</a>  -->
-                                              
-                                              
-                                              </span>
-
-                                            </li>
-
-                                            <li>
-
-
-
-                                              <span  
-                                              
-                                              data-toggle="tooltip" data-placement="top" title="{{$_38_name??'0'}}"
-
-                                              style="" class="border bg-{{$_38??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-
-                                              <span onclick="clickedNode(this.id)" id="{{$_38??0}}">{{$_38??0}}</span>
-                                              <!-- <br>
-                                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38??00)}}">view</a>  -->
-                                              
-                                              
-                                              </span>
-
-                                            </li>
-
-                                      </ul>
-                                      
-                              </li>
-                              <li><span  
-                              
-                              data-toggle="tooltip" data-placement="top" title="{{$_38_name}}"
-
-                              style="" class="border bg-{{$_38!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
-
-                              <span onclick="clickedNode(this.id)" id="user_code">{{$_38}}</span>
-                              <!-- <br>
-                              <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38)}}">view</a>  -->
-                              
-                              
-                              </span>
-                                  <ul>
+                                    <ul>
 
                                       <li>
-
-
+                                    
                                         <span  
 
-                                        data-toggle="tooltip" data-placement="top" title="{{$_41_name??0}}"
+                                        data-toggle="tooltip" data-placement="top" title="{{$_37_name}}"
 
-                                        style="" class="border bg-{{$_41??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                        style="" class="border bg-{{$_37!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
                                         
-                                        <span onclick="clickedNode(this.id)" id="user_code">{{$_41??0}}</span>
+                                        <span onclick="clickedNode(this.id)" id="user_code">{{$_37}}</span>
 
                                         <!-- <br>
-                                        <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_41??0)}}">view</a>  -->
+                                        <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_37)}}">view</a>  -->
                                         
                                         
                                         </span>
-
+                                      
                                       </li>
 
                                       <li>
-
-
-
+                                      
                                         <span  
                                         
-                                        data-toggle="tooltip" data-placement="top" title="{{$_38_name??'0'}}"
+                                        data-toggle="tooltip" data-placement="top" title="{{$_38_name}}"
 
-                                        style="" class="border bg-{{$_38??0!='Empty'?'warning':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                        style="" class="border bg-{{$_38!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
 
-                                        <span onclick="clickedNode(this.id)" id="user_code">{{$_38??0}}</span>
+                                        <span onclick="clickedNode(this.id)" id="user_code">{{$_38}}</span>
                                         <!-- <br>
-                                        <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38??00)}}">view</a>  -->
+                                        <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38)}}">view</a>  -->
                                         
                                         
                                         </span>
-
+                                      
                                       </li>
 
-                                  </ul>
+                                    </ul>
+                                  
+                                  </li>
+
+                                  <li>
+                                  
+                                    <span  
+                                    
+                                    data-toggle="tooltip" data-placement="top" title="{{$_38_name}}"
+
+                                    style="" class="border bg-{{$_38!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+
+                                    <span onclick="clickedNode(this.id)" id="user_code">{{$_38}}</span>
+                                    <!-- <br>
+                                    <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38)}}">view</a>  -->
+                                    
+                                    
+                                    </span>
+
+                                    <ul>
+                                    
+                                      <li>
+                                    
+                                        <span  
+
+                                        data-toggle="tooltip" data-placement="top" title="{{$_37_name}}"
+
+                                        style="" class="border bg-{{$_37!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+                                        
+                                        <span onclick="clickedNode(this.id)" id="user_code">{{$_37}}</span>
+
+                                        <!-- <br>
+                                        <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_37)}}">view</a>  -->
+                                        
+                                        
+                                        </span>
                                       
-                              </li>
+                                      </li>
+
+                                      <li>
+                                      
+                                        <span  
+                                        
+                                        data-toggle="tooltip" data-placement="top" title="{{$_38_name}}"
+
+                                        style="" class="border bg-{{$_38!='Empty'?'success':'warning'}} card tf-nc tf-gap-lg shadow text-center mx-auto">
+
+                                        <span onclick="clickedNode(this.id)" id="user_code">{{$_38}}</span>
+                                        <!-- <br>
+                                        <a class="text-white font-weight-bold" href="{{route('user.genealogy2', $_38)}}">view</a>  -->
+                                        
+                                        
+                                        </span>
+                                      
+                                      </li>
+
+                                    </ul>
+                                  
+                                </li>
+
                             </ul>
+
+
                           </li>
                       </ul>
                     </li>
